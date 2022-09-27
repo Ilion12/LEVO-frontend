@@ -1,5 +1,21 @@
 #libroRojo{
-    height: 400px;
-    width: 300px;
-    margin: 8rem;
+    height: 250px;
+    width: 250px;
+    margin-top: 3rem;
+    margin-bottom: 2rem;
+    margin-left: -50px;
+}
+
+input.form-control{
+    width: 4in;
+}
+
+label.form-label{
+
+    text-align: left;
+
+}
+label.form-check-label{
+    text-align: left;
+    margin-left: -150px;
 }

@@ -1,4 +1,4 @@
-<main>
+<main class="container-fluid">
     <div class="container-fluid">
         <div class="row fc-content">
             <div class="col-xl-3">
@@ -6,7 +6,39 @@
             <div class="col-xl-6">
             <img src="/assets/imagenes/libro rojo.jpg" id="libroRojo">
             </div>
-            <div class="col-xl-3"></div>
+            <div class="col-xl-3">
+            </div>
         </div>
+        <form>
+            <div class="mb-3">
+                <div class="row">
+                    <div class="col-xl-3"></div>
+                    <div class="col-xl-1">
+                        <label id="usuario" for="Usuario" class="form-label" >Usuario</label></div>
+                    <div class="col-xl-2">
+                        <input type="identification number" class="form-control" id="Usuario" aria-describedby="identification number" 
+                        max="5" min="5"></div>
+                </div>
+            </div>
+            <div class="mb-3">
+                <div class="row">
+                <div class="col-xl-3"></div>
+                <div class="col-xl-1">
+              <label id="contraseña" for="InputPassword" class="form-label">Contraseña</label></div>
+              <div class="col-xl-2">
+              <input type="password" class="form-control" id="InputPassword" max="8" min="8"></div>
+                </div>
+            </div>
+            <div class="mb-3 form-check">
+                <div class="row">
+                    <div class="col-xl-5"></div>
+                    <div class="col-xl-3">
+              <input type="checkbox" class="form-check-input" id="exampleCheck1">
+              <label class="form-check-label" for="exampleCheck1">Ver contraseña</label>
+                    </div>
+                </div>
+            </div>
+            <a class="nav-link" routerLink="/administrador"><button type="submit" class="btn btn-primary">Aceptar</button></a>
+          </form>
     </div>
 </main>

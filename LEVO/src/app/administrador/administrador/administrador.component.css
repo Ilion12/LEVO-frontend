@@ -1,0 +1,19 @@
+li.nav-item{
+    height: 3rem;
+    background-color: #004d40;
+    font-weight: bold;
+    font-size: 16px;
+    border-top-color: #fdd835;
+    border-style: solid;
+    border-left-color: #fdd835;
+    border-right-color: #fdd835;
+    
+}
+
+a{
+    color:#fdd835;
+}
+
+ul.nav{
+    margin-left: -20px;
+}
