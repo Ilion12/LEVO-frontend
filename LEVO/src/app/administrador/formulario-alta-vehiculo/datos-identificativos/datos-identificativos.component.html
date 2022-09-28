@@ -2,39 +2,87 @@
 <div class="row" id="lineaInferior">
   <div class="col-xl-2"></div>
     <div class="col-xl-8">
-    <h3>Administrador-Alta Vehículo-Datos Identificativos</h3>
+    <h3>Administrador-Alta Vehículo</h3>
   </div>
 </div>
+<h3>Datos Identificativos</h3>
 <form>
-<div class="input-group mb-3">
-  <span class="input-group-text" id="basic-addon1">Matricula:</span>
-  <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+<div class="row">
+  <div class="col-xl-4"></div>
+  <div class="col-xl-8">
+    <div class="input-group mb-3 matricula">
+      <span class="input-group-text" id="basic-addon1">Matricula:&nbsp;&nbsp;&nbsp;&nbsp;</span>
+      <input type="text" class="form-control" placeholder="PGC-xxxx-A" aria-label="matricula" aria-describedby="basic-addon1">
+    </div>
+  </div>
 </div>
+<div class="row">
+  <div class="col-xl-4"></div>
+  <div class="col-xl-8">
+<div class="input-group mb-3">
+  <span class="input-group-text">Fecha Alta</span>
+  <input type="text" class="form-control" placeholder="dd/mm/aaaa" aria-label="fechaAlta">
+</div>
+  </div>
+  </div>
+<div class="row">
+  <div class="col-xl-2"></div>
+  <div class="col-xl-4">
+  <div class="input-group mb-3">
+    <span class="input-group-text" id="basic-addon2">Marca:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+    <input type="text" class="form-control" placeholder="" aria-label="marca" aria-describedby="basic-addon2">
+  </div>
+  </div>
+  <div class="col-xl-4">
+    <div class="input-group mb-3">
+    <span class="input-group-text" id="basic-addon3">Modelo:&nbsp;&nbsp;&nbsp;&nbsp;</span>
+    <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3"> 
+  </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-xl-2"></div>
+<div class="col-xl-4">
+<div class="input-group mb-3">
+  <span class="input-group-text">Tipo de Vehículo:</span>
+  <select class="form-select align-content-lg-start" aria-label="tipoVehiculo">
+    <option selected></option>
+    <option value="1">Turismo</option>
+    <option value="2">Todo terreno</option>
+    <option value="3">Motocicleta</option>
+    <option value="4">Otros</option>
+  </select>
+</div>
+</div>
+<div class="col-xl-4">
+<div class="input-group mb-3">
+  <span class="input-group-text">Color:</span>
+  <select class="form-select align-content-lg-start" aria-label="color">
+    <option selected></option>
+    <option value="1">Bicolor</option>
+    <option value="2">Comercial</option>
+  </select>
+</div>
+</div>
+</div>
+  <div class="row">
+    <div class="col-xl-2"></div>
+    <div class="col-xl-4">
+<div class="input-group mb-3">
+  <span class="input-group-text"> Unidad Destino</span>
+  <input class="form-control" aria-label="With textarea"></div>
+</div>
+<div class="col-xl-4">
+  <div class="input-group mb-3">
+  <span class="input-group-text">Fecha Adjudicación</span>
+  <input type="text" class="form-control" placeholder="dd/mm/aaaa" aria-label="fechaAdjudicación">
+</div>
+    </div>
+  </div>
 
-<div class="input-group mb-3">
-  <span class="input-group-text" id="basic-addon2">Marca:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-  <input type="text" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="basic-addon2"> 
-</div>
-<div class="input-group mb-3">
-  <span class="input-group-text" id="basic-addon3">https://example.com/users/</span>
-  <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3">
-</div>
-
-<div class="input-group mb-3">
-  <span class="input-group-text">$</span>
-  <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
-  <span class="input-group-text">.00</span>
-</div>
-
-<div class="input-group mb-3">
-  <input type="text" class="form-control" placeholder="Username" aria-label="Username">
-  <span class="input-group-text">@</span>
-  <input type="text" class="form-control" placeholder="Server" aria-label="Server">
-</div>
-
-<div class="input-group">
-  <span class="input-group-text">With textarea</span>
-  <textarea class="form-control" aria-label="With textarea"></textarea>
-</div>
+  <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+    <button class="btn btn-primary" type="button" id="volver">Volver</button>
+    <button class="btn btn-primary" type="button" id="siguiente">Siguiente</button>
+  </div>
 </form>
 </main>
