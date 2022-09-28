@@ -1,7 +1,13 @@
 <main class="container-fluid">
+  <div class="row" id="lineaInferior">
+     <div class="col-xl-2"></div>
+      <div class="col-xl-8">
+      <h3>Administrador</h3>
+    </div>
+</div>
     <ul class="nav">
         <li class="nav-item">
-          <a class="nav-link"  data-bs-toggle="modal" data-bs-target="#altaVehiculoModal">Alta Vehículo</a>
+          <a class="nav-link"  routerLink="/formulario-alta-vehiculo">Alta Vehículo</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" routerLink="">Consultar Vehículo</a>
@@ -14,8 +20,19 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="altaVehiculoModalLabel">Datos Identificativos</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        <!--h5 class="modal-title" id="altaVehiculoModalLabel">Datos Identificativos</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button-->
+          <ul class="nav nav-pills">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Datos Identificativos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Datos Técnicos de Interés</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Mantenimmiento Preventivo</a>
+            </li>
+          </ul>
       </div>
       <div class="modal-body">
         <form class="row g-3 needs-validation" novalidate>

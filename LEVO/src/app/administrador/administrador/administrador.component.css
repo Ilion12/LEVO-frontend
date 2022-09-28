@@ -17,3 +17,22 @@ a{
 ul.nav{
     margin-left: -20px;
 }
+
+ul.nav-pills{
+    margin-left:0;
+}
+
+#lineaInferior{
+    margin-top:-2rem;
+    height: 3rem;
+    background-color: #004d40;
+    font-weight: bold;
+    font-size: 16px;
+    color: white;
+    border-top-color: #fdd835;
+    border-style: solid;
+    border-left-color: #004d40;
+    border-right-color: #004d40;
+    border-bottom-color: #004d00;
+}
+
