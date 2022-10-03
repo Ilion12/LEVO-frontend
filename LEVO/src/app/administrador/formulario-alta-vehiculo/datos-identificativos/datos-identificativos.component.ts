@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-datos-identificativos',
@@ -11,5 +12,7 @@ export class DatosIdentificativosComponent implements OnInit {
 
   ngOnInit(): void {
   }
+
+  lupa=faMagnifyingGlass;
 
 }

@@ -1,14 +1,6 @@
-.emblemaGC{
-    height: 150px;
-    width: 150px;
-
-    margin-top: 4rem;
-}
-
-main{
+a{
     color:#fdd835;
 }
-
 #lineaInferior{
     margin-top:-2rem;
     height: 3rem;
@@ -21,4 +13,10 @@ main{
     border-left-color: #004d40;
     border-right-color: #004d40;
     border-bottom-color: #004d00;
+}
+
+div.overflow-hidden{
+    height:400px;
+    width: 400px;
+    margin-top: 5rem;
 }

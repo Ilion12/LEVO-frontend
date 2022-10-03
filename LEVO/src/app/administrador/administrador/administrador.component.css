@@ -36,3 +36,9 @@ ul.nav-pills{
     border-bottom-color: #004d00;
 }
 
+div.overflow-hidden{
+    height:400px;
+    width: 400px;
+    border-width: 1px;
+    font-weight: bold;
+}

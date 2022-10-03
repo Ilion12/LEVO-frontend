@@ -5,97 +5,37 @@
       <h3>Administrador</h3>
     </div>
 </div>
-    <ul class="nav">
+<ul class="nav">
         <li class="nav-item">
-          <a class="nav-link"  routerLink="/formulario-alta-vehiculo">Alta Vehículo</a>
+          <a class="nav-link" routerLink="/formulario-alta-vehiculo">Alta Vehículo</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="">Consultar Vehículo</a>
-        </li>
-      </ul>
-
-  <!--Modal Alta Vehículo-->
-
-<div class="modal fade" id="altaVehiculoModal" tabindex="-1" aria-labelledby="altaVehiculoModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <!--h5 class="modal-title" id="altaVehiculoModalLabel">Datos Identificativos</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button-->
-          <ul class="nav nav-pills">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">Datos Identificativos</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Datos Técnicos de Interés</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Mantenimmiento Preventivo</a>
-            </li>
-          </ul>
+</ul>
+<div class="container overflow-hidden text-center">
+  <div class="row gx-sm-5">
+    <div class="col">
+     <div class="p-3 border bg-light">
+      <form action="">
+        <div class="header">
+          CONSULTA
+          <hr>
+        </div>
+        <div class="mb-3">
+          <label for="formGroupExampleInput" class="form-label">Introduzca Matrícula</label>
+          <input type="text" class="form-control" id="matricula" placeholder="PGC-XXXX-A">
+        </div>
+        <div class="row">
+          <div class="col-6">
+        <a class="nav-link" routerLink="/vehiculo-consulta"><button type="submit" class="btn btn-primary">Consultar</button></a></div>
+        <div class="col-6">
+        <a class="nav-link" routerLink="/"><button type="submit" class="btn btn-danger">Cancelar</button></a></div>
       </div>
-      <div class="modal-body">
-        <form class="row g-3 needs-validation" novalidate>
-          <div class="col-md-4">
-            <label for="validationCustom01" class="form-label">Matricula</label>
-            <input type="text" class="form-control" id="validationCustom01" value="PGC-" required>
-            <div class="valid-feedback">
-              Correcto
-            </div>
-          </div>
-          <div class="col-md-4">
-            <label for="validationCustom02" class="form-label">Marca</label>
-            <input type="text" class="form-control" id="validationCustom02" value="Nissan" required>
-            <div class="valid-feedback">
-              Correcto
-            </div>
-          </div>
-          <div class="col-md-4">
-            <label for="validationCustomUsername" class="form-label">Modelo</label>
-            <div class="input-group has-validation">
-              <input type="text" class="form-control" id="validationCustomUsername" aria-describedby="inputGroupPrepend" required>
-              <div class="invalid-feedback">
-                Correcto
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6">
-            <label for="validationCustom03" class="form-label">Color</label>
-            <input type="text" class="form-control" id="validationCustom03" required>
-            <div class="invalid-feedback">
-              Indique color del vehículo
-            </div>
-          </div>
-          <div class="col-md-3">
-            <label for="validationCustom04" class="form-label">Combustible</label>
-            <select class="form-select" id="validationCustom04" required>
-              <option selected disabled value=""></option>
-              <option>...</option>
-            </select>
-            <div class="invalid-feedback">
-              Indique el Tipo de Combustible
-            </div>
-          </div>
-          <div class="col-md-3">
-            <label for="validationCustom05" class="form-label">Tipo de Cambio</label>
-            <input type="text" class="form-control" id="validationCustom05" required>
-            <div class="invalid-feedback">
-              Indique el Tipo de Cambio
-            </div>
-          </div>
-          
-          <div class="col-12">
-            <button class="btn btn-primary" type="submit">Submit form</button>
-          </div>
-        </form>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-        <button type="button" class="btn btn-primary">Aceptar</button>
-      </div>
+    </form>
+     </div>
     </div>
   </div>
 </div>
+<br><br><br><br>
+  
 
 
 </main>

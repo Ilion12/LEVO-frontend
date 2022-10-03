@@ -11,3 +11,15 @@
     border-right-color: #004d40;
     border-bottom-color: #004d00;
 }
+
+#volver{
+    width: 100px;
+    background-color: red;
+    margin-bottom: 1rem;
+}
+
+#siguiente{
+    width: 100px;
+    background-color: #004d40;
+    margin-bottom: 1rem;
+}

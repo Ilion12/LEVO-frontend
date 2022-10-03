@@ -6,6 +6,8 @@ import { AppComponent } from './app.component';
 import { CoreModule } from './core/core.module';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { AdministradorModule } from './administrador/administrador.module';
+import { UsuarioModule } from './usuario/usuario.module';
+import { VehiculoModule } from './vehiculo/vehiculo.module';
 
 @NgModule({
   declarations: [
@@ -13,7 +15,7 @@ import { AdministradorModule } from './administrador/administrador.module';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule, CoreModule, FontAwesomeModule, AdministradorModule
+    AppRoutingModule, CoreModule, FontAwesomeModule, AdministradorModule, UsuarioModule, VehiculoModule
   ],
   providers: [],
   bootstrap: [AppComponent]

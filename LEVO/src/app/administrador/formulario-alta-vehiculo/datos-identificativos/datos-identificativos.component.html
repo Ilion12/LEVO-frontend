@@ -6,6 +6,7 @@
   </div>
 </div>
 <h3>Datos Identificativos</h3>
+<hr>
 <form>
 <div class="row">
   <div class="col-xl-4"></div>
@@ -25,8 +26,8 @@
 </div>
   </div>
   </div>
-<div class="row">
-  <div class="col-xl-2"></div>
+  <hr>
+<div class="row"><br><br>
   <div class="col-xl-4">
   <div class="input-group mb-3">
     <span class="input-group-text" id="basic-addon2">Marca:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
@@ -39,10 +40,7 @@
     <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3"> 
   </div>
   </div>
-</div>
-<div class="row">
-  <div class="col-xl-2"></div>
-<div class="col-xl-4">
+    <div class="col-xl-4">
 <div class="input-group mb-3">
   <span class="input-group-text">Tipo de Vehículo:</span>
   <select class="form-select align-content-lg-start" aria-label="tipoVehiculo">
@@ -54,18 +52,11 @@
   </select>
 </div>
 </div>
-<div class="col-xl-4">
-<div class="input-group mb-3">
-  <span class="input-group-text">Color:</span>
-  <select class="form-select align-content-lg-start" aria-label="color">
-    <option selected></option>
-    <option value="1">Bicolor</option>
-    <option value="2">Comercial</option>
-  </select>
 </div>
-</div>
-</div>
-  <div class="row">
+<br>
+<br>
+  <div class="row"><br><br>
+    <hr>
     <div class="col-xl-2"></div>
     <div class="col-xl-4">
 <div class="input-group mb-3">
@@ -79,10 +70,12 @@
 </div>
     </div>
   </div>
+  <hr>
 
   <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-    <button class="btn btn-primary" type="button" id="volver">Volver</button>
-    <button class="btn btn-primary" type="button" id="siguiente">Siguiente</button>
+   <a routerLink="/formulario-alta-vehiculo"><button class="btn btn-primary" type="button" id="volver">Volver</button></a>
+   <a routerLink="/datosTecnicosInteres"><button class="btn btn-primary" type="button" id="siguiente">Siguiente</button></a>
   </div>
 </form>
+<br><br><br><br>
 </main>
