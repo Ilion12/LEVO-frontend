@@ -15,11 +15,13 @@
 #volver{
     width: 100px;
     background-color: red;
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
+    margin-top: 2rem;
 }
 
 #siguiente{
     width: 100px;
     background-color: #004d40;
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
+    margin-top: 2rem;
 }

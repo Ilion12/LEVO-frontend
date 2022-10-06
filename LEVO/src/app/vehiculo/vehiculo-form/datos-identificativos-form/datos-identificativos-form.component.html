@@ -1,0 +1,82 @@
+<main class="container-fluid">
+    <div class="row" id="lineaInferior">
+      <div class="col-xl-2"></div>
+        <div class="col-xl-8">
+        <h3>Alta Vehículo</h3>
+      </div>
+    </div>
+    <h3>Datos Identificativos</h3>
+    <hr>
+    <form>
+    <div class="row">
+      <div class="col-xl-4"></div>
+      <div class="col-xl-8">
+        <div class="input-group mb-3 matricula">
+          <span class="input-group-text" id="basic-addon1">Matricula:&nbsp;&nbsp;&nbsp;&nbsp;</span>
+          <input type="text" class="form-control" placeholder="PGC-xxxx-A" aria-label="matricula" aria-describedby="basic-addon1">
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xl-4"></div>
+      <div class="col-xl-8">
+    <div class="input-group mb-3">
+      <span class="input-group-text">Fecha Alta</span>
+      <input type="date" class="form-control" placeholder="dd/mm/aaaa" aria-label="fechaAlta">
+    </div>
+      </div>
+      </div>
+      <hr>
+    <div class="row"><br><br>
+      <div class="col-xl-4">
+      <div class="input-group mb-3">
+        <span class="input-group-text" id="basic-addon2">Marca:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+        <input type="text" class="form-control" placeholder="" aria-label="marca" aria-describedby="basic-addon2">
+      </div>
+      </div>
+      <div class="col-xl-4">
+        <div class="input-group mb-3">
+        <span class="input-group-text" id="basic-addon3">Modelo:&nbsp;&nbsp;&nbsp;&nbsp;</span>
+        <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3"> 
+      </div>
+      </div>
+        <div class="col-xl-4">
+    <div class="input-group mb-3">
+      <span class="input-group-text">Tipo de Vehículo:</span>
+      <select class="form-select align-content-lg-start" aria-label="tipoVehiculo">
+        <option selected></option>
+        <option value="1">Turismo</option>
+        <option value="2">Todo terreno</option>
+        <option value="3">Motocicleta</option>
+        <option value="4">Otros</option>
+      </select>
+    </div>
+    </div>
+    </div>
+    <br>
+    <br>
+      <div class="row"><br><br>
+        <hr>
+        <div class="col-xl-2"></div>
+        <div class="col-xl-4">
+    <div class="input-group mb-3">
+      <span class="input-group-text"> Unidad Destino</span>
+      <input class="form-control" aria-label="With textarea"></div>
+    </div>
+    <div class="col-xl-4">
+      <div class="input-group mb-3">
+      <span class="input-group-text">Fecha Adjudicación</span>
+      <input type="date" class="form-control" placeholder="dd/mm/aaaa" aria-label="fechaAdjudicación">
+    </div>
+        </div>
+      </div>
+      <hr>
+    
+      <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+       <a routerLink="/formulario-alta-vehiculo"><button class="btn btn-primary" type="button" id="volver">Volver</button></a>
+       <a routerLink="/datosTecnicosInteresForm"><button class="btn btn-primary" type="button" id="siguiente">Siguiente</button></a>
+      </div>
+    </form>
+    <br><br><br><br>
+    </main>
+    

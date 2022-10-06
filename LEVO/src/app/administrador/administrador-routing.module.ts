@@ -1,11 +1,10 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { DatosIdentificativosFormComponent } from '../vehiculo/vehiculo-form/datos-identificativos-form/datos-identificativos-form.component';
+import { DatosTecnicosInteresFormComponent } from '../vehiculo/vehiculo-form/datos-tecnicos-interes-form/datos-tecnicos-interes-form.component';
+import { MantenimientoPreventivoFormComponent } from '../vehiculo/vehiculo-form/mantenimiento-preventivo-form/mantenimiento-preventivo-form.component';
+import { VehiculoFormComponent } from '../vehiculo/vehiculo-form/vehiculo-form.component';
 import { AdministradorComponent } from './administrador/administrador.component';
-import { DatosIdentificativosComponent } from './formulario-alta-vehiculo/datos-identificativos/datos-identificativos.component';
-import { DatosTecnicosInteresComponent } from './formulario-alta-vehiculo/datos-tecnicos-interes/datos-tecnicos-interes.component';
-import { FormularioAltaVehiculoComponent } from './formulario-alta-vehiculo/formulario-alta-vehiculo.component';
-import { MantenimientoPreventivoComponent } from './formulario-alta-vehiculo/mantenimiento-preventivo/mantenimiento-preventivo.component';
-
 const routes: Routes = [
   {
   path: '',
@@ -13,19 +12,19 @@ const routes: Routes = [
 },
 {
   path:'formulario-alta-vehiculo',
-  component: FormularioAltaVehiculoComponent
+  component: VehiculoFormComponent
 },
 {
-  path:'datosIdentificativos',
-  component: DatosIdentificativosComponent
+  path:'datosIdentificativosForm',
+  component: DatosIdentificativosFormComponent
 },
 {
-  path:'datosTecnicosInteres',
-  component: DatosTecnicosInteresComponent
+  path:'datosTecnicosInteresForm',
+  component: DatosTecnicosInteresFormComponent
 },
 {
-  path:'mantenimientoPreventivo',
-  component: MantenimientoPreventivoComponent
+  path:'mantenimientoPreventivoForm',
+  component: MantenimientoPreventivoFormComponent
 }
 ];
 
