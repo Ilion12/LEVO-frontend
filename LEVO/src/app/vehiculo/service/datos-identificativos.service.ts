@@ -26,7 +26,7 @@ export class DatosIdentificativosService {
   
     extraerDatosIdentificativos(respuestaApi: any): DatosIdentificativos[] {
       const datosIdentificativos: DatosIdentificativos[] = [];
-      respuestaApi._embedded.datosIdentificativos.forEach((a: any) => {
+      respuestaApi._embedded.datosidentificativos.forEach((a: any) => {
       datosIdentificativos.push(this.mapearDatosIdentificativos(a));
       });
       return datosIdentificativos;
