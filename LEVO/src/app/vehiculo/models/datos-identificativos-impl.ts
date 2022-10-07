@@ -4,11 +4,12 @@ export class DatosIdentificativosImpl {
 
     id!: string;
     matricula!: string;
-    mrca!: string;
+    marca!: string;
     modelo!: string;
     tipoVehiculo!: string;
     unidadDestino!: string;
     vehiculo!: Vehiculo;
+    fechaAdjudicacion!: Date;
 
     constructor(){}
 }

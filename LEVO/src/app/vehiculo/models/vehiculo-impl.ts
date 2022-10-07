@@ -5,13 +5,14 @@ import { MantenimientoPreventivo } from "./mantenimiento-preventivo";
 
 export class VehiculoImpl {
 
-    id!: number;
-    kilometrosActuales!: number;
-    mesesActuales!: number;
+    id!: string;
     datosIdentificativos!: DatosIdentificativos;
     datosTecnicosInteres!: DatosTecnicosInteres;
     mantenimientoPreventivo!: MantenimientoPreventivo;
     mantenimmiento!: Mantenimiento[];
+    fechaAlta!: Date;
+    kilometrosActuales!: number;
+    mesesActuales!: number;
 
         constructor(){}
 }
