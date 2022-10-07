@@ -17,6 +17,12 @@ import { MantenimientoItemComponent } from './mantenimientos/mantenimiento-item/
 import { MantenimientoConsultarComponent } from './mantenimientos/mantenimiento-consultar/mantenimiento-consultar.component';
 import { MantenimientoEditarComponent } from './mantenimientos/mantenimiento-editar/mantenimiento-editar.component';
 import { VehiculoItemComponent } from './vehiculo-item/vehiculo-item.component';
+import { ManteniminentoPreventivoEditarComponent } from './vehiculo-editar/manteniminento-preventivo-editar/manteniminento-preventivo-editar.component';
+import { ManteniminentoPreventivoItemComponent } from './vehiculo-item/manteniminento-preventivo-item/manteniminento-preventivo-item.component';
+import { DatosTecnicosInteresItemComponent } from './vehiculo-item/datos-tecnicos-interes-item/datos-tecnicos-interes-item.component';
+import { DatosIdentificativosItemComponent } from './vehiculo-item/datos-identificativos-item/datos-identificativos-item.component';
+import { DatosTecnicosInteresEditarComponent } from './vehiculo-editar/datos-tecnicos-interes-editar/datos-tecnicos-interes-editar.component';
+import { DatosIdentificativosEditarComponent } from './vehiculo-editar/datos-identificativos-editar/datos-identificativos-editar.component';
 
 
 @NgModule({
@@ -35,7 +41,13 @@ import { VehiculoItemComponent } from './vehiculo-item/vehiculo-item.component';
     MantenimientoItemComponent,
     MantenimientoConsultarComponent,
     MantenimientoEditarComponent,
-    VehiculoItemComponent
+    VehiculoItemComponent,
+    ManteniminentoPreventivoEditarComponent,
+    ManteniminentoPreventivoItemComponent,
+    DatosTecnicosInteresItemComponent,
+    DatosIdentificativosItemComponent,
+    DatosTecnicosInteresEditarComponent,
+    DatosIdentificativosEditarComponent
   ],
   imports: [
     CommonModule,

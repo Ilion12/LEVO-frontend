@@ -9,13 +9,13 @@
     <hr>
     <form>
     <div class="row">
-      <div class="col-sm-4">
+      <div class="col-sm-3">
         <div class="input-group mb-3 matricula">
           <span class="input-group-text" id="basic-addon1">Nº Bastidor:</span>
           <input type="text" class="form-control" placeholder="" aria-label="bastidor" aria-describedby="basic-addon1">
         </div>
       </div>
-      <div class="col-sm-4">
+      <div class="col-sm-3">
        <div class="input-group mb-3">
           <span class="input-group-text">Color carrocería:</span>
           <input type="text" class="form-control" placeholder="" aria-label="color" aria-describedby="color">
@@ -34,8 +34,19 @@
             </select>
           </div>
         </div>
-      </div>
-    <div class="row">
+        <div class="col-sm-3">
+          <div class="input-group mb-3">
+            <span class="input-group-text">Tipo de Cambio:</span>
+            <select class="form-select align-content-lg-start" aria-label="tipoCambio">
+              <option selected></option>
+              <option value="1">Manual</option>
+              <option value="2">Automático</option>
+            </select> 
+        </div>
+        </div>
+    </div>
+    <div class="row"><h4> Combustible</h4>
+      <hr>
       <div class="col-xl-2"></div>
       <div class="col-xl-4">
       <div class="input-group mb-3">
@@ -52,14 +63,10 @@
       </div>
       <div class="col-xl-4">
         <div class="input-group mb-3">
-          <span class="input-group-text">Tipo de Cambio:</span>
-          <select class="form-select align-content-lg-start" aria-label="tipoCambio">
-            <option selected></option>
-            <option value="1">Manual</option>
-            <option value="2">Automático</option>
-          </select> 
+        <span class="input-group-text" id="capacidadCombustible">Capacidad Combustible:</span>
+        <input type="number" class="form-control" placeholder="" aria-label="capacidadCombustible" aria-describedby="capacidadCombustible">  
       </div>
-      </div>
+    </div>
     </div>
     <hr>
     <div class="row"><h4> Aceite</h4>
