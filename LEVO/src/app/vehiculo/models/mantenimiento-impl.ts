@@ -21,7 +21,7 @@ export class MantenimientoImpl {
 	correaArrastreAccesorios!: boolean;
 	kitCorreaArrastreAccesorios!: boolean;
 	anticongelante!: boolean;
-	aceiteTransimision!: boolean;
+	aceiteTransmision!: boolean;
 	bujiasEncendido!: boolean;
 
     constructor(){}

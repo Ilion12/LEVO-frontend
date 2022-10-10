@@ -5,7 +5,7 @@ export class MantenimientoPreventivoImpl {
     id!: string;
     condicionesUso!: string;
     observaciones!: string;
-    vehiculo:Vehiculo | undefined;
+    vehiculo!:Vehiculo;
     liquidoFrenosKm!: number;
 	liquidoFrenosMes!: number;
 	operacionesSistematicasKm!: number;

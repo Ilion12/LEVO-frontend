@@ -46,7 +46,7 @@ export class DatosIdentificativosService {
       return datosIdentificativos;
     }
 
-    creardaatosIdentificativos(datosIdentificativos: DatosIdentificativos): Observable<any>{
+    creardatosIdentificativos(datosIdentificativos: DatosIdentificativos): Observable<any>{
       return this.http.post(`${this.urlEndPoint}`, datosIdentificativos).pipe(
         catchError((e) =>{
           if(e.status ===400) {

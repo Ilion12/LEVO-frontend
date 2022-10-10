@@ -55,7 +55,7 @@ export class DatosTecnicosInteresService {
       return datosTecnicosInteres;
     }
 
-    creardaatosTecnicosInteres(datosTecnicosInteres: DatosTecnicosInteres): Observable<any>{
+    creardatosTecnicosInteres(datosTecnicosInteres: DatosTecnicosInteres): Observable<any>{
       return this.http.post(`${this.urlEndPoint}`, datosTecnicosInteres).pipe(
         catchError((e) =>{
           if(e.status ===400) {
