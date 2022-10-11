@@ -23,6 +23,10 @@ import { DatosTecnicosInteresItemComponent } from './vehiculo-item/datos-tecnico
 import { DatosIdentificativosItemComponent } from './vehiculo-item/datos-identificativos-item/datos-identificativos-item.component';
 import { DatosTecnicosInteresEditarComponent } from './vehiculo-editar/datos-tecnicos-interes-editar/datos-tecnicos-interes-editar.component';
 import { DatosIdentificativosEditarComponent } from './vehiculo-editar/datos-identificativos-editar/datos-identificativos-editar.component';
+import { VehiculosComponent } from './vehiculos/vehiculos.component';
+import { FormsModule } from '@angular/forms';
+import { AuxiliarService } from '../service/auxiliar.service';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -47,12 +51,14 @@ import { DatosIdentificativosEditarComponent } from './vehiculo-editar/datos-ide
     DatosTecnicosInteresItemComponent,
     DatosIdentificativosItemComponent,
     DatosTecnicosInteresEditarComponent,
-    DatosIdentificativosEditarComponent
+    DatosIdentificativosEditarComponent,
+    VehiculosComponent
   ],
   imports: [
     CommonModule,
-    VehiculoRoutingModule
+    VehiculoRoutingModule, FormsModule, HttpClientModule
   ],
+  providers:[AuxiliarService],
   exports:[VehiculoConsultaComponent]
 })
 export class VehiculoModule { }

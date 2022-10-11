@@ -9,7 +9,7 @@ export class VehiculoImpl {
     datosIdentificativos!: DatosIdentificativos;
     datosTecnicosInteres!: DatosTecnicosInteres;
     mantenimientoPreventivo!: MantenimientoPreventivo;
-    mantenimmiento!: Mantenimiento[];
+    mantenimiento!: Mantenimiento[];
     fechaAlta!: Date;
     kilometrosActuales!: number;
     mesesActuales!: number;

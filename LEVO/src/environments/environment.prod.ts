@@ -1,4 +1,5 @@
 export const environment = {
   production: true,
-  host: 'http://localhost:8080/api/'
+  host: 'https://levoapi.herokuapp.com/api/',
+  itemsPorPagina:10
 };

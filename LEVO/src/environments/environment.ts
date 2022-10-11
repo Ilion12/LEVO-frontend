@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  host: 'http://localhost:8080/api/'
+  host: 'https://levoapi.herokuapp.com/api/',
+  itemsPorPagina:10
 };
 
 /*

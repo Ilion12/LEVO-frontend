@@ -7,7 +7,8 @@ import { CoreModule } from './core/core.module';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { AdministradorModule } from './administrador/administrador.module';
 import { UsuarioModule } from './usuario/usuario.module';
-import { VehiculoModule } from './vehiculo/vehiculo.module';
+import { VehiculoModule } from './vehiculo/vehiculo.module';import { HttpClientModule } from '@angular/common/http';
+HttpClientModule
 
 @NgModule({
   declarations: [

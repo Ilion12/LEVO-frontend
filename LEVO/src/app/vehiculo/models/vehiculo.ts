@@ -11,7 +11,7 @@ export interface Vehiculo {
     datosIdentificativos:DatosIdentificativos;
     datosTecnicosInteres:DatosTecnicosInteres;
     mantenimientoPreventivo:MantenimientoPreventivo;
-    mantenimmiento:Mantenimiento[];
+    mantenimiento:Mantenimiento[];
     kilometrosActuales: number;
     mesesActuales:number;
 }

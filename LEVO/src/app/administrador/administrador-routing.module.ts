@@ -4,6 +4,8 @@ import { DatosIdentificativosFormComponent } from '../vehiculo/vehiculo-form/dat
 import { DatosTecnicosInteresFormComponent } from '../vehiculo/vehiculo-form/datos-tecnicos-interes-form/datos-tecnicos-interes-form.component';
 import { MantenimientoPreventivoFormComponent } from '../vehiculo/vehiculo-form/mantenimiento-preventivo-form/mantenimiento-preventivo-form.component';
 import { VehiculoFormComponent } from '../vehiculo/vehiculo-form/vehiculo-form.component';
+import { VehiculoModule } from '../vehiculo/vehiculo.module';
+import { VehiculosComponent } from '../vehiculo/vehiculos/vehiculos.component';
 import { AdministradorComponent } from './administrador/administrador.component';
 const routes: Routes = [
   {
@@ -25,7 +27,10 @@ const routes: Routes = [
 {
   path:'mantenimientoPreventivoForm',
   component: MantenimientoPreventivoFormComponent
-}
+},
+{path:'vehiculos',
+component:VehiculosComponent}
+
 ];
 
 @NgModule({
