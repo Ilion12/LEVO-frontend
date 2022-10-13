@@ -1,6 +1,5 @@
 <main class="container-fluid">
   <div class="row" id="lineaInferior">
-     <div class="col-xl-4"><a class="button" routerLink="/vehiculos"><button class="btn btn-primary" ></button></a></div>
       <div class="col-xl-3">
       <h3>Administrador</h3>
     </div>
@@ -8,6 +7,9 @@
 <ul class="nav">
         <li class="nav-item">
           <a class="nav-link" routerLink="/formulario-alta-vehiculo">Alta Vehículo</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/vehiculos">Listado Vehículos</a>
         </li>
 </ul>
 <div class="container overflow-hidden text-center">
@@ -21,11 +23,12 @@
         </div>
         <div class="mb-3">
           <label for="formGroupExampleInput" class="form-label">Introduzca Matrícula</label>
-          <input type="text" class="form-control" id="matricula" placeholder="PGC-XXXX-A">
+          <input type="text" class="form-control" id="matricula" placeholder="PGC-XXXX-A" 
+          [(ngModel)]="matricula" [ngModelOptions]="{standalone: true}" required>
         </div>
         <div class="row">
           <div class="col-6">
-        <a class="nav-link" routerLink="/vehiculo-consulta"><button type="submit" class="btn btn-primary">Consultar</button></a></div>
+        <a class="nav-link" routerLink="/vehiculo-consulta"><button type="submit" class="btn btn-primary" (click)="vehiculoBuscado(matricula)">Consultar</button></a></div>
         <div class="col-6">
         <a class="nav-link" routerLink="/"><button type="submit" class="btn btn-danger">Cancelar</button></a></div>
       </div>

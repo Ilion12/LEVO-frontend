@@ -28,3 +28,30 @@ li.nav-item, .dropdown-item{
     color: #fdd835;
 }
 
+
+input,select{
+    max-width:max-content; 
+ }
+ 
+ form{
+     margin-top:3rem;   
+ }
+ 
+ #volver{
+     width: 100px;
+     background-color: red;
+ }
+ 
+ #siguiente{
+     width: 100px;
+     background-color: #004d40;
+ }
+ div.gap-2{
+     margin-top:2rem;
+     margin-right: 2rem;
+ }
+ 
+ #lupa{
+     padding: 2rem;
+ }
+

@@ -8,7 +8,12 @@ export interface Vehiculo {
 
     id: string;
     fechaAlta:Date;
-    datosIdentificativos:DatosIdentificativos;
+    matricula:string;
+    marca:string;
+    modelo:string;
+    tipoVehiculo:string;
+    unidadDestino:string;
+    fechaAdjudicacion:Date;
     datosTecnicosInteres:DatosTecnicosInteres;
     mantenimientoPreventivo:MantenimientoPreventivo;
     mantenimiento:Mantenimiento[];

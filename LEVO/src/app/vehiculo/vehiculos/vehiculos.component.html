@@ -1,14 +1,10 @@
-<main><div class="row">
-    <div class="col-10 col-sm-10 col-md-2 col-lg-2 col-xl-2">Kilometros Actuales</div>
-    <div class="col-10 col-sm-10 col-md-2 col-lg-2 col-xl-2">Meses Actuales</div>
-    <div class="col-10 col-sm-10 col-md-2 col-lg-2 col-xl-2">Datos Identificativos</div>
-    <div class="col-10 col-sm-10 col-md-2 col-lg-2 col-xl-2">Datos Técnicos de Interés</div>
-    <div class="col-10 col-sm-10 col-md-2 col-lg-2 col-xl-2">Fecha Alta</div>
-    <div class="col-10 col-sm-10 col-md-2 col-lg-2 col-xl-2">Plan Preventivo</div>
-    <div class="col-10 col-sm-10 col-md-2 col-lg-2 col-xl-2">Mantenimientos Realizados</div>
-    
-  </div>
+<main>
   
+  <div class="row" id="lineaInferior">
+    <div class="col-xl-3">
+    <h3>Listado de Vehiculos</h3>
+  </div>
+</div>  
   <div *ngFor="let vehiculo of vehiculos">
     <app-vehiculo-item [vehiculo]="vehiculo"></app-vehiculo-item>
   </div>
