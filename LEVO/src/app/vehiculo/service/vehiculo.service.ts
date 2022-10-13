@@ -29,7 +29,7 @@ export class VehiculoService {
   
     extraerVehiculos(respuestaApi: any): Vehiculo[] {
       const vehiculos: Vehiculo[] = [];
-      respuestaApi._embedded.vehiculos.forEach((a: any) => {
+      respuestaApi._embedded.vehiculos.forEach((a: Vehiculo) => {
       vehiculos.push(this.mapearVehiculo(a));
       });
       return vehiculos;
@@ -39,7 +39,12 @@ export class VehiculoService {
 
       let vehiculo: Vehiculo = new VehiculoImpl();
       vehiculo.id= this.getId(vehiculoApi._links.vehiculo.href);
-      vehiculo.datosIdentificativos= vehiculoApi.datosIdentificativos;
+      vehiculo.matricula=vehiculoApi.matricula;
+      vehiculo.modelo=vehiculoApi.modelo;
+      vehiculo.marca= vehiculoApi.marca;
+      vehiculo.tipoVehiculo=vehiculoApi.tipo;
+      vehiculo.unidadDestino=vehiculoApi.unidadDestino;
+      vehiculo.fechaAdjudicacion=vehiculoApi.fechaAdjudicacion;
       vehiculo.datosTecnicosInteres=vehiculoApi.datosTecnicosInteres;
       vehiculo.mantenimientoPreventivo=vehiculoApi.planMantenimientoPreventivo;
       vehiculo.mantenimiento=vehiculoApi.mantenimientosRealizados;
@@ -109,6 +114,19 @@ getVehiculo(id:string): Observable<any>{
 
 getVehiculosPagina(pagina: number): Observable<any> {
   return this.auxService.getItemsPorPagina(this.urlEndPoint, pagina);
+}
+
+getVehiculoBuscado(matricula:string): Observable<any>{
+  return this.http.get<any>(`${this.urlEndPoint}/search/por-matricula?matricula=${matricula}`).pipe(catchError((e) => {
+    if (e.status === 400) {
+      return throwError(() => new Error(e));
+    }
+    if (e.error.mensaje) {
+      console.error(e.error.mensaje);
+    }
+    return throwError(() => new Error(e));
+  })
+);
 }
 
 }

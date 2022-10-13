@@ -7,24 +7,29 @@
     </div>
     <h3>Datos Técnicos de Interés</h3>
     <hr>
-    <form>
+    <form #datosTecnicosInteres="ngForm" class="was-validated">
     <div class="row">
       <div class="col-sm-3">
         <div class="input-group mb-3 matricula">
           <span class="input-group-text" id="basic-addon1">Nº Bastidor:</span>
-          <input type="text" class="form-control" placeholder="" aria-label="bastidor" aria-describedby="basic-addon1">
+          <input type="text" class="form-control" [(ngModel)]="datosTecnicosInteres.bastidor" placeholder="" aria-label="bastidor" aria-describedby="basic-addon1" name="bastidor" required #bastidor="ngModel"
+          [ngClass]="{
+            'is-invalid': bastidor.invalid && (bastidor.dirty || bastidor.touched),
+            'is-valid': ! bastidor.invalid
+          }" />
         </div>
       </div>
       <div class="col-sm-3">
        <div class="input-group mb-3">
           <span class="input-group-text">Color carrocería:</span>
-          <input type="text" class="form-control" placeholder="" aria-label="color" aria-describedby="color">
+          <input type="text" class="form-control" [(ngModel)]="datosTecnicosInteres.color" placeholder="" aria-label="color" aria-describedby="color" required>
         </div>
       </div>
         <div class="col-sm-3">
           <div class="input-group mb-3 matricula">
             <span class="input-group-text" id="calificacioMA">Calificación Mediambiental:</span>
-            <select class="form-select align-content-lg-start" aria-label="calificacionMA">
+            <select class="form-select align-content-lg-start" [(ngModel)]="datosTecnicosInteres.calificacionMedioambiental" (change)="capturar()"
+            [ngModelOptions]="{standalone: true}" aria-label="calificacionMA" required>
               <option selected></option>
               <option value="1">A</option>
               <option value="2">B</option>
@@ -37,7 +42,8 @@
         <div class="col-sm-3">
           <div class="input-group mb-3">
             <span class="input-group-text">Tipo de Cambio:</span>
-            <select class="form-select align-content-lg-start" aria-label="tipoCambio">
+            <select class="form-select align-content-lg-start" [(ngModel)]="datosTecnicosInteres.cambio" (change)="capturar()"
+            [ngModelOptions]="{standalone: true}" aria-label="tipoCambio" required>
               <option selected></option>
               <option value="1">Manual</option>
               <option value="2">Automático</option>
@@ -51,7 +57,8 @@
       <div class="col-xl-4">
       <div class="input-group mb-3">
         <span class="input-group-text">Tipo de Combustible:</span>
-        <select class="form-select align-content-lg-start" aria-label="tipoCombustible">
+        <select class="form-select align-content-lg-start" [(ngModel)]="datosTecnicosInteres.combustible" (change)="capturar()"
+        [ngModelOptions]="{standalone: true}" aria-label="tipoCombustible">
           <option selected></option>
           <option value="1">Diesel</option>
           <option value="2">Gasolina</option>
@@ -64,7 +71,7 @@
       <div class="col-xl-4">
         <div class="input-group mb-3">
         <span class="input-group-text" id="capacidadCombustible">Capacidad Combustible:</span>
-        <input type="number" class="form-control" placeholder="" aria-label="capacidadCombustible" aria-describedby="capacidadCombustible">  
+        <input type="number" class="form-control" [(ngModel)]="datosTecnicosInteres.capacidadDeposito" placeholder="" aria-label="capacidadCombustible" aria-describedby="capacidadCombustible" required>  
       </div>
     </div>
     </div>
@@ -75,13 +82,13 @@
     <div class="col-xl-4">
     <div class="input-group mb-3">
       <span class="input-group-text" id="lubricante">Lubricante:</span>
-      <input type="text" class="form-control" placeholder="" aria-label="lubricante" aria-describedby="lubricante">  
+      <input type="text" class="form-control" [(ngModel)]="datosTecnicosInteres.lubricanteMotor" placeholder="" aria-label="lubricante" aria-describedby="lubricante" required>  
     </div>
     </div>
     <div class="col-xl-4">
     <div class="input-group mb-3">
       <span class="input-group-text" id="carter">Capacidad Carter:</span>
-          <input type="number" class="form-control" placeholder="" aria-label="carter" aria-describedby="carter">
+          <input type="number" class="form-control"[(ngModel)]="datosTecnicosInteres.capacidadCarter" placeholder="" aria-label="carter" aria-describedby="carter" required />
     </div>
     </div>
     </div>
@@ -91,19 +98,19 @@
         <div class="col-xl-4">
           <div class="input-group mb-3">
             <span class="input-group-text">Presion Neumáticos/Delanteros</span>
-            <input type="number" class="form-control" aria-label="presion1">
+            <input type="number" class="form-control" [(ngModel)]="datosTecnicosInteres.presionNeumaticosDelanteros" aria-label="presion1" required>
           </div>
         </div>
         <div class="col-xl-4">
           <div class="input-group mb-3">
             <span class="input-group-text">Presión Neumáticos/Traseros</span>
-            <input type="number" class="form-control" aria-label="presion2">
+            <input type="number" class="form-control" [(ngModel)]="datosTecnicosInteres.presionNeumaticosTraseros" required aria-label="presion2">
           </div>
         </div>
         <div class="col-xl-4">
           <div class="input-group mb-3 matricula">
             <span class="input-group-text" id="cubiertas">Tipo de Cubiertas:</span>
-            <input type="text" class="form-control" placeholder="" aria-label="cubiertas" aria-describedby="cubiertas">
+            <input type="text" class="form-control" [(ngModel)]="datosTecnicosInteres.tipoCubiertas" required placeholder="" aria-label="cubiertas" aria-describedby="cubiertas">
           </div>
         </div>
       </div>
@@ -113,32 +120,33 @@
       <div class="col-xl-3">
         <div class="input-group mb-3">
           <span class="input-group-text">Nº Baterias:</span>
-         <input type="number" class="form-control" aria-label="numeroBaterias">
+         <input type="number" class="form-control" [(ngModel)]="datosTecnicosInteres.numeroBaterias" required aria-label="numeroBaterias">
         </div>
       </div>
       <div class="col-xl-3">
         <div class="input-group mb-3">
           <span class="input-group-text">Amperios/Hora:</span>
-         <input type="number" class="form-control" aria-label="amperiosHora">
+         <input type="number" class="form-control" [(ngModel)]="datosTecnicosInteres.amperiosHoraBaterias" required aria-label="amperiosHora">
         </div>
       </div>
       <div class="col-xl-3">
         <div class="input-group mb-3">
           <span class="input-group-text">Amperaje:</span>
-          <input type="number" class="form-control" aria-label="amperaje">
+          <input type="number" class="form-control" [(ngModel)]="datosTecnicosInteres.amperajeBaterias" required aria-label="amperaje">
         </div>
       </div>
       <div class="col-xl-3">
           <div class="input-group mb-3 matricula">
               <span class="input-group-text" id="voltaje"> Voltaje:</span>
-              <input type="number" class="form-control" placeholder="" aria-label="voltaje" aria-describedby="voltaje">
+              <input type="number" class="form-control" [(ngModel)]="datosTecnicosInteres.voltajeBaterias" required placeholder="" aria-label="voltaje" aria-describedby="voltaje">
           </div>
       </div>
       </div>
     <hr>
       <div class="d-grid gap-2 d-md-flex justify-content-md-end">
         <a routerLink="/datosIdentificativosForm"><button class="btn btn-primary" type="button" id="volver">Volver</button></a>
-        <a routerLink="/mantenimientoPreventivoForm"><button class="btn btn-primary" type="button" id="siguiente">Siguiente</button></a>
+        <button class="btn btn-primary" type="button" id="siguiente" (click)="onAddDatosTecnicosInteres" 
+        [disabled]="!datosTecnicosInteres.form.valid"><a routerLink="/mantenimientoPreventivoForm">Siguiente</a></button>
       </div>
     </form>
     <br><br><br>
