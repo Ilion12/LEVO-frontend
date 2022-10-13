@@ -1,4 +1,4 @@
-import { DatosIdentificativos } from "./datos-identificativos";
+
 import { DatosTecnicosInteres } from "./datos-tecnicos-interes";
 import { Mantenimiento } from "./mantenimiento";
 import { MantenimientoPreventivo } from "./mantenimiento-preventivo";

@@ -50,7 +50,7 @@ export class DatosTecnicosInteresService {
       datosTecnicosInteres.voltajeBaterias=datosTecnicosInteresApi.voltajeBaterias;
       datosTecnicosInteres.amperiosHoraBaterias=datosTecnicosInteresApi.amperiosHoraBaterias;
       datosTecnicosInteres.amperajeBaterias=datosTecnicosInteresApi.amperajeBaterias;
-      datosTecnicosInteres.clasificacionMediambiental=datosTecnicosInteresApi.clasificacionMediambiental;
+      datosTecnicosInteres.calificacionMediambiental=datosTecnicosInteresApi.clasificacionMediambiental;
       datosTecnicosInteres.vehiculo=datosTecnicosInteresApi.this.getId(datosTecnicosInteresApi._links.vehiculo.href);
       return datosTecnicosInteres;
     }

@@ -17,7 +17,7 @@ export class DatosTecnicosInteresImpl {
     voltajeBaterias!: number;
     amperajeBaterias!: number;
     amperiosHoraBaterias!: number;
-    clasificacionMediambiental!: string;
+    calificacionMedioambiental!: string;
     vehiculo!: Vehiculo;
 
     constructor(){}

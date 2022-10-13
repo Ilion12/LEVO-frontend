@@ -31,13 +31,16 @@
       </div>
       <h3>Datos Identificativos</h3>
       <hr>
-      <form>
+      <form #nuevoVehiculo="ngForm" class="was-validated">
       <div class="row">
         <div class="col-xl-4"></div>
         <div class="col-xl-8">
           <div class="input-group mb-3 matricula">
             <span class="input-group-text" id="basic-addon1">Matricula:&nbsp;&nbsp;&nbsp;&nbsp;</span>
-            <input type="text" class="form-control" placeholder="PGC-xxxx-A" aria-label="matricula" aria-describedby="basic-addon1">
+            <input type="text" class="form-control" [(ngModel)]="vehiculo.matricula" name="matricula" placeholder="PGC-xxxx-A" aria-label="matricula" aria-describedby="basic-addon1" required  maxlength="10" minlength="10" #matricula="ngModel" [ngClass]="{
+              'is-invalid': matricula.invalid && (matricula.dirty || matricula.touched),
+              'is-valid': !matricula.invalid
+            }" />
           </div>
         </div>
       </div>
@@ -46,7 +49,7 @@
         <div class="col-xl-8">
       <div class="input-group mb-3">
         <span class="input-group-text">Fecha Alta</span>
-        <input type="date" class="form-control" placeholder="dd/mm/aaaa" aria-label="fechaAlta">
+        <input type="date" class="form-control" [(ngModel)]="vehiculo.fechaAlta"  name="fechaAlta" placeholder="dd/mm/aaaa" aria-label="fechaAlta" required>
       </div>
         </div>
         </div>
@@ -55,19 +58,19 @@
         <div class="col-xl-4">
         <div class="input-group mb-3">
           <span class="input-group-text" id="basic-addon2">Marca:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-          <input type="text" class="form-control" placeholder="" aria-label="marca" aria-describedby="basic-addon2">
+          <input type="text" class="form-control" [(ngModel)]="vehiculo.marca"  name="marca" placeholder="" aria-label="marca" aria-describedby="basic-addon2" required>
         </div>
         </div>
         <div class="col-xl-4">
           <div class="input-group mb-3">
           <span class="input-group-text" id="basic-addon3">Modelo:&nbsp;&nbsp;&nbsp;&nbsp;</span>
-          <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3"> 
+          <input type="text" class="form-control" [(ngModel)]="vehiculo.modelo"  name="modelo" aria-describedby="basic-addon3" required> 
         </div>
         </div>
           <div class="col-xl-4">
       <div class="input-group mb-3">
         <span class="input-group-text">Tipo de Vehículo:</span>
-        <select class="form-select align-content-lg-start" aria-label="tipoVehiculo">
+        <select class="form-select align-content-lg-start" aria-label="tipoVehiculo" [(ngModel)]="vehiculo.tipoVehiculo" (change)="capturar()" [ngModelOptions]="{standalone: true}" required>
           <option selected></option>
           <option value="1">Turismo</option>
           <option value="2">Todo terreno</option>
@@ -85,12 +88,16 @@
           <div class="col-xl-4">
       <div class="input-group mb-3">
         <span class="input-group-text"> Unidad Destino</span>
-        <input class="form-control" aria-label="With textarea"></div>
+        <input type= "text" class="form-control" name="unidad" [(ngModel)]="vehiculo.unidadDestino" aria-label="unidadDestino" required #unidad="ngModel" [ngClass]="{
+          'is-invalid': unidad.invalid && (unidad.dirty || unidad.touched),
+          'is-valid': ! unidad.invalid
+        }" />
+      </div>
       </div>
       <div class="col-xl-4">
         <div class="input-group mb-3">
         <span class="input-group-text">Fecha Adjudicación</span>
-        <input type="date" class="form-control" placeholder="dd/mm/aaaa" aria-label="fechaAdjudicación">
+        <input type="date" class="form-control"[(ngModel)]="vehiculo.fechaAdjudicacion"  name="fechaAdjudicacion" required placeholder="dd/mm/aaaa" aria-label="fechaAdjudicacion">
       </div>
           </div>
         </div>
@@ -98,7 +105,8 @@
       
         <div class="d-grid gap-2 d-md-flex justify-content-md-end">
          <a routerLink="/formulario-alta-vehiculo"><button class="btn btn-primary" type="button" id="volver">Volver</button></a>
-         <a routerLink="/datosTecnicosInteresForm"><button class="btn btn-primary" type="button" id="siguiente">Siguiente</button></a>
+         <a ><button class="btn btn-primary" type="button" id="siguiente" (click)="onAddVehiculo" 
+          [disabled]="!nuevoVehiculo.form.valid">Siguiente</button></a>
         </div>
       </form>
       <br><br><br><br>
