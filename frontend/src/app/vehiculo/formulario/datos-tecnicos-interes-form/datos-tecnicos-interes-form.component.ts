@@ -5,6 +5,7 @@ import { DatosTecnicosInteresImpl } from '../../models/datos-tecnicos-interes-im
 import { DatosTecnicosInteresService } from '../../service/datos-tecnicos-interes.service';
 import { MantenimientoPreventivoService } from '../../service/mantenimiento-preventivo.service';
 import { VehiculoService } from '../../service/vehiculo.service';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-datos-tecnicos-interes-form',

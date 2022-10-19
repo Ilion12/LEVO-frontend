@@ -6,7 +6,6 @@ export class MantenimientoImpl {
     fechaMantenimiento!: Date;
     kilometrosMantenimineto!: number;
     observaciones!: string;
-    vehiculo!: Vehiculo;
     liquidoFrenos!: boolean;
 	operacionesSistematicas!: boolean;
 	filtroAire!: boolean;

@@ -2,28 +2,39 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { VehiculoRoutingModule } from './vehiculo-routing.module';
-import { VehiculoConsultaComponent } from './vehiculo-consulta/vehiculo-consulta.component';
-import { VehiculoEditarComponent } from './vehiculo-editar/vehiculo-editar.component';
-import { DatosTecnicosInteresConsultaComponent } from './vehiculo-consulta/datos-tecnicos-interes-consulta/datos-tecnicos-interes-consulta.component';
-import { MantenimientoPreventivoConsultaComponent } from './vehiculo-consulta/mantenimiento-preventivo-consulta/mantenimiento-preventivo-consulta.component';
-import { VehiculoFormComponent } from './vehiculo-form/vehiculo-form.component';
-import { DatosTecnicosInteresFormComponent } from './vehiculo-form/datos-tecnicos-interes-form/datos-tecnicos-interes-form.component';
-import { MantenimientoPreventivoFormComponent } from './vehiculo-form/mantenimiento-preventivo-form/mantenimiento-preventivo-form.component';
 import { MantenimientosComponent } from './mantenimientos/mantenimientos.component';
 import { MantenimientoFormComponent } from './mantenimientos/mantenimiento-form/mantenimiento-form.component';
 import { MantenimientoItemComponent } from './mantenimientos/mantenimiento-item/mantenimiento-item.component';
 import { MantenimientoConsultarComponent } from './mantenimientos/mantenimiento-consultar/mantenimiento-consultar.component';
 import { MantenimientoEditarComponent } from './mantenimientos/mantenimiento-editar/mantenimiento-editar.component';
 import { VehiculoItemComponent } from './vehiculo-item/vehiculo-item.component';
-import { ManteniminentoPreventivoEditarComponent } from './vehiculo-editar/manteniminento-preventivo-editar/manteniminento-preventivo-editar.component';
 import { ManteniminentoPreventivoItemComponent } from './vehiculo-item/manteniminento-preventivo-item/manteniminento-preventivo-item.component';
 import { DatosTecnicosInteresItemComponent } from './vehiculo-item/datos-tecnicos-interes-item/datos-tecnicos-interes-item.component';
-import { DatosTecnicosInteresEditarComponent } from './vehiculo-editar/datos-tecnicos-interes-editar/datos-tecnicos-interes-editar.component';
 import { VehiculosComponent } from './vehiculos/vehiculos.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AuxiliarService } from '../service/auxiliar.service';
 import { HttpClientModule } from '@angular/common/http';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { FormularioComponent } from './formulario/formulario.component';
+import { ConsultaComponent } from './consulta/consulta.component';
+import { EditarComponent } from './editar/editar.component';
+import { DatosTecnicosInteresConsultaComponent } from './consulta/datos-tecnicos-interes-consulta/datos-tecnicos-interes-consulta.component';
+import { MantenimientoPreventivoConsultaComponent } from './consulta/mantenimiento-preventivo-consulta/mantenimiento-preventivo-consulta.component';
+import { VehiculoConsultaComponent } from './consulta/vehiculo-consulta/vehiculo-consulta.component';
+import { DatosTecnicosInteresEditarComponent } from './editar/datos-tecnicos-interes-editar/datos-tecnicos-interes-editar.component';
+import { ManteniminentoPreventivoEditarComponent } from './editar/manteniminento-preventivo-editar/manteniminento-preventivo-editar.component';
+import { VehiculoEditarComponent } from './editar/vehiculo-editar/vehiculo-editar.component';
+import { DatosIdentificativosFormComponent } from './formulario/datos-identificativos-form/datos-identificativos-form.component';
+import { DatosTecnicosInteresFormComponent } from './formulario/datos-tecnicos-interes-form/datos-tecnicos-interes-form.component';
+import { PlanPreventivoFormComponent } from './formulario/plan-preventivo-form/plan-preventivo-form.component';
+import { MatSliderModule } from '@angular/material/slider';
+import {MatStepperModule} from '@angular/material/stepper';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatSelectModule } from '@angular/material/select';
+
+
+
 
 
 @NgModule({
@@ -32,9 +43,6 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     VehiculoEditarComponent,
     DatosTecnicosInteresConsultaComponent,
     MantenimientoPreventivoConsultaComponent,
-    VehiculoFormComponent,
-    DatosTecnicosInteresFormComponent,
-    MantenimientoPreventivoFormComponent,
     MantenimientosComponent,
     MantenimientoFormComponent,
     MantenimientoItemComponent,
@@ -45,13 +53,20 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     ManteniminentoPreventivoItemComponent,
     DatosTecnicosInteresItemComponent,
     DatosTecnicosInteresEditarComponent,
-    VehiculosComponent
+    VehiculosComponent,
+    FormularioComponent,
+    ConsultaComponent,
+    EditarComponent,
+    DatosIdentificativosFormComponent,
+    DatosTecnicosInteresFormComponent,
+    PlanPreventivoFormComponent
   ],
   imports: [
     CommonModule,
-    VehiculoRoutingModule, FormsModule, HttpClientModule, FontAwesomeModule
-  ],
+  VehiculoRoutingModule, FormsModule, HttpClientModule, FontAwesomeModule, MatStepperModule,
+  MatSliderModule, MatFormFieldModule, ReactiveFormsModule, MatInputModule, 
+  MatSelectModule],
   providers:[AuxiliarService],
-  exports:[VehiculoConsultaComponent]
+  exports:[VehiculoConsultaComponent,  MatFormFieldModule, MatInputModule ]
 })
 export class VehiculoModule { }

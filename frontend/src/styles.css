@@ -1,3 +1,6 @@
+
+@import '@angular/material/prebuilt-themes/deeppurple-amber.css';
+
 /* el texto del documento se centra */
 * {
   text-align: center;
@@ -6,3 +9,6 @@
 main {
   background-color: #EEEEEE;
 }
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+

@@ -18,6 +18,6 @@ export interface DatosTecnicosInteres {
     amperajeBaterias:number;
     amperiosHoraBaterias:number;
     calificacionMedioambiental:string;
-    vehiculo:Vehiculo;
+    urlDatosTecnicosInteres:string;
 
 }

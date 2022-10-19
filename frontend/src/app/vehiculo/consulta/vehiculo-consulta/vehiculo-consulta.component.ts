@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Vehiculo } from '../models/vehiculo';
-import { VehiculoImpl } from '../models/vehiculo-impl';
+import { Vehiculo } from '../../models/vehiculo';
+import { VehiculoImpl } from '../../models/vehiculo-impl';
+
 
 @Component({
   selector: 'app-vehiculo-consulta',

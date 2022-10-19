@@ -1,0 +1,76 @@
+
+<div class="row">
+    <div class="col-xl-4"></div>
+    <div class="col-xl-8">
+        <mat-form-field appearance="fill">
+            <mat-label>Matricula:</mat-label>
+            <input type="text"
+              matInput placeholder="PGCxxxxA"
+              formControlName="matriculaCtrl" [(ngModel)]="vehiculo.matricula" maxlength="8" minlength="8"
+              required
+            />
+        </mat-form-field>
+      </div>
+    </div>
+  
+  <div class="row">
+    <div class="col-xl-4"></div>
+    <div class="col-xl-8">
+        <mat-form-field appearance="fill">
+            <mat-label>Fecha Alta:</mat-label>
+            <input type="date"
+              matInput placeholder="dd/mm/aaaa"
+              formControlName="fechaAltaCtrl" [(ngModel)]="vehiculo.fechaAlta" required />
+        </mat-form-field>
+    </div>
+    </div>
+    <hr>
+  <div class="row"><br><br>
+    <div class="col-xl-4">
+        <mat-form-field appearance="fill">
+            <mat-label>Marca:</mat-label>
+            <input type="text"
+              matInput placeholder="Nissan"
+              formControlName="marcaCtrl" [(ngModel)]="vehiculo.marca" required />
+        </mat-form-field>
+    </div>
+    <div class="col-xl-4">
+        <mat-form-field appearance="fill">
+            <mat-label>Modelo:</mat-label>
+            <input type="text"
+              matInput placeholder="Qasqai 2.0"
+              formControlName="modeloCtrl" [(ngModel)]="vehiculo.modelo" required />
+        </mat-form-field>
+    </div>
+      <div class="col-xl-4">
+  <!--mat-form-field>
+    <mat-label>Tipo de Vehículo:</mat-label>
+    <mat-select matInput type="text" formControlName="tipoCtrl" [(ngModel)]="vehiculo.tipoVehiculo" (change)="capturar()"  required>
+      <mat-option selected></mat-option>
+      <mat-option value="1">Turismo</mat-option>
+      <mat-option value="2">Todo terreno</mat-option>
+      <mat-option value="3">Motocicleta</mat-option>
+      <mat-option value="4">Otros</mat-option>
+    </mat-select>
+  </mat-form-field-->
+  </div>
+  </div>
+  <br>
+  <br>
+    <div class="row"><br><br>
+      <hr>
+      <div class="col-xl-2"></div>
+      <div class="col-xl-4">
+  <div class="input-group mb-3">
+    <span class="input-group-text"> Unidad Destino</span>
+    <input type= "text" class="form-control" name="unidad" [(ngModel)]="vehiculo.unidadDestino" aria-label="unidadDestino" required/>
+  </div>
+  </div>
+  <div class="col-xl-4">
+    <div class="input-group mb-3">
+    <span class="input-group-text">Fecha Adjudicación</span>
+    <input type="date" class="form-control"[(ngModel)]="vehiculo.fechaAdjudicacion"  name="fechaAdjudicacion" required placeholder="dd/mm/aaaa" aria-label="fechaAdjudicacion">
+  </div>
+      </div>
+    </div>
+    <hr>

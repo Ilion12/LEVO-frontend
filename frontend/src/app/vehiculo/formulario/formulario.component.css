@@ -12,25 +12,11 @@
     border-bottom-color: #004d00;
 }
 
-
-input,select{
-    max-width:max-content; 
- }
- 
- form{
-     margin-top:1rem;   
- }
- 
- #volver{
-     width: 100px;
-     background-color: red;
- }
- 
- #siguiente{
-     width: 100px;
-     background-color: #004d40;
- }
- div.gap-2{
-     margin-top:2rem;
-     margin-right: 2rem;
- }
+.mat-stepper-horizontal {
+    margin-top: 8px;
+  }
+  
+  .mat-form-field {
+    margin-top: 16px;
+  }
+  

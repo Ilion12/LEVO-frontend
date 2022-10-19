@@ -5,7 +5,6 @@ export class MantenimientoPreventivoImpl {
     id!: string;
     condicionesUso!: string;
     observaciones!: string;
-    vehiculo!:Vehiculo;
     liquidoFrenosKm!: number;
 	liquidoFrenosMes!: number;
 	operacionesSistematicasKm!: number;
@@ -38,6 +37,7 @@ export class MantenimientoPreventivoImpl {
 	aceiteTransmisionMes!: number;
 	bujiasEncendidoKm!: number;
     bujiasEncendidoMes!: number;
+	urlMantenimientoPreventivo!:string;
 
     constructor(){}
 }

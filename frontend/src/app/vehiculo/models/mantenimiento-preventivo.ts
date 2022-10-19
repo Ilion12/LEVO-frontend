@@ -5,7 +5,6 @@ export interface MantenimientoPreventivo {
     id:string;
     condicionesUso:string;
     observaciones:string;
-    vehiculo:Vehiculo;
     liquidoFrenosKm:number;
 	liquidoFrenosMes:number;
 	operacionesSistematicasKm:number;
@@ -38,6 +37,7 @@ export interface MantenimientoPreventivo {
 	aceiteTransmisionMes:number;
 	bujiasEncendidoKm:number;
     bujiasEncendidoMes:number;
+	urlMantenimientoPreventivo:string;
 
 
 }

@@ -4,7 +4,7 @@ import { catchError, Observable, throwError } from 'rxjs';
 import { environment } from 'src/environments/environment.prod';
 import { MantenimientoPreventivo } from '../models/mantenimiento-preventivo';
 import { MantenimientoPreventivoImpl } from '../models/mantenimiento-preventivo-impl';
-import { ManteniminentoPreventivoEditarComponent } from '../vehiculo-editar/manteniminento-preventivo-editar/manteniminento-preventivo-editar.component';
+
 
 @Injectable({
   providedIn: 'root'
@@ -70,7 +70,7 @@ export class MantenimientoPreventivoService {
       mantenimientoPreventivo.pHLiquidoRefrigeracionMes=mantenimientoPreventivoApi.pHLiquidoRefrigeracionMes;
       mantenimientoPreventivo.reglajeProyectoresKm=mantenimientoPreventivoApi.reglajeProyectoresKm;
       mantenimientoPreventivo.reglajeProyectoresMes=mantenimientoPreventivoApi.reglajeProyectoresMes;
-      mantenimientoPreventivo.vehiculo=mantenimientoPreventivoApi.this.getId(mantenimientoPreventivoApi._links.vehiculo.href);
+      mantenimientoPreventivo.urlMantenimientoPreventivo=mantenimientoPreventivoApi._links.planpreventivo.href;
       return mantenimientoPreventivo;
     }
 

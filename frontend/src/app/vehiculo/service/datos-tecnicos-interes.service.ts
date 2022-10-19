@@ -50,8 +50,9 @@ export class DatosTecnicosInteresService {
       datosTecnicosInteres.voltajeBaterias=datosTecnicosInteresApi.voltajeBaterias;
       datosTecnicosInteres.amperiosHoraBaterias=datosTecnicosInteresApi.amperiosHoraBaterias;
       datosTecnicosInteres.amperajeBaterias=datosTecnicosInteresApi.amperajeBaterias;
-      datosTecnicosInteres.calificacionMediambiental=datosTecnicosInteresApi.clasificacionMediambiental;
-      datosTecnicosInteres.vehiculo=datosTecnicosInteresApi.this.getId(datosTecnicosInteresApi._links.vehiculo.href);
+      datosTecnicosInteres.calificacionMedioambiental=datosTecnicosInteresApi.clasificacionMediambiental;
+     /*datosTecnicosInteres.vehiculo=datosTecnicosInteresApi.this.getId(datosTecnicosInteresApi._links.vehiculo.href);*/
+     datosTecnicosInteres.urlDatosTecnicosInteres=datosTecnicosInteresApi._link.datotecnicointeres.href;
       return datosTecnicosInteres;
     }
 

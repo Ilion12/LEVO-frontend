@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuxiliarService } from 'src/app/service/auxiliar.service';
 import { Vehiculo } from '../models/vehiculo';
+import { VehiculoImpl } from '../models/vehiculo-impl';
 import { VehiculoService } from '../service/vehiculo.service';
 
 @Component({
@@ -9,6 +10,7 @@ import { VehiculoService } from '../service/vehiculo.service';
   styleUrls: ['./vehiculos.component.css']
 })
 export class VehiculosComponent implements OnInit {
+  vehiculo!: VehiculoImpl;
   vehiculos:Vehiculo[]=[];
   todosVehiculos: Vehiculo[] = [];
   numeroPaginas:number=0;
