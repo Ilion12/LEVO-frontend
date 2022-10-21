@@ -3,7 +3,7 @@ import { FormBuilder, Validators } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
 import { DatosTecnicosInteres } from '../../models/datos-tecnicos-interes';
 import { DatosTecnicosInteresImpl } from '../../models/datos-tecnicos-interes-impl';
-import { MantenimientoPreventivoImpl } from '../../models/mantenimiento-preventivo-impl';
+import { MantenimientoPreventivoImpl } from '../../models/planes-preventivos-impl';
 import { Vehiculo } from '../../models/vehiculo';
 import { VehiculoImpl } from '../../models/vehiculo-impl';
 import { DatosTecnicosInteresService } from '../../service/datos-tecnicos-interes.service';

@@ -1,0 +1,73 @@
+<main class="container-fluid">
+    <div class="row" id="lineaInferior">
+      <div class="col-xl-2"></div>
+      <div class="col-xl-8">
+        <h1>{{vehiculo.matricula|uppercase}}</h1>
+      </div>
+    </div>
+    <nav class="navbar navbar-expand-lg bg-light">
+      <div class="container-fluid">
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" id="datos" href="#" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                Datos Vehiculo
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" routerLink="/datosTecnicosInteresConsulta">Datos Técnicos de Interés</a></li>
+                <li><a class="dropdown-item" routerLink="/mantenimientoPreventivoConsulta">Plan Preventivo</a></li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" id="mantenimiento" href="#" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                Mantenimiento
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" routerLink="">Listado de Mantenimientos</a></li>
+                <li><a class="dropdown-item" routerLink="/mantenimientoForm">Nuevo Mantenimiento</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  
+    <h3>Datos Identificativos</h3>
+    <div class="mb-3 mt-3">
+      <label class="form-label">Matricula</label>
+      <input type="text" class="form-control" [(ngModel)]="vehiculo.matricula">
+    </div>
+    <div class="mb-3 mt-3">
+      <label class="form-label">Marca</label>
+      <input type="text" class="form-control" [(ngModel)]="vehiculo.marca">
+    </div>
+    <div class="mb-3 mt-3">
+      <label class="form-label">Modelo</label>
+      <input type="text" class="form-control" [(ngModel)]="vehiculo.modelo" readonly>
+    </div>
+    <div class="mb-3 mt-3">
+      <label class="form-label">Tipo de vehiculo</label>
+      <input type="text" class="form-control" [(ngModel)]="vehiculo.tipo">
+    </div>
+    <div class="mb-3 mt-3">
+      <label class="form-label">Unidad Destino</label>
+      <input type="text" class="form-control" [(ngModel)]="vehiculo.unidadDestino">
+    </div>
+    <div class="mb-3 mt-3">
+      <label class="form-label">Fecha Adjudicación</label>
+      <input type="text" class="form-control" [(ngModel)]="vehiculo.fechaAdjudicacion">
+    </div>
+    <div class="row justify-content-center">
+      <div class="col-2">
+          <button id="guardar" type="submit" class="btn btn-primary" (click)="onEditarVehiculo()"
+              routerLink="/vehiculos">Editar</button>
+      </div>
+      <div class="col-2">
+          <a routerLink="/"><button id="cancelar" type="button" class="btn btn-danger">Cancelar</button></a>
+      </div>
+  </div>
+  <pre>{{ vehiculo | json }}</pre>
+  
+    

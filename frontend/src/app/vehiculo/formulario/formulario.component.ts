@@ -7,7 +7,7 @@ import { MantenimientoPreventivoService } from '../service/mantenimiento-prevent
 import { VehiculoService } from '../service/vehiculo.service';
 import { DatosTecnicosInteres } from '../models/datos-tecnicos-interes';
 import { DatosTecnicosInteresImpl } from '../models/datos-tecnicos-interes-impl';
-import { MantenimientoPreventivoImpl } from '../models/mantenimiento-preventivo-impl';
+import { MantenimientoPreventivoImpl } from '../models/planes-preventivos-impl';
 import { Vehiculo } from '../models/vehiculo';
 import { VehiculoImpl } from '../models/vehiculo-impl';
 
@@ -139,7 +139,7 @@ export class FormularioComponent implements OnInit {
     console.log(this.vehiculo);
     this.mantenimientoPreventivoService.crearMantenimientoPreventivo
     (this.mantenimientoPreventivo).subscribe
-    (planPreventivo =>{this.vehiculo.mantenimientoPreventivo=planPreventivo._links.planpreventivo.href; console.log(this.vehiculo);
+    (planPreventivo =>{this.vehiculo.planespreventivos=planPreventivo._links.planpreventivo.href; console.log(this.vehiculo);
       this.vehiculoService.crearVehiculo(this.vehiculo).subscribe();});
   });     
     /*let id: string = this.cargarVehiculo();

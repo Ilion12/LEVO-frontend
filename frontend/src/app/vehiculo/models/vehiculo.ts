@@ -1,20 +1,20 @@
 import { DatosTecnicosInteres } from "./datos-tecnicos-interes";
 import { Mantenimiento } from "./mantenimiento";
-import { MantenimientoPreventivo } from "./mantenimiento-preventivo";
+import { MantenimientoPreventivo } from "./planes-preventivos";
 
 export interface Vehiculo {
 
-    id?: string;
-    fechaAlta?:Date;
-    matricula?:string;
-    marca?:string;
-    modelo?:string;
-    tipoVehiculo?:string;
-    unidadDestino?:string;
-    fechaAdjudicacion?:Date;
-    datosTecnicosInteres?:DatosTecnicosInteres|string;
-    mantenimientoPreventivo?:MantenimientoPreventivo|string;
-    mantenimiento?:Mantenimiento[];
-    kilometrosActuales?: number;
-    mesesActuales?:number;
+    id: string;
+    fechaAlta:Date;
+    matricula:string;
+    marca:string;
+    modelo:string;
+    tipo:string;
+    unidadDestino:string;
+    fechaAdjudicacion:Date;
+    datosTecnicosInteres:DatosTecnicosInteres|string;
+    planespreventivos:MantenimientoPreventivo|string;
+    mantenimiento:Mantenimiento[];
+    kilometrosActuales: number;
+    mesesActuales:number;
 }

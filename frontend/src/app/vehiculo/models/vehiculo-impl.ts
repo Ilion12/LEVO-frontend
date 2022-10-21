@@ -1,23 +1,23 @@
 
 import { DatosTecnicosInteres } from "./datos-tecnicos-interes";
 import { Mantenimiento } from "./mantenimiento";
-import { MantenimientoPreventivo } from "./mantenimiento-preventivo";
+import { MantenimientoPreventivo } from "./planes-preventivos";
 
 export class VehiculoImpl {
 
-    id?: string;
-    datosTecnicosInteres?: DatosTecnicosInteres| string;
-    mantenimientoPreventivo?: MantenimientoPreventivo|string;
-    mantenimiento?: Mantenimiento[];
-    fechaAlta?: Date;
-    kilometrosActuales?: number;
-    mesesActuales?: number;
-    matricula?: string;
-    marca?: string;
-    modelo?: string;
-    tipoVehiculo?: string;
-    unidadDestino?: string;
-    fechaAdjudicacion?: Date;
+    id!: string;
+    datosTecnicosInteres!: DatosTecnicosInteres | string;
+    planespreventivos!: MantenimientoPreventivo | string;
+    mantenimiento!: Mantenimiento[];
+    fechaAlta!: Date;
+    kilometrosActuales!: number;
+    mesesActuales!: number;
+    matricula!: string;
+    marca!: string;
+    modelo!: string;
+    tipo!: string;
+    unidadDestino!: string;
+    fechaAdjudicacion!: Date;
 
         constructor(){}
 }

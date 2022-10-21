@@ -2,8 +2,8 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { catchError, Observable, throwError } from 'rxjs';
 import { environment } from 'src/environments/environment.prod';
-import { MantenimientoPreventivo } from '../models/mantenimiento-preventivo';
-import { MantenimientoPreventivoImpl } from '../models/mantenimiento-preventivo-impl';
+import { MantenimientoPreventivo } from '../models/planes-preventivos';
+import { MantenimientoPreventivoImpl } from '../models/planes-preventivos-impl';
 
 
 @Injectable({

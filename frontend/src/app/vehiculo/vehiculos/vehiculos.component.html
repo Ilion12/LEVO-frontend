@@ -6,6 +6,10 @@
   </div>
 </div>  
   <div *ngFor="let vehiculo of vehiculos">
-    <app-vehiculo-item [vehiculo]="vehiculo"></app-vehiculo-item>
+    <app-vehiculo-item [vehiculo]="vehiculo"
+    (vehiculoEliminar)="onVehiculoEliminar($event)"
+    (vehiculoConsultar)="onVehiculoConsultar($event)"
+    (vehiculoEditar)="onVehiculoEditar($event)">
+  </app-vehiculo-item>
   </div>
 </main>

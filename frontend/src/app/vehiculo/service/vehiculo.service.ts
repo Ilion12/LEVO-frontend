@@ -42,12 +42,12 @@ export class VehiculoService {
       vehiculo.matricula=vehiculoApi.matricula;
       vehiculo.modelo=vehiculoApi.modelo;
       vehiculo.marca= vehiculoApi.marca;
-      vehiculo.tipoVehiculo=vehiculoApi.tipo;
+      vehiculo.tipo=vehiculoApi.tipo;
       vehiculo.unidadDestino=vehiculoApi.unidadDestino;
       vehiculo.fechaAdjudicacion=vehiculoApi.fechaAdjudicacion;
       vehiculo.datosTecnicosInteres=vehiculoApi.datosTecnicosInteres;
-      vehiculo.mantenimientoPreventivo=vehiculoApi.planMantenimientoPreventivo;
-      vehiculo.mantenimiento=vehiculoApi.mantenimientosRealizados;
+      vehiculo.planespreventivos=vehiculoApi.planesPreventivos;
+      vehiculo.mantenimiento=vehiculoApi.mantenimientosrealizados;
       vehiculo.fechaAlta=vehiculoApi.fechaAlta;
       vehiculo.kilometrosActuales=vehiculoApi.kilometrosActuales;
       vehiculo.mesesActuales=vehiculoApi.mesesActuales;
@@ -116,7 +116,7 @@ getVehiculosPagina(pagina: number): Observable<any> {
   return this.auxService.getItemsPorPagina(this.urlEndPoint, pagina);
 }
 
-getVehiculoBuscado(matricula:string): Observable<any>{
+getBusquedaPorMatricula(matricula:string): Observable<any>{
   return this.http.get<any>(`${this.urlEndPoint}/search/por-matricula?matricula=${matricula}`).pipe(catchError((e) => {
     if (e.status === 400) {
       return throwError(() => new Error(e));

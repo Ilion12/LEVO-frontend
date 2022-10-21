@@ -28,7 +28,10 @@
         </div>
         <div class="row">
           <div class="col-6">
-        <a class="nav-link" routerLink="/vehiculo-consulta"><button type="submit" class="btn btn-primary" (click)="vehiculoBuscado(matricula)">Consultar</button></a></div>
+        <!--a class="nav-link" routerLink="/vehiculo-consulta"-->
+          <button type="submit" class="btn btn-primary" (click)="vehiculoBuscado(matricula)">Consultar</button>
+        <!--/a-->
+        </div>
         <div class="col-6">
         <a class="nav-link" routerLink="/"><button type="submit" class="btn btn-danger">Cancelar</button></a></div>
       </div>
@@ -37,6 +40,17 @@
     </div>
   </div>
 </div>
+
+<div *ngFor="let vehiculo of vehiculos">
+  <app-busqueda-item 
+      [vehiculo]="vehiculo" 
+      (vehiculoConsultar)="onVehiculoConsultar($event)"
+      (vehiculoEliminar)="onVehiculoEliminar($event)"
+      (vehiculoEditar)="onVehiculoEditar($event)"
+      >
+  </app-busqueda-item>
+</div>
+
 <br><br><br><br>
   
 

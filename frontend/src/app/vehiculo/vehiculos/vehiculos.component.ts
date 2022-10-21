@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { faMagnifyingGlass, faPencil, faTrashCan } from '@fortawesome/free-solid-svg-icons';
 import { AuxiliarService } from 'src/app/service/auxiliar.service';
 import { Vehiculo } from '../models/vehiculo';
 import { VehiculoImpl } from '../models/vehiculo-impl';
@@ -12,11 +14,13 @@ import { VehiculoService } from '../service/vehiculo.service';
 export class VehiculosComponent implements OnInit {
   vehiculo!: VehiculoImpl;
   vehiculos:Vehiculo[]=[];
+  vehiculoVerDatos: Vehiculo = new VehiculoImpl();
   todosVehiculos: Vehiculo[] = [];
   numeroPaginas:number=0;
 
   constructor(private vehiculoService: VehiculoService,
-    private auxService: AuxiliarService) { }
+    private auxService: AuxiliarService,
+    private router: Router) { }
 
   ngOnInit(): void {
     this.vehiculoService.getVehiculos().subscribe((response)=> this.vehiculos=this.vehiculoService.extraerVehiculos(response));
@@ -35,4 +39,28 @@ export class VehiculosComponent implements OnInit {
     });
   }
 
+  onVehiculoEliminar(vehiculo: Vehiculo){
+    this.vehiculoService.deleteVehiculo(vehiculo.id).subscribe();
+    this.router.navigate(['vehiculos']);
+  }
+
+  onVehiculoConsultar(vehiculo: Vehiculo){
+    this.verDatos(vehiculo);
+    let url = `vehiculos/consultar/${vehiculo.id}`;
+    this.router.navigate([url])
+  }
+
+  onVehiculoEditar(vehiculo: Vehiculo){
+    this.verDatos(vehiculo);
+    let url = `vehiculos/editar/${vehiculo.id}`;
+    this.router.navigate([url])
+  }
+
+  verDatos(vehiculo: Vehiculo): void {
+    this.vehiculoVerDatos = vehiculo;
+  }
+
+  faMagnifyingGlass = faMagnifyingGlass;
+  faPencil = faPencil;
+  faTrashCan = faTrashCan;
 }

@@ -16,14 +16,12 @@ import { AuxiliarService } from '../service/auxiliar.service';
 import { HttpClientModule } from '@angular/common/http';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { FormularioComponent } from './formulario/formulario.component';
-import { ConsultaComponent } from './consulta/consulta.component';
-import { EditarComponent } from './editar/editar.component';
-import { DatosTecnicosInteresConsultaComponent } from './consulta/datos-tecnicos-interes-consulta/datos-tecnicos-interes-consulta.component';
-import { MantenimientoPreventivoConsultaComponent } from './consulta/mantenimiento-preventivo-consulta/mantenimiento-preventivo-consulta.component';
-import { VehiculoConsultaComponent } from './consulta/vehiculo-consulta/vehiculo-consulta.component';
-import { DatosTecnicosInteresEditarComponent } from './editar/datos-tecnicos-interes-editar/datos-tecnicos-interes-editar.component';
-import { ManteniminentoPreventivoEditarComponent } from './editar/manteniminento-preventivo-editar/manteniminento-preventivo-editar.component';
-import { VehiculoEditarComponent } from './editar/vehiculo-editar/vehiculo-editar.component';
+import { DatosTecnicosInteresConsultaComponent } from './vehiculos/datos-tecnicos-interes-consulta/datos-tecnicos-interes-consulta.component';
+import { MantenimientoPreventivoConsultaComponent } from './vehiculos/mantenimiento-preventivo-consulta/mantenimiento-preventivo-consulta.component';
+import { VehiculoConsultaComponent } from './vehiculos/vehiculo-consulta/vehiculo-consulta.component';
+import { DatosTecnicosInteresEditarComponent } from './vehiculos/datos-tecnicos-interes-editar/datos-tecnicos-interes-editar.component';
+import { ManteniminentoPreventivoEditarComponent } from './vehiculos/manteniminento-preventivo-editar/manteniminento-preventivo-editar.component';
+import { VehiculoEditarComponent } from './vehiculos/vehiculo-editar/vehiculo-editar.component';
 import { DatosIdentificativosFormComponent } from './formulario/datos-identificativos-form/datos-identificativos-form.component';
 import { DatosTecnicosInteresFormComponent } from './formulario/datos-tecnicos-interes-form/datos-tecnicos-interes-form.component';
 import { PlanPreventivoFormComponent } from './formulario/plan-preventivo-form/plan-preventivo-form.component';
@@ -32,6 +30,7 @@ import {MatStepperModule} from '@angular/material/stepper';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
+
 
 
 
@@ -55,8 +54,6 @@ import { MatSelectModule } from '@angular/material/select';
     DatosTecnicosInteresEditarComponent,
     VehiculosComponent,
     FormularioComponent,
-    ConsultaComponent,
-    EditarComponent,
     DatosIdentificativosFormComponent,
     DatosTecnicosInteresFormComponent,
     PlanPreventivoFormComponent
@@ -67,6 +64,6 @@ import { MatSelectModule } from '@angular/material/select';
   MatSliderModule, MatFormFieldModule, ReactiveFormsModule, MatInputModule, 
   MatSelectModule],
   providers:[AuxiliarService],
-  exports:[VehiculoConsultaComponent,  MatFormFieldModule, MatInputModule ]
+  exports:[MatFormFieldModule, MatInputModule ]
 })
 export class VehiculoModule { }

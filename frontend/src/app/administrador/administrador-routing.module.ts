@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { DatosIdentificativosFormComponent } from '../vehiculo/formulario/datos-identificativos-form/datos-identificativos-form.component';
-import { DatosTecnicosInteresFormComponent } from '../vehiculo/formulario/datos-tecnicos-interes-form/datos-tecnicos-interes-form.component';
+import { VehiculoConsultaComponent } from '../vehiculo/vehiculos/vehiculo-consulta/vehiculo-consulta.component';
+import { VehiculoEditarComponent } from '../vehiculo/vehiculos/vehiculo-editar/vehiculo-editar.component';
 import { FormularioComponent } from '../vehiculo/formulario/formulario.component';
-import { PlanPreventivoFormComponent } from '../vehiculo/formulario/plan-preventivo-form/plan-preventivo-form.component';
 import { VehiculosComponent } from '../vehiculo/vehiculos/vehiculos.component';
 import { AdministradorComponent } from './administrador/administrador.component';
+import { DatosTecnicosInteresConsultaComponent } from '../vehiculo/vehiculos/datos-tecnicos-interes-consulta/datos-tecnicos-interes-consulta.component';
 const routes: Routes = [
   {
   path: '',
@@ -16,7 +16,17 @@ const routes: Routes = [
   component:FormularioComponent
 },
 {path:'vehiculos',
-component:VehiculosComponent}
+component:VehiculosComponent},
+{
+  path: 'consultar/:id',
+  component: VehiculoConsultaComponent
+},
+{path:'consultar/:id/datostecnicosinteres',
+component: DatosTecnicosInteresConsultaComponent},
+{
+  path: 'editar/:id',
+  component: VehiculoEditarComponent
+}
 
 ];
 

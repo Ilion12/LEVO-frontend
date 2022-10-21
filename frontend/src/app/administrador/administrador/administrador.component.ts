@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Vehiculo } from 'src/app/vehiculo/models/vehiculo';
 import { VehiculoImpl } from 'src/app/vehiculo/models/vehiculo-impl';
 import { VehiculoService } from 'src/app/vehiculo/service/vehiculo.service';
@@ -9,22 +10,41 @@ import { VehiculoService } from 'src/app/vehiculo/service/vehiculo.service';
   styleUrls: ['./administrador.component.css']
 })
 export class AdministradorComponent implements OnInit {
-  @Input() vehiculo: Vehiculo = new VehiculoImpl();
-  vehiculos:Vehiculo[]=[];
+  matricula: string = '';
+  vehiculos: Vehiculo[] = [];
   vehiculoVerDatos: Vehiculo = new VehiculoImpl();
-  matricula!: string;
 
-  constructor(
-    private vehiculoService: VehiculoService
-  ) { }
+  constructor(private vehiculoService: VehiculoService,
+              private router: Router) {}
 
-  vehiculoBuscado(matricula:string){
-    this.vehiculoService.getVehiculoBuscado(matricula).subscribe((response:Vehiculo) => {
-      this.vehiculos=this.vehiculoService.extraerVehiculos(response)
+  ngOnInit(): void {
+  }
+
+  onVehiculoConsultar(vehiculo: Vehiculo){
+    this.verDatos(vehiculo);
+    console.log(vehiculo);
+    let url = `consultar/${vehiculo.id}`;
+    this.router.navigate([url])
+  }
+
+  verDatos(vehiculo: Vehiculo): void {
+    this.vehiculoVerDatos = vehiculo;
+  }
+
+  vehiculoBuscado(matricula: string) {
+    this.vehiculoService.getBusquedaPorMatricula(matricula).subscribe((response) => {
+      this.vehiculos = this.vehiculoService.extraerVehiculos(response);
     });
   }
 
-  ngOnInit(): void {
+  onVehiculoEliminar(vehiculo: Vehiculo){
+    this.vehiculoService.deleteVehiculo(vehiculo.id).subscribe();
+  }
+
+  onVehiculoEditar(vehiculo: Vehiculo){
+    this.verDatos(vehiculo);
+    let url = `editar/${vehiculo.id}`;
+    this.router.navigate([url])
   }
 
 }
