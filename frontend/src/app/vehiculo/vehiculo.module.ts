@@ -2,11 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { VehiculoRoutingModule } from './vehiculo-routing.module';
-import { MantenimientosComponent } from './mantenimientos/mantenimientos.component';
-import { MantenimientoFormComponent } from './mantenimientos/mantenimiento-form/mantenimiento-form.component';
-import { MantenimientoItemComponent } from './mantenimientos/mantenimiento-item/mantenimiento-item.component';
-import { MantenimientoConsultarComponent } from './mantenimientos/mantenimiento-consultar/mantenimiento-consultar.component';
-import { MantenimientoEditarComponent } from './mantenimientos/mantenimiento-editar/mantenimiento-editar.component';
+import { MantenimientoFormComponent } from './vehiculos/mantenimiento-form/mantenimiento-form.component';
 import { VehiculoItemComponent } from './vehiculo-item/vehiculo-item.component';
 import { VehiculosComponent } from './vehiculos/vehiculos.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -31,11 +27,7 @@ import { MatSelectModule } from '@angular/material/select';
   declarations: [
     VehiculoConsultaComponent,
     VehiculoEditarComponent,
-    MantenimientosComponent,
     MantenimientoFormComponent,
-    MantenimientoItemComponent,
-    MantenimientoConsultarComponent,
-    MantenimientoEditarComponent,
     VehiculoItemComponent,
     VehiculosComponent,
     FormularioComponent,

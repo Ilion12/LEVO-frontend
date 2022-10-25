@@ -51,7 +51,7 @@ export class VehiculoEditarComponent implements OnInit {
     voltajeBaterias: ['', ],
     amperajeBaterias:  ['', ],
     amperiosHoraBaterias:  ['', ],
-    calificacionMedioambiental: ['', ],
+    clasificacionMedioambiental: ['', ],
     
   });
 

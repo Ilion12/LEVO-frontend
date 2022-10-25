@@ -47,11 +47,6 @@ export class AdministradorComponent implements OnInit {
   }
 
   onVehiculoEliminar(vehiculo: Vehiculo){
-  //   let datosTecnicosInteres=vehiculo.datosTecnicosInteres;
-    console.log(vehiculo);
-  //  this.datosTecnicosInteresService.deleteDatosTecnicosInteres(this.datosTecnicosInteresService.getId(datosTecnicosInteres)).subscribe();
-  //   // this.mantenimientoPreventivoService.deleteMantenimientoPreventivo
-  //   // (this.mantenimientoPreventivo.vehiculo).subscribe();    
     this.vehiculoService.deleteVehiculo(vehiculo.id).subscribe();
   }
 

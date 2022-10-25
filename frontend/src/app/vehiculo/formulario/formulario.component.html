@@ -103,9 +103,9 @@
           </mat-form-field>
           <div class="col-sm-3">
             <mat-form-field>
-              <mat-label>Calificación Mediambiental:</mat-label>
-              <mat-select matInput type="text" formControlName="calificacionMedioambiental"
-                [(ngModel)]="datosTecnicosInteres.calificacionMedioambiental" required>
+              <mat-label>Clasificación Mediambiental:</mat-label>
+              <mat-select matInput type="text" formControlName="clasificacionMedioambiental"
+                [(ngModel)]="datosTecnicosInteres.clasificacionMedioambiental" required>
                 <mat-option selected></mat-option>
                 <mat-option value="A">A</mat-option>
                 <mat-option value="B">B</mat-option>
@@ -450,3 +450,7 @@
     </form>
   </mat-step>
 </mat-stepper>
+
+<pre>{{vehiculo|json}}</pre>
+<pre>{{datosTecnicosInteres|json}}</pre>
+<pre>{{mantenimientoPreventivo|json}}</pre>

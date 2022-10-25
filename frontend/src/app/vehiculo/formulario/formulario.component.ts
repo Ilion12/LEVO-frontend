@@ -29,8 +29,7 @@ export class FormularioComponent implements OnInit {
   datosTecnicosInteres: DatosTecnicosInteres =new DatosTecnicosInteresImpl();
   mantenimientoPreventivo: MantenimientoPreventivoImpl = new MantenimientoPreventivoImpl();
   tipoVehiculo;
-  opcionSeleccionada: string = '0'
-  verSeleccion: string = '';
+ 
 
   firstFormGroup = this._formBuilder.group({
     matricula: ['', Validators.required],
@@ -57,7 +56,7 @@ export class FormularioComponent implements OnInit {
     voltajeBaterias: ['', Validators.required],
     amperajeBaterias:  ['', Validators.required],
     amperiosHoraBaterias:  ['', Validators.required],
-    calificacionMedioambiental: ['', Validators.required],
+    clasificacionMedioambiental: ['', Validators.required],
     
   });
 
@@ -158,12 +157,5 @@ export class FormularioComponent implements OnInit {
     this.router.navigate([`/planespreventivos/editar/${id}`]);
   }
 
-
-
-
-  capturar() {
-    this.verSeleccion = this.opcionSeleccionada;
-
-}
 
 }

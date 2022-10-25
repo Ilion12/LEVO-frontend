@@ -56,7 +56,7 @@ export class VehiculoConsultaComponent implements OnInit {
     voltajeBaterias: ['', ],
     amperajeBaterias:  ['', ],
     amperiosHoraBaterias:  ['', ],
-    calificacionMedioambiental: ['', ],
+    clasificacionMedioambiental: ['', ],
     
   });
 
@@ -96,6 +96,8 @@ export class VehiculoConsultaComponent implements OnInit {
 	bujiasEncendidoKm:[''],
   bujiasEncendidoMes:[''],
    });
+
+   fourthFormGroup=this._formBuilder.array;
   constructor(private vehiculoService: VehiculoService,
     private datosTecnicosInteresService: DatosTecnicosInteresService, 
     private mantenimientoPreventivoService: MantenimientoPreventivoService,
