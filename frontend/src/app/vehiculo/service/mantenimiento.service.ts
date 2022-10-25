@@ -53,7 +53,6 @@ export class MantenimientoService {
       mantenimiento.operacionesSistematicas=mantenimientoApi.operacionesSistematicas;
       mantenimiento.pHLiquidoRefrigeracion=mantenimientoApi.pHLiquidoRefrigeracion;
       mantenimiento.reglajeProyectores=mantenimientoApi.reglajeProyectores;
-      mantenimiento.vehiculo=mantenimientoApi.this.getId(mantenimientoApi._links.vehiculo.href);
       return mantenimiento;
     }
 

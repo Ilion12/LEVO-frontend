@@ -5,7 +5,7 @@ import { VehiculoEditarComponent } from '../vehiculo/vehiculos/vehiculo-editar/v
 import { FormularioComponent } from '../vehiculo/formulario/formulario.component';
 import { VehiculosComponent } from '../vehiculo/vehiculos/vehiculos.component';
 import { AdministradorComponent } from './administrador/administrador.component';
-import { DatosTecnicosInteresConsultaComponent } from '../vehiculo/vehiculos/datos-tecnicos-interes-consulta/datos-tecnicos-interes-consulta.component';
+
 const routes: Routes = [
   {
   path: '',
@@ -21,8 +21,6 @@ component:VehiculosComponent},
   path: 'consultar/:id',
   component: VehiculoConsultaComponent
 },
-{path:'consultar/:id/datostecnicosinteres',
-component: DatosTecnicosInteresConsultaComponent},
 {
   path: 'editar/:id',
   component: VehiculoEditarComponent

@@ -12,9 +12,10 @@ export class DatosTecnicosInteresService {
 
   private host: string = environment.host;
   private urlEndPoint: string = `${this.host}datostecnicosinteres`;
+  private urlEndPointDTI: string = `${this.host}vehiculos`;
   constructor(private http: HttpClient) { }
 
-  getId(url: string):string{
+  getId(url: string): string{
     let posicionFinal: number = url.lastIndexOf('/');
     let numId:string = url.slice(posicionFinal + 1, url.length);
     return numId;
@@ -35,7 +36,7 @@ export class DatosTecnicosInteresService {
     mapearDatosTecnicosInteres(datosTecnicosInteresApi: any): DatosTecnicosInteresImpl {
 
       let datosTecnicosInteres: DatosTecnicosInteres = new DatosTecnicosInteresImpl();
-      datosTecnicosInteres.id= this.getId(datosTecnicosInteresApi._links.datosTecnicosInteres.href);
+      datosTecnicosInteres.id= this.getId(datosTecnicosInteresApi._links.datotecnicointeres.href);
       datosTecnicosInteres.bastidor=datosTecnicosInteresApi.bastidor;
       datosTecnicosInteres.color=datosTecnicosInteresApi.color;
       datosTecnicosInteres.combustible=datosTecnicosInteresApi.combustible;
@@ -51,8 +52,7 @@ export class DatosTecnicosInteresService {
       datosTecnicosInteres.amperiosHoraBaterias=datosTecnicosInteresApi.amperiosHoraBaterias;
       datosTecnicosInteres.amperajeBaterias=datosTecnicosInteresApi.amperajeBaterias;
       datosTecnicosInteres.calificacionMedioambiental=datosTecnicosInteresApi.clasificacionMediambiental;
-     /*datosTecnicosInteres.vehiculo=datosTecnicosInteresApi.this.getId(datosTecnicosInteresApi._links.vehiculo.href);*/
-     datosTecnicosInteres.urlDatosTecnicosInteres=datosTecnicosInteresApi._link.datotecnicointeres.href;
+      datosTecnicosInteres.vehiculo=datosTecnicosInteresApi._links.vehiculo.href;
       return datosTecnicosInteres;
     }
 
@@ -100,17 +100,7 @@ updateDatosTecnicosInteres(datosTecnicosInteres:DatosTecnicosInteres): Observabl
 }
 
 getDatosTecnicosInteresVehiculo(id:string): Observable<any>{
-  return this.http.get<any>(`${this.urlEndPoint}/${id}`).pipe(
-    catchError((e) => {
-      if (e.status === 400) {
-        return throwError(() => new Error(e));
-      }
-      if (e.error.mensaje) {
-        console.error(e.error.mensaje);
-      }
-      return throwError(() => new Error(e));
-    })
-  );
+  return this.http.get<any>(`${this.urlEndPointDTI}/${id}/datosTecnicosInteres`);
 }
 
 }

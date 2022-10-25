@@ -3,6 +3,7 @@ import { Vehiculo } from "./vehiculo";
 export interface MantenimientoPreventivo {
 
     id:string;
+	vehiculo: string;
     condicionesUso:string;
     observaciones:string;
     liquidoFrenosKm:number;

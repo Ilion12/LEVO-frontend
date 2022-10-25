@@ -45,9 +45,9 @@ export class VehiculoService {
       vehiculo.tipo=vehiculoApi.tipo;
       vehiculo.unidadDestino=vehiculoApi.unidadDestino;
       vehiculo.fechaAdjudicacion=vehiculoApi.fechaAdjudicacion;
-      vehiculo.datosTecnicosInteres=vehiculoApi.datosTecnicosInteres;
-      vehiculo.planespreventivos=vehiculoApi.planesPreventivos;
-      vehiculo.mantenimiento=vehiculoApi.mantenimientosrealizados;
+      vehiculo.datosTecnicosInteres=vehiculoApi._links.datosTecnicosInteres.href;
+      vehiculo.planespreventivos=vehiculoApi._links.planespreventivos.href;
+      vehiculo.mantenimiento=vehiculoApi._links.mantenimientosrealizados.href;
       vehiculo.fechaAlta=vehiculoApi.fechaAlta;
       vehiculo.kilometrosActuales=vehiculoApi.kilometrosActuales;
       vehiculo.mesesActuales=vehiculoApi.mesesActuales;

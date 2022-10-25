@@ -1,8 +1,13 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { DatosTecnicosInteres } from 'src/app/vehiculo/models/datos-tecnicos-interes';
+import { DatosTecnicosInteresImpl } from 'src/app/vehiculo/models/datos-tecnicos-interes-impl';
+import { MantenimientoPreventivoImpl } from 'src/app/vehiculo/models/planes-preventivos-impl';
 import { Vehiculo } from 'src/app/vehiculo/models/vehiculo';
 import { VehiculoImpl } from 'src/app/vehiculo/models/vehiculo-impl';
+import { MantenimientoPreventivoService } from 'src/app/vehiculo/service/mantenimiento-preventivo.service';
 import { VehiculoService } from 'src/app/vehiculo/service/vehiculo.service';
+import { DatosTecnicosInteresService} from 'src/app/vehiculo/service/datos-tecnicos-interes.service';
 
 @Component({
   selector: 'app-administrador',
@@ -13,8 +18,11 @@ export class AdministradorComponent implements OnInit {
   matricula: string = '';
   vehiculos: Vehiculo[] = [];
   vehiculoVerDatos: Vehiculo = new VehiculoImpl();
+  datosTecnicosInteres!: DatosTecnicosInteresImpl;
+  mantenimientoPreventivo!: MantenimientoPreventivoImpl;
 
-  constructor(private vehiculoService: VehiculoService,
+  constructor(private vehiculoService: VehiculoService, private datosTecnicosInteresService: DatosTecnicosInteresService,
+    private mantenimientoPreventivoService: MantenimientoPreventivoService,
               private router: Router) {}
 
   ngOnInit(): void {
@@ -34,10 +42,16 @@ export class AdministradorComponent implements OnInit {
   vehiculoBuscado(matricula: string) {
     this.vehiculoService.getBusquedaPorMatricula(matricula).subscribe((response) => {
       this.vehiculos = this.vehiculoService.extraerVehiculos(response);
+    console.log(response)
     });
   }
 
   onVehiculoEliminar(vehiculo: Vehiculo){
+  //   let datosTecnicosInteres=vehiculo.datosTecnicosInteres;
+    console.log(vehiculo);
+  //  this.datosTecnicosInteresService.deleteDatosTecnicosInteres(this.datosTecnicosInteresService.getId(datosTecnicosInteres)).subscribe();
+  //   // this.mantenimientoPreventivoService.deleteMantenimientoPreventivo
+  //   // (this.mantenimientoPreventivo.vehiculo).subscribe();    
     this.vehiculoService.deleteVehiculo(vehiculo.id).subscribe();
   }
 

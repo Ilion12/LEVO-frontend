@@ -12,6 +12,7 @@ import { MantenimientoPreventivoImpl } from '../models/planes-preventivos-impl';
 export class MantenimientoPreventivoService {
   private host: string = environment.host;
   private urlEndPoint: string = `${this.host}planespreventivos`;
+  private urlEndPointPP: string = `${this.host}vehiculos`;
   constructor(private http: HttpClient) { }
 
   getId(url: string):string{
@@ -71,6 +72,7 @@ export class MantenimientoPreventivoService {
       mantenimientoPreventivo.reglajeProyectoresKm=mantenimientoPreventivoApi.reglajeProyectoresKm;
       mantenimientoPreventivo.reglajeProyectoresMes=mantenimientoPreventivoApi.reglajeProyectoresMes;
       mantenimientoPreventivo.urlMantenimientoPreventivo=mantenimientoPreventivoApi._links.planpreventivo.href;
+      mantenimientoPreventivo.vehiculo=mantenimientoPreventivoApi._links.vehiculo.href;
       return mantenimientoPreventivo;
     }
 
@@ -130,4 +132,8 @@ getmantenimientoPreventivoVehiculo(id:string): Observable<any>{
     })
   );
 }
+getPP(id: string): Observable<any> {
+  return this.http.get<any>(`${this.urlEndPointPP}/${id}/planespreventivos`);
+}
+
 }

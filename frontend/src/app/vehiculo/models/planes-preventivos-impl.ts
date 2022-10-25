@@ -38,6 +38,7 @@ export class MantenimientoPreventivoImpl {
 	bujiasEncendidoKm!: number;
     bujiasEncendidoMes!: number;
 	urlMantenimientoPreventivo!:string;
+	vehiculo!:string;
 
     constructor(){}
 }

@@ -19,6 +19,7 @@ export class DatosTecnicosInteresImpl {
     amperiosHoraBaterias!: number;
     calificacionMedioambiental!: string;
     urlDatosTecnicosInteres!:string;
+    vehiculo!:string;
     
 
     constructor(){}
