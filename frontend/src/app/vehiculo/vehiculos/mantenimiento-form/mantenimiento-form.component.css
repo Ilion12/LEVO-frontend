@@ -1,0 +1,38 @@
+#lineaInferior{
+    margin-top:-2rem;
+    height: 3rem;
+    background-color: #004d40;
+    font-weight: bold;
+    font-size: 16px;
+    color: white;
+    border-top-color: #fdd835;
+    border-style: solid;
+    border-left-color: #004d40;
+    border-right-color: #004d40;
+    border-bottom-color: #004d00;
+}
+
+#inputdate1, #inputkilometros1{
+   max-width:max-content; 
+}
+
+textarea{
+    height: max-content;
+    width: 600px;
+    margin-left:5rem;
+    
+}
+
+form{
+    margin-top:3rem;   
+}
+
+.btn-primary{
+    background-color: #004d00;
+    margin-bottom: 2rem;
+}
+
+#cancelarMantenimiento{
+    margin-left:2rem;
+    background-color: red;
+}

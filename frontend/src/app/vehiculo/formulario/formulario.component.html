@@ -86,7 +86,7 @@
   </mat-step>
   <mat-step [stepControl]="secondFormGroup">
     <form [formGroup]="secondFormGroup">
-      <ng-template matStepLabel>DATOS TÉCNICOS DE INTRES</ng-template>
+      <ng-template matStepLabel>DATOS TÉCNICOS DE INTERES</ng-template>
       <div class="row">
         <div class="col-sm-3">
           <mat-form-field appearance="fill">
@@ -204,7 +204,7 @@
           <hr>
           <div class="col-xl-3">
             <mat-form-field appearance="fill">
-              <mat-label>Numero de Vaterías:</mat-label>
+              <mat-label>Numero de Baterías:</mat-label>
               <input type="number" matInput placeholder="2 baterías" formControlName="numeroBaterias"
                 [(ngModel)]="datosTecnicosInteres.numeroBaterias" required /><span>&nbsp;baterías</span>
             </mat-form-field>
@@ -276,7 +276,7 @@
                         [(ngModel)]="mantenimientoPreventivo.liquidoFrenosMes"></td>
                   </tr>
                   <tr>
-                    <th scope="row">Operaciones Sistemáticas</th>
+                    <th scope="row">* Operaciones Sistemáticas</th>
                     <td>
                       <input matInput type="number" formControlName="operacionesSistematicasKm"
                         [(ngModel)]="mantenimientoPreventivo.operacionesSistematicasKm">
@@ -437,12 +437,10 @@
       </div>
 
       <div class="row">
-        <mat-form-field class="example-full-width" appearance="fill">
-          <mat-label>Observaciones:</mat-label>
-          <textarea matInput placeholder="Ex. It makes me feel..." formControlName="observaciones"
-            [(ngModel)]="mantenimientoPreventivo.observaciones"></textarea>
-        </mat-form-field>
+        
+          <mat-label> * Operaciones Sistemáticas: Cambio de aceite motor, inspeccion general del vehiculo(estado neumáticos,faros, luces, frenos, limpiaparabrisas, dirección...)  </mat-label>
       </div>
+      <br><br>
       <div>
         <button mat-button matStepperPrevious>Atrás</button>
         <a routerLink="/vehiculos"><button mat-button (click)="onAddVehiculo()">Guardar</button></a>
@@ -451,6 +449,3 @@
   </mat-step>
 </mat-stepper>
 
-<pre>{{vehiculo|json}}</pre>
-<pre>{{datosTecnicosInteres|json}}</pre>
-<pre>{{mantenimientoPreventivo|json}}</pre>

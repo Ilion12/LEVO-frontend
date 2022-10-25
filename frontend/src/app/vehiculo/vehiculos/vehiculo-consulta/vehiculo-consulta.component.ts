@@ -9,6 +9,7 @@ import { DatosTecnicosInteresService } from '../../service/datos-tecnicos-intere
 import { MantenimientoPreventivoService } from '../../service/mantenimiento-preventivo.service';
 import { VehiculoService } from '../../service/vehiculo.service';
 import { FormBuilder, Validators, FormGroup, FormControlName, FormControl } from '@angular/forms';
+import { UpperCasePipe } from '@angular/common';
 
 
 @Component({
@@ -62,7 +63,7 @@ export class VehiculoConsultaComponent implements OnInit {
 
   thirdFormGroup = this._formBuilder.group({
     condicionesUso:['', ],
-    observaciones: ['', ],
+    observaciones: ['',],
   liquidoFrenosKm: ['', ],
 	liquidoFrenosMes: ['', ],
 	operacionesSistematicasKm: ['', ],
