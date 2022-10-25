@@ -71,8 +71,8 @@ export class MantenimientoPreventivoService {
       mantenimientoPreventivo.pHLiquidoRefrigeracionMes=mantenimientoPreventivoApi.pHLiquidoRefrigeracionMes;
       mantenimientoPreventivo.reglajeProyectoresKm=mantenimientoPreventivoApi.reglajeProyectoresKm;
       mantenimientoPreventivo.reglajeProyectoresMes=mantenimientoPreventivoApi.reglajeProyectoresMes;
-      mantenimientoPreventivo.urlMantenimientoPreventivo=mantenimientoPreventivoApi._links.planpreventivo.href;
-      mantenimientoPreventivo.vehiculo=mantenimientoPreventivoApi._links.vehiculo.href;
+      // mantenimientoPreventivo.urlMantenimientoPreventivo=mantenimientoPreventivoApi._links.planpreventivo.href;
+      // mantenimientoPreventivo.vehiculo=mantenimientoPreventivoApi._links.vehiculo.href;
       return mantenimientoPreventivo;
     }
 

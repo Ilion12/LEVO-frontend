@@ -1,0 +1,135 @@
+<main class="container-fluid">
+    <div class="row" id="lineaInferior">
+        <div class="col-xl-2"></div>
+          <div class="col-xl-8">
+          <h1>PGC-XXXX-A</h1>
+        </div>
+    </div>
+    <h3>NUEVO MANTENIMIENTO</h3>
+    <form>
+        <div class="row mb-3">
+          <label for="inputdate1" class="col-sm-2 col-form-label">Fecha Realización:</label>
+          <div class="col-sm-10">
+            <input type="date" class="form-control" id="inputdate1">
+          </div>
+        </div>
+        <div class="row mb-3">
+          <label for="inputkilometros1" class="col-sm-2 col-form-label">Kilómetros:</label>
+          <div class="col-sm-10">
+            <input type="number" class="form-control" id="inputkilometros1">
+          </div>
+        </div>
+        <fieldset class="row mb-3">
+          <legend class="col-form-label col-sm-2 pt-0">Acciones:</legend>
+          <div class="col-sm-4">
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" name="gridCheck1" id="gridCheck1" value="option1">
+              <label class="form-check-label" for="gridCheck1">
+                Operaciones sistemáticas
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" name="gridCheck" id="gridCheck2" value="option2">
+              <label class="form-check-label" for="gridCheck2">
+                Líquido de Frenos
+              </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" name="gridCheck" id="gridCheck3" value="option3">
+                <label class="form-check-label" for="gridCheck3">
+                  Filtro de Aire
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" name="gridCheck" id="gridCheck4" value="option4">
+                <label class="form-check-label" for="gridCheck4">
+                  Filtro de Aire(habitáculo)
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" name="gridCheck" id="gridCheck5" value="option5">
+                <label class="form-check-label" for="gridCheck5">
+                  Filtro Combustible
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" name="gridCheck" id="gridCheck6" value="option6">
+                <label class="form-check-label" for="gridCheck6">
+                  Filtro Antipolen
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" name="gridCheck" id="gridCheck7" value="option7">
+                <label class="form-check-label" for="gridCheck7">
+                  Correa de Distribución
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" name="gridCheck" id="gridCheck8" value="option8">
+                <label class="form-check-label" for="gridCheck8">
+                  Kit de Distribución
+                </label>
+              </div>
+          </div>
+            <div class="col-sm-4">
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" name="gridCheck" id="gridCheck9" value="option9">
+                <label class="form-check-label" for="gridCheck9">
+                  Reglaje Proyectores
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" name="gridCheck" id="gridCheck10" value="option10">
+                <label class="form-check-label" for="gridCheck10">
+                  Ph Líquido Refrigeración
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" name="gridCheck" id="gridCheck11" value="option11">
+                <label class="form-check-label" for="gridCheck11">
+                  Líquido Refrigeración
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" name="gridCheck" id="gridCheck12" value="option12">
+                <label class="form-check-label" for="gridCheck12">
+                  Correa Arrastre Accesorios
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" name="gridCheck" id="gridCheck13" value="option13">
+                <label class="form-check-label" for="gridCheck13">
+                  Kit Correa Arrastre Accesorios
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" name="gridCheck" id="gridCheck14" value="option14">
+                <label class="form-check-label" for="gridCheck14">
+                  Anticongelante
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" name="gridCheck" id="gridCheck15" value="option15">
+                <label class="form-check-label" for="gridCheck15">
+                  Aceite Transmisión
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" name="gridCheck" id="gridCheck16" value="option16">
+                <label class="form-check-label" for="gridCheck16">
+                  Bujías Encendido
+                </label>
+              </div>
+          </div>
+        </fieldset>
+        <div class="row">
+        <div class="col-2 mb-3">
+            <label for="exampleFormControlTextarea1" class="form-label"> Observaciones:</label>
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" max="250"></textarea>
+          </div>
+        </div>
+        <button class="btn btn-primary" type="submit">Aceptar</button>
+        <button class="btn btn-primary" id="cancelarMantenimiento" routerLink="/vehiculo-consulta">Cancelar</button>
+        
+      </form>
+</main>

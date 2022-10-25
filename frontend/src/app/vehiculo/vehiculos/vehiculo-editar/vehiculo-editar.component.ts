@@ -20,6 +20,9 @@ import { VehiculoService } from '../../service/vehiculo.service';
 })
 export class VehiculoEditarComponent implements OnInit {
 
+
+  urlEndpoint=environment.host;
+
   vehiculo: Vehiculo =new VehiculoImpl();
   datosTecnicosInteres: DatosTecnicosInteres = new DatosTecnicosInteresImpl();
   mantenimientoPreventivo: MantenimientoPreventivo = new MantenimientoPreventivoImpl();
@@ -112,6 +115,8 @@ export class VehiculoEditarComponent implements OnInit {
     return this.activatedRoute.snapshot.params['id'];
   }
   onEditarVehiculo(): void {
+    this.vehiculo.datosTecnicosInteres=`${this.urlEndpoint}datostecnicosinteres/${this.datosTecnicosInteres.id}`;
+    this.vehiculo.planespreventivos=`${this.urlEndpoint}planespreventivos/${this.mantenimientoPreventivo.id}`;
     this.vehiculoService.updateVehiculo(this.vehiculo).subscribe(); 
     this.datosTecnicosInteresService.updateDatosTecnicosInteres(this.datosTecnicosInteres).subscribe();
     this.mantenimientoPreventivoService.updateMantenimmientoPreventivo(this.mantenimientoPreventivo).subscribe();
