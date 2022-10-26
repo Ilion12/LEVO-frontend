@@ -4,7 +4,7 @@ export interface Mantenimiento {
 
     id:string;
     fechaMantenimiento:Date;
-    kilometrosMantenimineto:number;
+    kilometrosMantenimiento:number;
     observaciones:string;
     liquidoFrenos:boolean;
 	operacionesSistematicas:boolean;
@@ -22,6 +22,7 @@ export interface Mantenimiento {
 	anticongelante:boolean;
 	aceiteTransmision:boolean;
 	bujiasEncendido:boolean;
+	vehiculo: string;
 
 
 }

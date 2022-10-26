@@ -99,7 +99,7 @@ updateMantenimmiento(mantenimiento:Mantenimiento): Observable<any>{
     );
 }
 
-getmantenimientoVehiculo(id:string): Observable<any>{
+getmantenimientosVehiculo(id:string): Observable<any>{
   return this.http.get<any>(`${this.urlEndPoint}/${id}`).pipe(
     catchError((e) => {
       if (e.status === 400) {

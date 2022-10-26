@@ -14,7 +14,7 @@ export interface Vehiculo {
     fechaAdjudicacion:Date;
     datosTecnicosInteres:DatosTecnicosInteres|string;
     planespreventivos:MantenimientoPreventivo|string;
-    mantenimiento:Mantenimiento[];
+    mantenimientos:Mantenimiento[];
     kilometrosActuales: number;
     mesesActuales:number;
 }

@@ -7,7 +7,7 @@
             </div>
             <div class="col-1">
                 <a>
-                    <fa-icon [icon]="faMagnifyingGlass" class="fa-2x" (click)="consultar()"></fa-icon>
+                    <fa-icon [icon]="faMagnifyingGlass" class="fa-2x" (click)="consultarVH()"></fa-icon>
                 </a>
             </div>
             <div class="col-1">
@@ -19,6 +19,7 @@
                 <a>
                     <fa-icon [icon]="faTrashCan" class="fa-2x" (click)="eliminar()"></fa-icon>
                 </a>
+                <button [routerLink]="['/mantenimientoForm', vehiculo.id]">Crear Nuevo mantenimiento</button>
             </div>
         </div>
 

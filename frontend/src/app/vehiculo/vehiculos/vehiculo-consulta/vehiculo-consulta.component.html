@@ -86,7 +86,7 @@
     </mat-step>
     <mat-step [stepControl]="secondFormGroup">
       <form [formGroup]="secondFormGroup">
-        <ng-template matStepLabel>DATOS TÉCNICOS DE INTRES</ng-template>
+        <ng-template matStepLabel>DATOS TÉCNICOS DE INTERÉS</ng-template>
         <div class="row">
           <div class="col-sm-3">
             <mat-form-field appearance="fill">
@@ -444,15 +444,16 @@
         </div>
         <div>
           <button mat-button matStepperPrevious>Atrás</button>
-          <button mat-button matStepperNext>Siguiente</button>
+          <button mat-button matStepperNext >Siguiente</button>
         </div>
       </form>
     </mat-step>
-    <mat-step >
-    <!--/*[stepControl]=""-->
-      <form><!--[formGroup]="fourthFormGroup"-->
-        <ng-template matStepLabel> Listado de Mantenimientos Realizados</ng-template>
-        <a routerLink="/mantenimientoForm"><button class="">Crear Nuevo Mantenimiento</button></a>
-      </form>
+    <mat-step>
+     <ng-template matStepLabel> MANTENIMIENTOS REALIZADOS</ng-template>
+     <div *ngFor="let mantenimiento of vehiculo.mantenimientos">
+     <app-mantenimiento-item
+     [mantenimiento]="mantenimiento"
+    (mantenimientoConsultar)="onMantenimientoConsultar($event)"></app-mantenimiento-item>
+     </div>
     </mat-step>
       </mat-stepper>

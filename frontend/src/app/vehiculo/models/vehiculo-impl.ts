@@ -8,7 +8,7 @@ export class VehiculoImpl {
     id!: string;
     datosTecnicosInteres!: DatosTecnicosInteres | string;
     planespreventivos!: MantenimientoPreventivo | string;
-    mantenimiento!: Mantenimiento[];
+    mantenimientos!: Mantenimiento[];
     fechaAlta!: Date;
     kilometrosActuales!: number;
     mesesActuales!: number;

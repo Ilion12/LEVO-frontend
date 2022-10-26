@@ -10,6 +10,9 @@ import { MantenimientoPreventivoService } from '../../service/mantenimiento-prev
 import { VehiculoService } from '../../service/vehiculo.service';
 import { FormBuilder, Validators, FormGroup, FormControlName, FormControl } from '@angular/forms';
 import { UpperCasePipe } from '@angular/common';
+import { MantenimientoService } from '../../service/mantenimiento.service';
+import { MantenimientoImpl } from '../../models/mantenimiento-impl';
+import { Mantenimiento } from '../../models/mantenimiento';
 
 
 @Component({
@@ -21,6 +24,7 @@ export class VehiculoConsultaComponent implements OnInit {
 
   vehiculo: Vehiculo =new VehiculoImpl();
  
+  mantenimientosVerDatos: MantenimientoImpl []= [];
   mantenimientoPreventivoVerDatos: MantenimientoPreventivoImpl = new MantenimientoPreventivoImpl();
   datosTecnicosInteresVerDatos: DatosTecnicosInteresImpl = new DatosTecnicosInteresImpl();
 
@@ -30,6 +34,12 @@ export class VehiculoConsultaComponent implements OnInit {
   @Input()
   mantenimientoPreventivo: MantenimientoPreventivoImpl = new MantenimientoPreventivoImpl();
   @Output() mantenimientoPreventivoConsultar = new EventEmitter<MantenimientoPreventivoImpl>();
+
+  mantenimiento: Mantenimiento= new MantenimientoImpl();  
+  @Input()
+  mantenimientos: Mantenimiento[] = [];
+  @Output() mantenimientoConsultar = new EventEmitter<MantenimientoImpl>();
+
 
 
   firstFormGroup = this._formBuilder.group({
@@ -102,6 +112,7 @@ export class VehiculoConsultaComponent implements OnInit {
   constructor(private vehiculoService: VehiculoService,
     private datosTecnicosInteresService: DatosTecnicosInteresService, 
     private mantenimientoPreventivoService: MantenimientoPreventivoService,
+    private mantenimientoService:MantenimientoService,
     private router : Router,
     private activatedRoute: ActivatedRoute,
     private _formBuilder: FormBuilder ) { }
@@ -109,12 +120,15 @@ export class VehiculoConsultaComponent implements OnInit {
   ngOnInit(): void {
     
     let id: string = this.cargarVehiculo();
-    this.vehiculoService.getVehiculo(id).subscribe(response => 
-      this.vehiculo = this.vehiculoService.mapearVehiculo(response));
+    this.vehiculoService.getVehiculo(id).subscribe(response =>{ 
+      this.vehiculo = this.vehiculoService.mapearVehiculo(response);console.log(this.vehiculo)});
       this.datosTecnicosInteresService.getDatosTecnicosInteresVehiculo(id).subscribe(response=>
         this.datosTecnicosInteres=this.datosTecnicosInteresService.mapearDatosTecnicosInteres(response));
       this.mantenimientoPreventivoService.getPP(id).subscribe(response =>
-        this.mantenimientoPreventivo = this.mantenimientoPreventivoService.mapearMantenimientoPreventivo(response))
+        this.mantenimientoPreventivo = this.mantenimientoPreventivoService.mapearMantenimientoPreventivo(response));
+        
+      
+
       }
 
   cargarVehiculo(): string {
@@ -148,6 +162,20 @@ export class VehiculoConsultaComponent implements OnInit {
   consultarMP(): void{
     this.mantenimientoPreventivoConsultar.emit(this.mantenimientoPreventivo);
   }
+
+  consultarMR(): void{
+    this.mantenimientoConsultar.emit(this.mantenimiento);
+  }
+
+  onMantenimientoConsultar(mantenimientos: MantenimientoImpl[]) {
+    this.verDatosMR(mantenimientos);
+    let url = `mantenimientosrealizados/consultar/${this.vehiculo.id}`;
+    this.router.navigate([url])
+    }
+
+    verDatosMR(mantenimientos: MantenimientoImpl[]): void {
+      this.mantenimientosVerDatos = mantenimientos;
+    }
   
 
 

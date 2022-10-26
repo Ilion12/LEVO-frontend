@@ -276,7 +276,7 @@
                             [(ngModel)]="mantenimientoPreventivo.liquidoFrenosMes"></td>
                       </tr>
                       <tr>
-                        <th scope="row">Operaciones Sistemáticas</th>
+                        <th scope="row">* Operaciones Sistemáticas</th>
                         <td>
                           <input matInput type="number" formControlName="operacionesSistematicasKm"
                             [(ngModel)]="mantenimientoPreventivo.operacionesSistematicasKm">
@@ -437,11 +437,7 @@
           </div>
     
           <div class="row">
-            <mat-form-field class="example-full-width" appearance="fill">
-              <mat-label>Observaciones:</mat-label>
-              <textarea matInput placeholder="Ex. It makes me feel..." formControlName="observaciones"
-                [(ngModel)]="mantenimientoPreventivo.observaciones"></textarea>
-            </mat-form-field>
+            <mat-label>* Operaciones Sistemáticas: Cambio de aceite motor, inspeccion general del vehiculo(estado neumáticos,faros, luces, frenos, limpiaparabrisas, dirección...)</mat-label>
           </div>
           <div>
             <button mat-button matStepperPrevious>Atrás</button>
@@ -449,5 +445,9 @@
           </div>
         </form>
       </mat-step>
+      <mat-step>
+        <ng-template matStepLabel> MANTENIMIENTOS REALIZADOS</ng-template>
+        <app-mantenimiento-item></app-mantenimiento-item>
+       </mat-step>
     </mat-stepper>
 

@@ -25,7 +25,7 @@ export class BusquedaItemComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  consultar(): void{
+  consultarVH(): void{
     this.vehiculoConsultar.emit(this.vehiculo);
   }
 

@@ -1,0 +1,81 @@
+<div class="row">
+    <div class="col-3">
+        <mat-form-field>
+            <mat-label>Fecha Realización:</mat-label>
+            <input matInput type="date" [(ngModel)]="mantenimiento.fechaMantenimiento" readonly>
+        </mat-form-field>
+    </div>
+    <div class="col-3">
+        <mat-form-field>
+            <mat-label>Kilometros:</mat-label>
+            <input matInput type="number" [(ngModel)]="mantenimiento.kilometrosMantenimiento" readonly>
+        </mat-form-field>
+    </div>
+    <div class="col-2">
+    <mat-expansion-panel>
+    <mat-expansion-panel-header>
+        <mat-panel-title>
+          Acciones
+        </mat-panel-title>
+    </mat-expansion-panel-header>
+    <section class="example-section">
+      <mat-checkbox class="example-margin" [(ngModel)]="mantenimiento.operacionesSistematicas" readonly>Operaciones Sistemáticas</mat-checkbox>
+    </section>
+    <section class="example-section">
+      <mat-checkbox class="example-margin" [(ngModel)]="mantenimiento.liquidoFrenos" readonly>&nbsp;&nbsp;&nbsp;&nbsp;Liquido de Frenos</mat-checkbox>
+    </section>
+    <section class="example-section">
+      <mat-checkbox class="example-margin" [(ngModel)]="mantenimiento.filtroAire" readonly>Filtro de Aire</mat-checkbox>
+    </section>
+    <section class="example-section">
+      <mat-checkbox class="example-margin" [(ngModel)]="mantenimiento.filtroAireHabitaculo" readonly>Filtro de Aire (habitáculo)</mat-checkbox>
+    </section>
+    <section class="example-section">
+      <mat-checkbox class="example-margin" [(ngModel)]="mantenimiento.filtroCombustible" readonly>Filtro Combustible</mat-checkbox>
+    </section>
+    <section class="example-section">
+      <mat-checkbox class="example-margin" [(ngModel)]="mantenimiento.filtroAntipolen" readonly>Filtro Antipolen</mat-checkbox>
+    </section>
+    <section class="example-section">
+      <mat-checkbox class="example-margin" [(ngModel)]="mantenimiento.correaDistribucion" readonly>Correa de Distribución</mat-checkbox>
+    </section>
+    <section class="example-section">
+      <mat-checkbox class="example-margin" [(ngModel)]="mantenimiento.kitDistribucion" readonly>Kit de Distribución</mat-checkbox>
+    </section>
+    <section class="example-section">
+      <mat-checkbox class="example-margin" [(ngModel)]="mantenimiento.reglajeProyectores" readonly>Reglaje de los Proyectores</mat-checkbox>
+    </section>
+    <section class="example-section">
+      <mat-checkbox class="example-margin" [(ngModel)]="mantenimiento.pHLiquidoRefrigeracion" readonly>pH del Líquido de Refrigeración</mat-checkbox>
+    </section>
+    <section class="example-section">
+      <mat-checkbox class="example-margin" [(ngModel)]="mantenimiento.liquidoRefrigeracion" readonly>Líquido de Refrigeración</mat-checkbox>
+    </section>
+    <section class="example-section">
+      <mat-checkbox class="example-margin" [(ngModel)]="mantenimiento.kitCorreaArrastreAccesorios" readonly>Kit Correa Arrastre Accesorios</mat-checkbox>
+    </section>
+    <section class="example-section">
+      <mat-checkbox class="example-margin" [(ngModel)]="mantenimiento.correaArrastreAccesorios" readonly>Correa Arrastre Accesorios</mat-checkbox>
+    </section>
+    <section class="example-section">
+      <mat-checkbox class="example-margin" [(ngModel)]="mantenimiento.anticongelante" readonly>Anticongelante</mat-checkbox>
+    </section>
+    <section class="example-section">
+      <mat-checkbox class="example-margin" [(ngModel)]="mantenimiento.aceiteTransmision" readonly>Aceite Transmisión</mat-checkbox>
+    </section>
+    <section class="example-section">
+      <mat-checkbox class="example-margin" [(ngModel)]="mantenimiento.bujiasEncendido" readonly >Bujías Encendido</mat-checkbox>
+    </section>
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Observaciones:</mat-label>
+      <textarea matInput [(ngModel)]="mantenimiento.observaciones" readonly></textarea>
+    </mat-form-field>
+    
+</mat-expansion-panel>
+    </div>
+
+</div>
+
+
+
+    

@@ -141,8 +141,8 @@ export class FormularioComponent implements OnInit {
     (planPreventivo =>{this.vehiculo.planespreventivos=planPreventivo._links.planpreventivo.href; console.log(this.vehiculo);
       this.vehiculoService.crearVehiculo(this.vehiculo).subscribe();});
   });     
-    /*let id: string = this.cargarVehiculo();
-    this.router.navigate([`/vehiculos/consultar/${id}`]);*/
+    let id: string = this.cargarVehiculo();
+    this.router.navigate([`/vehiculos/consultar/${id}`]);
   }
 
   onAddDatosTecnicosInteres(): void {

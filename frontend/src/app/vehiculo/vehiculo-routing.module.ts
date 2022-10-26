@@ -10,7 +10,7 @@ const routes: Routes = [
   path:'',
   component:VehiculosComponent
  }, {
-    path:'mantenimientoForm',
+    path:'mantenimientoForm/:id',
     component:MantenimientoFormComponent
   },
   {
