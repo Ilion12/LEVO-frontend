@@ -4,7 +4,6 @@ import { HttpClient } from '@angular/common/http';
 import { catchError, Observable, throwError } from 'rxjs';
 import { Vehiculo } from '../models/vehiculo';
 import { VehiculoImpl } from '../models/vehiculo-impl';
-import { AuxiliarService } from 'src/app/service/auxiliar.service';
 
 @Injectable({
   providedIn: 'root'
@@ -14,8 +13,7 @@ export class VehiculoService {
   private host: string = environment.host;
   private urlEndPoint: string = `${this.host}vehiculos`;
 
-  constructor(private http: HttpClient,
-    private auxService:AuxiliarService) { }
+  constructor(private http: HttpClient) { }
 
   getId(url: string):string{
     let posicionFinal: number = url.lastIndexOf('/');
@@ -110,10 +108,6 @@ getVehiculo(id:string): Observable<any>{
       return throwError(() => new Error(e));
     })
   );
-}
-
-getVehiculosPagina(pagina: number): Observable<any> {
-  return this.auxService.getItemsPorPagina(this.urlEndPoint, pagina);
 }
 
 getBusquedaPorMatricula(matricula:string): Observable<any>{

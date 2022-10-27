@@ -1,27 +1,28 @@
 <main>
     <div class="container mt-auto">
 
+        <br>
+        <br>
         <div class="row justify-content-center">
-            <div class="col-2">
-                <li class="list-group-item">{{ vehiculo.matricula|uppercase}}</li>
+            <div class="col-4">
+                <h2>{{ vehiculo.matricula.toUpperCase() }} &nbsp; {{ vehiculo.marca.toUpperCase() }} &nbsp; {{ vehiculo.modelo.toUpperCase() }}</h2>
             </div>
-            <div class="col-1">
-                <a>
-                    <fa-icon [icon]="faMagnifyingGlass" class="fa-2x" (click)="consultarVH()"></fa-icon>
-                </a>
-            </div>
-            <div class="col-1">
-                <a>
-                    <fa-icon [icon]="faPencil" class="fa-2x" (click)="editar()"></fa-icon>
-                </a>
-            </div>
-            <div class="col-1">
-                <a>
-                    <fa-icon [icon]="faTrashCan" class="fa-2x" (click)="eliminar()"></fa-icon>
-                </a>
-                <button [routerLink]="['/mantenimientoForm', vehiculo.id]">Crear Nuevo mantenimiento</button>
+            <div class="col-4">
+                <button type="button" class="btn btn-primary btn-md" (click)="consultar()">
+                    Consultar
+                </button>
+                &nbsp; &nbsp; &nbsp; &nbsp;
+                <button type="button" class="btn btn-warning btn-md" (click)="editar()">
+                    Editar
+                </button>
+                &nbsp; &nbsp; &nbsp; &nbsp;
+                <button type="button" class="btn btn-danger btn-md" (click)="eliminar()">
+                    Eliminar
+                </button>
             </div>
         </div>
+
+        <!-- <pre>{{ vehiculo | json }}</pre> -->
 
     </div>
 </main>

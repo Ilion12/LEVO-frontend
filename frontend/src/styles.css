@@ -1,14 +1,23 @@
+/* @import '@angular/material/prebuilt-themes/deeppurple-amber.css'; */
 
-@import '@angular/material/prebuilt-themes/deeppurple-amber.css';
-
-/* el texto del documento se centra */
 * {
   text-align: center;
 }
-/* el color del background del body es #EEEEEE */
+
 main {
   background-color: #EEEEEE;
 }
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
+#lineaInferior {
+  margin-top: -2rem;
+  height: 3rem;
+  background-color: #004d40;
+  font-weight: bold;
+  /* font-size: 16px; */
+  color: white;
+  border-top-color: #fdd835;
+  border-style: solid;
+  border-left-color: #004d40;
+  border-right-color: #004d40;
+  border-bottom-color: #004d00;
+}

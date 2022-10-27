@@ -1,44 +1,38 @@
-li.nav-item{
-    height: 3rem;
-    background-color: #004d40;
-    font-weight: bold;
-    font-size: 16px;
-    border-top-color: #fdd835;
-    border-style: solid;
-    border-left-color: #fdd835;
-    border-right-color: #fdd835;
-    
+.login-container {
+  margin-top: 5%;
+  margin-bottom: 5%;
 }
 
-a{
-    color:#fdd835;
+.login-form-1 {
+  padding: 5%;
+  box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 9px 26px 0 rgba(0, 0, 0, 0.19);
 }
 
-ul.nav{
-    margin-left: -20px;
+.login-form-1 h3 {
+  text-align: center;
+  color: #333;
 }
 
-ul.nav-pills{
-    margin-left:0;
+.login-container form {
+  padding: 10%;
 }
 
-#lineaInferior{
-    margin-top:-2rem;
-    height: 3rem;
-    background-color: #004d40;
-    font-weight: bold;
-    font-size: 16px;
-    color: white;
-    border-top-color: #fdd835;
-    border-style: solid;
-    border-left-color: #004d40;
-    border-right-color: #004d40;
-    border-bottom-color: #004d00;
+.btnSubmit {
+  width: 50%;
+  border-radius: 1rem;
+  padding: 1.5%;
+  border: none;
+  cursor: pointer;
 }
 
-div.overflow-hidden{
-    height:400px;
-    width: 400px;
-    border-width: 1px;
-    font-weight: bold;
+.login-form-1 .btnSubmit {
+  font-weight: 600;
+  color: #fff;
+  background-color: #0062cc;
+}
+
+.login-form-1 .ForgetPwd {
+  color: #0062cc;
+  font-weight: 600;
+  text-decoration: none;
 }
