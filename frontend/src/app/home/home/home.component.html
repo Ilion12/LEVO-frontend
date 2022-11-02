@@ -11,15 +11,15 @@
             </picture>
             <br><br>
             <div class="form-group">
-                <input type="text" class="form-control" placeholder="Introduzca su número de TIP" />
+                <input type="text" name="usuario" class="form-control" placeholder="Introduzca su número de TIP" [(ngModel)]="usuario.usuario" />
             </div>
             <br>
             <div class="form-group">
-                <input type="password" class="form-control" placeholder="Introduzca su contraseña" />
+                <input type="password" name="contraseña" class="form-control" placeholder="Introduzca su contraseña" [(ngModel)]="usuario.contrasena"/>
             </div>
             <br>
             <div class="form-group">
-                <a class="nav-link" routerLink="/administrador"><button type="submit"
+                <a class="nav-link"(click)="login()"><button type="submit"
                         class="btn btn-success">Login</button></a>
             </div>
             <br>

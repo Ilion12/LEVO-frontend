@@ -6,6 +6,7 @@ import { HomeComponent } from "./home/home.component";
 import { AdministradorModule } from "../administrador/administrador.module";
 import { UsuarioModule } from "../usuario/usuario.module";
 import { VehiculoModule } from "../vehiculo/vehiculo.module";
+import { FormsModule } from "@angular/forms";
 
 @NgModule({
   declarations: [HomeComponent],
@@ -14,7 +15,7 @@ import { VehiculoModule } from "../vehiculo/vehiculo.module";
     HomeRoutingModule,
     AdministradorModule,
     UsuarioModule,
-    VehiculoModule,
+    VehiculoModule,FormsModule
   ],
 })
 export class HomeModule {}

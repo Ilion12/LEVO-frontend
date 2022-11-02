@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { AuthService } from 'src/app/service/auth-service.service';
+import { Usuario } from 'src/app/usuario/models/usuario';
+import { UsuarioImpl } from 'src/app/usuario/models/usuario-impl';
 
 @Component({
   selector: 'app-home',
@@ -7,9 +11,27 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+ 
+  usuario: Usuario = new UsuarioImpl();
+
+  constructor(private authService: AuthService, private router:Router) { }
 
   ngOnInit(): void {
+  }
+
+  login(){
+    this.authService.login(this.usuario.usuario, this.usuario.contrasena).subscribe(response=>{console.log(response)
+      if(response.role==='ADMIN'){
+        let url = `administrador`;
+    this.router.navigate([url]);
+      }
+      if(response.role==='USER'){
+        let url = `usuario`;
+    this.router.navigate([url]);
+      }
+    });
+    
+
   }
 
 }
