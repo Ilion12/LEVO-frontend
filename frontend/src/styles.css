@@ -12,7 +12,7 @@ main {
   margin-top: -2rem;
   height: 3rem;
   background-color: #004d40;
-  font-weight: bold;
+  /* font-weight: bold; */
   /* font-size: 16px; */
   color: white;
   border-top-color: #fdd835;
