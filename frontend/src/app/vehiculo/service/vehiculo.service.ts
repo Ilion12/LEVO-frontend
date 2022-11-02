@@ -12,6 +12,7 @@ export class VehiculoService {
   
   private host: string = environment.host;
   private urlEndPoint: string = `${this.host}vehiculos`;
+  private urlEndPointMantenimiento: string=`${this.host}mantenimientosrealizados`
 
   constructor(private http: HttpClient) {}
 
@@ -126,4 +127,11 @@ export class VehiculoService {
         })
       );
   }
+
+  getVehiculoMantenimiento(id:string): Observable<any> {
+    return this.http
+      .get<any>(
+        `${this.urlEndPointMantenimiento}/${id}/vehiculo`
+      )
+}
 }

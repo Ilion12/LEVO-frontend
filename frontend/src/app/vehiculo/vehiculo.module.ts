@@ -16,13 +16,14 @@ import { MatStepperModule } from "@angular/material/stepper";
 import { MatFormFieldModule } from "@angular/material/form-field";
 import { MatInputModule } from "@angular/material/input";
 import { MatSelectModule } from "@angular/material/select";
-import { MantenimientosComponent } from "./mantenimientos/mantenimientos.component";
 import { MantenimientoItemComponent } from "./mantenimiento-item/mantenimiento-item.component";
 import { MatButtonModule } from "@angular/material/button";
 import { MatExpansionModule } from "@angular/material/expansion";
 import { MatCheckboxModule } from "@angular/material/checkbox";
 import { MatListModule } from "@angular/material/list";
 import { MatIconModule } from "@angular/material/icon";
+import { MantenimientoItemEditarComponent } from './mantenimiento-item-editar/mantenimiento-item-editar.component';
+import { MantenimientoEditarComponent } from './vehiculos/mantenimiento-editar/mantenimiento-editar.component';
 
 @NgModule({
   declarations: [
@@ -32,8 +33,9 @@ import { MatIconModule } from "@angular/material/icon";
     VehiculoItemComponent,
     VehiculosComponent,
     FormularioComponent,
-    MantenimientosComponent,
     MantenimientoItemComponent,
+    MantenimientoItemEditarComponent,
+    MantenimientoEditarComponent,
   ],
   imports: [
     CommonModule,

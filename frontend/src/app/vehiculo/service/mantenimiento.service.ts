@@ -12,6 +12,7 @@ export class MantenimientoService {
 
   private host: string = environment.host;
   private urlEndPoint: string = `${this.host}mantenimientosrealizados`;
+  private urlEndPointVehiculo: string =`${this.host}vehiculos`
 
   constructor(private http: HttpClient) {}
 
@@ -30,13 +31,16 @@ export class MantenimientoService {
     respuestaApi._embedded.mantenimientosrealizados.forEach((a: any) => {
       mantenimientos.push(this.mapearMantenimiento(a));
     });
+    console.log(mantenimientos)
     return mantenimientos;
   }
 
   mapearMantenimiento(mantenimientoApi: any): MantenimientoImpl {
     let mantenimiento: Mantenimiento = new MantenimientoImpl();
+    mantenimiento.fechaMantenimiento=mantenimientoApi.fechaMantenimiento;
+    mantenimiento.kilometrosMantenimiento=mantenimientoApi.kilometrosMantenimiento;
     mantenimiento.id = this.getId(mantenimientoApi._links.mantenimientorealizado.href);
-    mantenimiento.observaciones = mantenimientoApi.comentarios;
+    mantenimiento.observaciones = mantenimientoApi.observaciones;
     mantenimiento.aceiteTransmision = mantenimientoApi.aceiteTransmision;
     mantenimiento.anticongelante = mantenimientoApi.anticongelante;
     mantenimiento.bujiasEncendido = mantenimientoApi.bujiasEncendido;
@@ -104,9 +108,9 @@ export class MantenimientoService {
       );
   }
 
-  getmantenimientosVehiculo(id: string): Observable<any> {
+  getmantenimientoVehiculo(id: string): Observable<any> {
     return this.http
-    .get<any>(`${this.urlEndPoint}/${id}`)
+    .get<any>(`${this.urlEndPointVehiculo}/${id}/mantenimientosrealizados`)
     .pipe(
       catchError((e) => {
         if (e.status === 400) {
@@ -118,5 +122,9 @@ export class MantenimientoService {
         return throwError(() => new Error(e));
       })
     );
+  }
+
+  getMantenimientoVehiculo(id:string):Observable<any>{
+    return this.http.get<any>(`${this.urlEndPoint}/${id}`)
   }
 }

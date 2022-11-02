@@ -28,12 +28,12 @@ export class MantenimientoItemComponent implements OnInit {
     this.mantenimientoConsultar.emit(this.mantenimientos)
   }
 
-  borrarVehiculo(): void {
+  borrarMantenimiento(): void {
     if(confirm('Va a eliminar el vehiculo y todos sus datos ¿Desea continuar?'))
     this.mantenimientoEliminar.emit(this.mantenimientos);
   }
 
-  editarVehiculo():void {
+  editarMantenimiento():void {
     this.mantenimientoEditar.emit(this.mantenimientos);
   }
 

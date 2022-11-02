@@ -441,13 +441,22 @@
           </div>
           <div>
             <button mat-button matStepperPrevious>Atrás</button>
-            <a routerLink="/vehiculos"  (click)="onEditarVehiculo()"><button mat-button>Guardar</button></a>
+            <button mat-button matStepperNext>Siguiente</button>
           </div>
         </form>
       </mat-step>
       <mat-step>
         <ng-template matStepLabel> MANTENIMIENTOS REALIZADOS</ng-template>
-        <app-mantenimiento-item></app-mantenimiento-item>
+        <div *ngFor="let mantenimiento of vehiculo.mantenimientos">
+        <app-mantenimiento-item-editar [mantenimiento]="mantenimiento"
+        (mantenimientoEditar)="onMantenimientoEditar($event)"
+        (mantenimientoEliminar)=" onMantenimientoEliminar($event)"
+       ></app-mantenimiento-item-editar>
+        </div>
+        <div>
+          <button mat-button matStepperPrevious>Atrás</button>
+          <a routerLink="/vehiculos"  (click)="onEditarVehiculo()"><button mat-button>Guardar</button></a>
+        </div>
        </mat-step>
     </mat-stepper>
 

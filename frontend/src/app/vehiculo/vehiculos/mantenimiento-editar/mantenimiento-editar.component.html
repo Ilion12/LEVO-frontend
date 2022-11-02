@@ -1,0 +1,151 @@
+<main class="container-fluid">
+    <div class="row" id="lineaInferior">
+        <div class="col-xl-2"></div>
+          <div class="col-xl-8">
+          <h1>{{vehiculo.matricula|uppercase}}</h1>
+        </div>
+    </div>
+    <br>
+    <h1>EDITAR MANTENIMIENTO</h1>
+    <form>
+        <div class="row mb-3">
+          <label for="inputdate1" class="col-sm-2 col-form-label">Fecha Realización:</label>
+          <div class="col-sm-10">
+            <input type="date" class="form-control" name="fechaRealizacion" id="inputdate1" [(ngModel)]="mantenimiento.fechaMantenimiento" 
+            required>
+          </div>
+        </div>
+        <div class="row mb-3">
+          <label for="inputkilometros1" class="col-sm-2 col-form-label">Kilómetros:</label>
+          <div class="col-sm-10">
+            <input type="number" class="form-control" name="kilometrosMantenimiento" id="inputkilometros1" [(ngModel)]="mantenimiento.kilometrosMantenimiento" required>
+          </div>
+        </div>
+        <fieldset class="row mb-3">
+          <legend class="col-form-label col-sm-2 pt-0">Acciones:</legend>
+          <div class="col-sm-4">
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" name="operacionesSistematicas" id="gridCheck1" value="option1" [(ngModel)]="mantenimiento.operacionesSistematicas" required>
+              <label class="form-check-label" for="gridCheck1">
+                Operaciones sistemáticas
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" name="liquidoFrenos" id="gridCheck2" value="option2" [(ngModel)]="mantenimiento.liquidoFrenos" required>
+              <label class="form-check-label" for="gridCheck2">
+                Líquido de Frenos
+              </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" name="filtroAire" id="gridCheck3" 
+                value="option3" [(ngModel)]="mantenimiento.filtroAire" required>
+                <label class="form-check-label" for="gridCheck3">
+                  Filtro de Aire
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" name="filtroAireHabitaculo"
+                 id="gridCheck4" value="option4" [(ngModel)]="mantenimiento.filtroAireHabitaculo" required>
+                <label class="form-check-label" for="gridCheck4">
+                  Filtro de Aire(habitáculo)
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" name="filtroCombustible" id="gridCheck5" value="option5" [(ngModel)]="mantenimiento.filtroCombustible" required>
+                <label class="form-check-label" for="gridCheck5">
+                  Filtro Combustible
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" name="filtroAntipolen" 
+                id="gridCheck6" value="option6" [(ngModel)]="mantenimiento.filtroAntipolen" required>
+                <label class="form-check-label" for="gridCheck6">
+                  Filtro Antipolen
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" name="correaDistribucion" id="gridCheck7" value="option7"
+                 [(ngModel)]="mantenimiento.correaDistribucion" required>
+                <label class="form-check-label" for="gridCheck7">
+                  Correa de Distribución
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" name="kitDistribucion" id="gridCheck8" value="option8"
+                [(ngModel)]="mantenimiento.kitDistribucion" required>
+                <label class="form-check-label" for="gridCheck8">
+                  Kit de Distribución
+                </label>
+              </div>
+          </div>
+            <div class="col-sm-4">
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" name="reglajePoyectores" id="gridCheck9" value="option9"
+                [(ngModel)]="mantenimiento.reglajeProyectores" required>
+                <label class="form-check-label" for="gridCheck9">
+                  Reglaje Proyectores
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" name="pHLiquidoRefrigeracion" id="gridCheck10" value="option10" 
+                [(ngModel)]="mantenimiento.pHLiquidoRefrigeracion" required>
+                <label class="form-check-label" for="gridCheck10">
+                  Ph Líquido Refrigeración
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" name="liquidoRefrigeracion" id="gridCheck11" value="option11"
+                [(ngModel)]="mantenimiento.liquidoRefrigeracion" required>
+                <label class="form-check-label" for="gridCheck11">
+                  Líquido Refrigeración
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" name="correaArrastreAccesorios" id="gridCheck12" value="option12"
+                [(ngModel)]="mantenimiento.correaArrastreAccesorios" required>
+                <label class="form-check-label" for="gridCheck12">
+                  Correa Arrastre Accesorios
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" name="kitCorreaArrastreAccesorios" id="gridCheck13" value="option13"
+                [(ngModel)]="mantenimiento.kitCorreaArrastreAccesorios" required>
+                <label class="form-check-label" for="gridCheck13">
+                  Kit Correa Arrastre Accesorios
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" name="anticongelante" id="gridCheck14" value="option14"
+                [(ngModel)]="mantenimiento.anticongelante" required>
+                <label class="form-check-label" for="gridCheck14">
+                  Anticongelante
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" name="aceiteTransmision" id="gridCheck15" value="option15"
+                [(ngModel)]="mantenimiento.aceiteTransmision" required>
+                <label class="form-check-label" for="gridCheck15">
+                  Aceite Transmisión
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" name="bujiasEncencido" id="gridCheck16" value="option16"
+                [(ngModel)]="mantenimiento.bujiasEncendido" required>
+                <label class="form-check-label" for="gridCheck16">
+                  Bujías Encendido
+                </label>
+              </div>
+          </div>
+        </fieldset>
+        <div class="row">
+        <div class="col-2 mb-3">
+            <label for="exampleFormControlTextarea1" class="form-label"> Observaciones:</label>
+            <textarea class="form-control" name="observaciones" id="observaciones" rows="3" max="250" [(ngModel)]="mantenimiento.observaciones" required></textarea>
+          </div>
+        </div>
+        <button class="btn btn-primary" type="submit" (click)="onMantenimientoEditar()">Aceptar</button>
+        <button class="btn btn-primary" name="cancelarMantenimiento" id="cancelarMantenimiento">Cancelar</button>
+        
+      </form>
+</main>
+
