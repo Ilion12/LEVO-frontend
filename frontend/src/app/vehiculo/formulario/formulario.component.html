@@ -130,7 +130,7 @@
         <div class="col-xl-3">
           <mat-form-field class="fs-6" appearance="outline">
             <mat-label>Clasif Medioambiental</mat-label>
-            <mat-select matInput type="text" formControlName="clasificacionMedioambiental" 
+            <mat-select matInput type="text" formControlName="clasificacionMedioambiental"
               [(ngModel)]="datosTecnicosInteres.clasificacionMedioambiental" required>
               <mat-option selected></mat-option>
               <mat-option value="A">A</mat-option>
@@ -165,7 +165,7 @@
           <div class="col-xl-6">
             <mat-form-field class="fs-6" appearance="outline">
               <mat-label>Tipo Combustible</mat-label>
-              <mat-select matInput type="text" formControlName="combustible" 
+              <mat-select matInput type="text" formControlName="combustible"
                 [(ngModel)]="datosTecnicosInteres.combustible" required>
                 <mat-option selected></mat-option>
                 <mat-option value="Diesel">Diesel</mat-option>
@@ -180,8 +180,9 @@
           <div class="col-xl-6">
             <mat-form-field class="fs-6" appearance="outline">
               <mat-label>Capacidad Depósito</mat-label>
-              <input type="number" matInput placeholder="Litros" formControlName="capacidadDeposito"
+              <input type="number" matInput formControlName="capacidadDeposito"
                 [(ngModel)]="datosTecnicosInteres.capacidadDeposito" required />
+              <span matSuffix>Litros</span>
             </mat-form-field>
           </div>
 
@@ -205,8 +206,9 @@
           <div class="col-xl-6">
             <mat-form-field class="fs-6" appearance="outline">
               <mat-label>Capacidad Carter</mat-label>
-              <input type="number" matInput placeholder="Litros" formControlName="capacidadCarter"
+              <input type="number" matInput formControlName="capacidadCarter"
                 [(ngModel)]="datosTecnicosInteres.capacidadCarter" required />
+              <span matSuffix>Litros</span>
             </mat-form-field>
           </div>
 
@@ -222,16 +224,18 @@
           <div class="col-xl-4">
             <mat-form-field class="fs-6" appearance="outline">
               <mat-label>Presión Delanteros</mat-label>
-              <input type="number" matInput placeholder="bar" formControlName="presionNeumaticosDelanteros"
+              <input type="number" matInput formControlName="presionNeumaticosDelanteros"
                 [(ngModel)]="datosTecnicosInteres.presionNeumaticosDelanteros" required />
+              <span matSuffix>bar</span>
             </mat-form-field>
           </div>
 
           <div class="col-xl-4">
             <mat-form-field class="fs-6" appearance="outline">
               <mat-label>Presión Traseros</mat-label>
-              <input type="number" matInput placeholder="bar" formControlName="presionNeumaticosTraseros"
+              <input type="number" matInput formControlName="presionNeumaticosTraseros"
                 [(ngModel)]="datosTecnicosInteres.presionNeumaticosTraseros" required />
+              <span matSuffix>bar</span>
             </mat-form-field>
           </div>
 
@@ -263,24 +267,27 @@
           <div class="col-xl-3">
             <mat-form-field class="fs-6" appearance="outline">
               <mat-label>Amperios/Hora</mat-label>
-              <input type="number" matInput placeholder="amp/h" formControlName="amperiosHoraBaterias"
+              <input type="number" matInput formControlName="amperiosHoraBaterias"
                 [(ngModel)]="datosTecnicosInteres.amperiosHoraBaterias" required />
+              <span matSuffix>amp/h</span>
             </mat-form-field>
           </div>
 
           <div class="col-xl-3">
             <mat-form-field class="fs-6" appearance="outline">
               <mat-label>Amperaje:</mat-label>
-              <input type="number" matInput placeholder="amp" formControlName="amperajeBaterias"
+              <input type="number" matInput formControlName="amperajeBaterias"
                 [(ngModel)]="datosTecnicosInteres.amperajeBaterias" required />
-            </mat-form-field>
+              <span matSuffix>amp</span>
+              </mat-form-field>
           </div>
 
           <div class="col-xl-3">
             <mat-form-field class="fs-6" appearance="outline">
               <mat-label>Voltaje:</mat-label>
-              <input type="number" matInput placeholder="V" formControlName="voltajeBaterias"
+              <input type="number" matInput formControlName="voltajeBaterias"
                 [(ngModel)]="datosTecnicosInteres.voltajeBaterias" required />
+              <span matSuffix>V</span>
             </mat-form-field>
           </div>
 
@@ -426,7 +433,7 @@
                         [(ngModel)]="mantenimientoPreventivo.kitDistribucionMes">
                     </td>
                   </tr>
-                  
+
                 </tbody>
 
               </table>
@@ -536,22 +543,22 @@
                   </tr>
 
                 </tbody>
-                
+
               </table>
             </div>
           </div>
-          
+
         </div>
-        
+
       </div>
 
       <br><br>
 
       <p class="fs-6">* Operaciones Sistemáticas: Cambio de aceite motor, inspeccion general del vehiculo (estado
           neumáticos, faros, luces, frenos, limpiaparabrisas, dirección...)</p>
-      
+
       <br><br>
-      
+
       <div>
         <button class="btn btn-warning btn-md" mat-button matStepperPrevious>Atrás</button>
         &nbsp;&nbsp;&nbsp;
