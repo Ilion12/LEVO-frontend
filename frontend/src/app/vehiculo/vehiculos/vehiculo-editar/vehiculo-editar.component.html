@@ -1,6 +1,6 @@
 <div class="row" id="lineaInferior">
   <p></p>
-  <p class="fs-2">Editar {{ vehiculo.matricula.toLocaleUpperCase() }}</p>
+  <div class="fs-2">Editar {{ vehiculo.matricula | uppercase }}</div>
 </div>
 
 <mat-stepper #stepper>
@@ -580,11 +580,16 @@
       ></app-mantenimiento-item-editar>
     </div>
 
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
     <div>
       <button class="btn btn-warning btn-md" mat-button matStepperPrevious>Atrás</button>
       &nbsp;&nbsp;&nbsp;
       <a routerLink="/vehiculos" (click)="onEditarVehiculo()"><button class="btn btn-primary btn-md" mat-button>Guardar</button></a>
     </div>
+
+    <br>
 
   </mat-step>
 
