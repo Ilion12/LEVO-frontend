@@ -309,15 +309,14 @@
   <!-- Tercer step -->
   <mat-step [stepControl]="thirdFormGroup">
     <form [formGroup]="thirdFormGroup">
-      <ng-template matStepLabel> PLAN PREVENTIVO</ng-template>
+    <ng-template matStepLabel> PLAN PREVENTIVO</ng-template>
 
       <div class="row">
 
         <div class="col-xl-12">
           <mat-form-field class="fs-6" appearance="outline">
             <mat-label>Condiciones Uso</mat-label>
-            <mat-select matInput type="text" formControlName="condicionesUso"
-              [(ngModel)]="mantenimientoPreventivo.condicionesUso" required>
+            <mat-select matInput type="text" formControlName="condicionesUso" [(ngModel)]="mantenimientoPreventivo.condicionesUso" required>
               <mat-option selected></mat-option>
               <mat-option value="Normales">Normales</mat-option>
               <mat-option value="Severas">Severas</mat-option>
@@ -560,32 +559,33 @@
 
       <br><br>
 
-
-
-
-
-
       <div>
         <button class="btn btn-warning btn-md" mat-button matStepperPrevious>Atrás</button>
         &nbsp;&nbsp;&nbsp;
-        <button mat-button matStepperNext>Siguiente</button>
+        <button class="btn btn-primary btn-md" mat-button matStepperNext>Siguiente</button>
       </div>
 
     </form>
   </mat-step>
 
-
+  <!-- Cuarto step -->
   <mat-step>
     <ng-template matStepLabel> MANTENIMIENTOS REALIZADOS</ng-template>
+
     <div *ngFor="let mantenimiento of vehiculo.mantenimientos">
-      <app-mantenimiento-item-editar [mantenimiento]="mantenimiento"
+      <app-mantenimiento-item-editar
+        [mantenimiento]="mantenimiento"
         (mantenimientoEditar)="onMantenimientoEditar($event)"
-        (mantenimientoEliminar)=" onMantenimientoEliminar($event)"></app-mantenimiento-item-editar>
+        (mantenimientoEliminar)=" onMantenimientoEliminar($event)"
+      ></app-mantenimiento-item-editar>
     </div>
+
     <div>
-      <button mat-button matStepperPrevious>Atrás</button>
-      <a routerLink="/vehiculos" (click)="onEditarVehiculo()"><button mat-button>Guardar</button></a>
+      <button class="btn btn-warning btn-md" mat-button matStepperPrevious>Atrás</button>
+      &nbsp;&nbsp;&nbsp;
+      <a routerLink="/vehiculos" (click)="onEditarVehiculo()"><button class="btn btn-primary btn-md" mat-button>Guardar</button></a>
     </div>
+
   </mat-step>
 
 </mat-stepper>
