@@ -1,4 +1,3 @@
-import { HttpClient } from '@angular/common/http';
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -19,20 +18,19 @@ import { VehiculoService } from '../../service/vehiculo.service';
 @Component({
   selector: 'app-vehiculo-editar',
   templateUrl: './vehiculo-editar.component.html',
-  styleUrls: ['./vehiculo-editar.component.css']
+  styleUrls: ['./vehiculo-editar.component.css'],
 })
 export class VehiculoEditarComponent implements OnInit {
 
+  urlEndpoint = environment.host;
 
-  urlEndpoint=environment.host;
-
-  vehiculo: Vehiculo =new VehiculoImpl();
+  vehiculo: Vehiculo = new VehiculoImpl();
   datosTecnicosInteres: DatosTecnicosInteres = new DatosTecnicosInteresImpl();
   mantenimientoPreventivo: MantenimientoPreventivo = new MantenimientoPreventivoImpl();
   mantenimientoPreventivoVerDatos: MantenimientoPreventivoImpl = new MantenimientoPreventivoImpl();
   datosTecnicosInteresVerDatos: DatosTecnicosInteresImpl = new DatosTecnicosInteresImpl();
   mantenimientoVerDatos: Mantenimiento = new MantenimientoImpl();
-  mantenimientos: Mantenimiento[]=[];
+  mantenimientos: Mantenimiento[] = [];
 
   @Input() mantenimiento: Mantenimiento = new MantenimientoImpl();
   @Output() mantenimientoConsultar = new EventEmitter<MantenimientoImpl>();
@@ -40,81 +38,83 @@ export class VehiculoEditarComponent implements OnInit {
   @Output() mantenimientoEliminar = new EventEmitter<MantenimientoImpl>();
 
   firstFormGroup = this._formBuilder.group({
-    matricula: ['', ],
-    fechaAlta: ['', ],
-    marca: ['', ],
-    modelo: ['', ],
-    tipoVehiculo: ['', ],
-    unidadDestino: ['', ],
-    fechaAdjudicacion:['', ],
-
+    matricula: [''],
+    fechaAlta: [''],
+    marca: [''],
+    modelo: [''],
+    tipoVehiculo: [''],
+    unidadDestino: [''],
+    fechaAdjudicacion: [''],
   });
+
   secondFormGroup = this._formBuilder.group({
     bastidor: [''],
-    color:  [''],
-    combustible:  ['', ],
-    cambio:  ['', ],
-    capacidadDeposito:  ['', ],
-    lubricanteMotor:  ['', ],
-    capacidadCarter:  ['', ],
-    presionNeumaticosDelanteros:  ['', ],
-    presionNeumaticosTraseros:  ['', ],
-    tipoCubiertas:  ['', ],
-    numeroBaterias:  ['', ],
-    voltajeBaterias: ['', ],
-    amperajeBaterias:  ['', ],
-    amperiosHoraBaterias:  ['', ],
-    clasificacionMedioambiental: ['', ],
-    
+    color: [''],
+    combustible: [''],
+    cambio: [''],
+    capacidadDeposito: [''],
+    lubricanteMotor: [''],
+    capacidadCarter: [''],
+    presionNeumaticosDelanteros: [''],
+    presionNeumaticosTraseros: [''],
+    tipoCubiertas: [''],
+    numeroBaterias: [''],
+    voltajeBaterias: [''],
+    amperajeBaterias: [''],
+    amperiosHoraBaterias: [''],
+    clasificacionMedioambiental: [''],
   });
 
   thirdFormGroup = this._formBuilder.group({
-    condicionesUso:['', ],
-    observaciones: ['', ],
-  liquidoFrenosKm: ['', ],
-	liquidoFrenosMes: ['', ],
-	operacionesSistematicasKm: ['', ],
-	operacionesSistematicasMes: ['', ],
-	filtroAireKm: ['', ],
-	filtroAireMes: ['', ],
-	filtroAireHabitaculoKm: ['', ],
-	filtroAireHabitaculoMes: ['', ],
-	filtroCombustibleKm:['', ],
-	filtroCombustibleMes:['', ],
-	filtroAntipolenKm:['', ],
-	filtroAntipolenMes:['', ],
-	correaDistribucionKm:['', ],
-	correaDistribucionMes:['', ],
-	kitDistribucionKm:['', ],
-	kitDistribucionMes:['', ],
-	reglajeProyectoresKm:['', ],
-	reglajeProyectoresMes:['', ],
-	pHLiquidoRefrigeracionKm:['', ],
-	pHLiquidoRefrigeracionMes:['', ],
-	liquidoRefrigeracionKm:['', ],
-	liquidoRefrigeracionMes:['', ],
-	correaArrastreAccesoriosKm:['', ],
-	correaArrastreAccesoriosMes:[''],
-	kitCorreaArrastreAccesoriosKm:[''],
-	kitCorreaArrastreAccesoriosMes:[''],
-	anticongelanteKm:[''],
-	anticongelanteMes:[''],
-	aceiteTransmisionKm:[''],
-	aceiteTransmisionMes:[''],
-	bujiasEncendidoKm:[''],
-  bujiasEncendidoMes:[''],
-   });
-  constructor(private vehiculoService: VehiculoService,
-    private datosTecnicosInteresService: DatosTecnicosInteresService, 
+    condicionesUso: [''],
+    observaciones: [''],
+    liquidoFrenosKm: [''],
+    liquidoFrenosMes: [''],
+    operacionesSistematicasKm: [''],
+    operacionesSistematicasMes: [''],
+    filtroAireKm: [''],
+    filtroAireMes: [''],
+    filtroAireHabitaculoKm: [''],
+    filtroAireHabitaculoMes: [''],
+    filtroCombustibleKm: [''],
+    filtroCombustibleMes: [''],
+    filtroAntipolenKm: [''],
+    filtroAntipolenMes: [''],
+    correaDistribucionKm: [''],
+    correaDistribucionMes: [''],
+    kitDistribucionKm: [''],
+    kitDistribucionMes: [''],
+    reglajeProyectoresKm: [''],
+    reglajeProyectoresMes: [''],
+    pHLiquidoRefrigeracionKm: [''],
+    pHLiquidoRefrigeracionMes: [''],
+    liquidoRefrigeracionKm: [''],
+    liquidoRefrigeracionMes: [''],
+    correaArrastreAccesoriosKm: [''],
+    correaArrastreAccesoriosMes: [''],
+    kitCorreaArrastreAccesoriosKm: [''],
+    kitCorreaArrastreAccesoriosMes: [''],
+    anticongelanteKm: [''],
+    anticongelanteMes: [''],
+    aceiteTransmisionKm: [''],
+    aceiteTransmisionMes: [''],
+    bujiasEncendidoKm: [''],
+    bujiasEncendidoMes: [''],
+  });
+
+  constructor(
+    private vehiculoService: VehiculoService,
+    private datosTecnicosInteresService: DatosTecnicosInteresService,
     private mantenimientoPreventivoService: MantenimientoPreventivoService,
-    private router : Router,
+    private router: Router,
     private activatedRoute: ActivatedRoute,
     private _formBuilder: FormBuilder,
-    private mantenimientoService: MantenimientoService ) { }
+    private mantenimientoService: MantenimientoService
+  ) {}
 
   ngOnInit(): void {
     let id: string = this.cargarVehiculo();
-    this.vehiculoService.getVehiculo(id).subscribe(response => {
+    this.vehiculoService.getVehiculo(id).subscribe((response) => {
       this.vehiculo = this.vehiculoService.mapearVehiculo(response);
       this.mantenimientoService.getmantenimientoVehiculo(id).subscribe(response => {
         this.mantenimientos = this.mantenimientoService.extraerMantenimientos(response);
@@ -133,12 +133,17 @@ export class VehiculoEditarComponent implements OnInit {
   cargarVehiculo(): string {
     return this.activatedRoute.snapshot.params['id'];
   }
+
   onEditarVehiculo(): void {
-    this.vehiculo.datosTecnicosInteres=`${this.urlEndpoint}datostecnicosinteres/${this.datosTecnicosInteres.id}`;
-    this.vehiculo.planespreventivos=`${this.urlEndpoint}planespreventivos/${this.mantenimientoPreventivo.id}`;
-    this.vehiculoService.updateVehiculo(this.vehiculo).subscribe(); 
-    this.datosTecnicosInteresService.updateDatosTecnicosInteres(this.datosTecnicosInteres).subscribe();
-    this.mantenimientoPreventivoService.updateMantenimmientoPreventivo(this.mantenimientoPreventivo).subscribe();
+    this.vehiculo.datosTecnicosInteres = `${this.urlEndpoint}datostecnicosinteres/${this.datosTecnicosInteres.id}`;
+    this.vehiculo.planespreventivos = `${this.urlEndpoint}planespreventivos/${this.mantenimientoPreventivo.id}`;
+    this.vehiculoService.updateVehiculo(this.vehiculo).subscribe();
+    this.datosTecnicosInteresService
+      .updateDatosTecnicosInteres(this.datosTecnicosInteres)
+      .subscribe();
+    this.mantenimientoPreventivoService
+      .updateMantenimmientoPreventivo(this.mantenimientoPreventivo)
+      .subscribe();
     this.router.navigate(['administrador']);
   }
 
@@ -146,11 +151,9 @@ export class VehiculoEditarComponent implements OnInit {
     this.vehiculo = vehiculo;
   }
 
- 
   verDatosMR(mantenimiento: MantenimientoImpl): void {
     this.mantenimientoVerDatos = mantenimiento;
   }
-
 
   onMantenimientoEditar(mantenimiento: MantenimientoImpl) {
     this.verDatosMR(mantenimiento);
@@ -163,10 +166,7 @@ export class VehiculoEditarComponent implements OnInit {
     this.mantenimientoConsultar.emit(this.mantenimiento);
   }
 
-  
-  onMantenimientoEliminar(mantenimiento: MantenimientoImpl){
+  onMantenimientoEliminar(mantenimiento: MantenimientoImpl) {
     this.mantenimientoService.deleteMantenimiento(mantenimiento.id).subscribe();
   }
-
-
 }
