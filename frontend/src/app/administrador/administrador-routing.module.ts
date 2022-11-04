@@ -20,8 +20,8 @@ const routes: Routes = [
   },
   {
     path: "administrador/editar/:id",
-    component: VehiculoEditarComponent,
-  },
+    component: VehiculoEditarComponent
+  }
 ];
 
 @NgModule({

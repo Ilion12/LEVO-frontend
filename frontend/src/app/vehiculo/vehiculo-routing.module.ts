@@ -7,7 +7,7 @@ import { VehiculosComponent } from "./vehiculos/vehiculos.component";
 
 const routes: Routes = [
   {
-    path: "vehiculos",
+    path: "administrador/vehiculos",
     component: VehiculosComponent,
   },
   {path:"administrador/vehiculo/formulario",
