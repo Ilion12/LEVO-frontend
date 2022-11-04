@@ -54,7 +54,7 @@ export class VehiculosComponent implements OnInit {
 
   onVehiculoConsultar(vehiculo: Vehiculo) {
     this.verDatos(vehiculo);
-    let url = `vehiculos/consultar/${vehiculo.id}`;
+    let url = `consultar/${vehiculo.id}`;
     this.router.navigate([url]);
   }
   

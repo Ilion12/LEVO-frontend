@@ -17,6 +17,9 @@ export class AdministradorComponent implements OnInit {
   vehiculoVerDatos: Vehiculo = new VehiculoImpl();
   datosTecnicosInteres!: DatosTecnicosInteresImpl;
   mantenimientoPreventivo!: MantenimientoPreventivoImpl;
+  
+  user:any=sessionStorage.getItem('usuario');
+  
 
   constructor(
     private vehiculoService: VehiculoService,
@@ -26,9 +29,10 @@ export class AdministradorComponent implements OnInit {
   ngOnInit(): void {}
 
   onVehiculoConsultar(vehiculo: Vehiculo) {
+
     this.verDatos(vehiculo);
     console.log(vehiculo);
-    let url = `consultar/${vehiculo.id}`;
+    let url = `administrador/consultar/${vehiculo.id}`;
     this.router.navigate([url]);
   }
 
@@ -43,6 +47,7 @@ export class AdministradorComponent implements OnInit {
         this.vehiculos = this.vehiculoService.extraerVehiculos(response);
         console.log(response);
       });
+  
   }
 
   onVehiculoEliminar(vehiculo: Vehiculo) {
@@ -51,7 +56,7 @@ export class AdministradorComponent implements OnInit {
 
   onVehiculoEditar(vehiculo: Vehiculo) {
     this.verDatos(vehiculo);
-    let url = `editar/${vehiculo.id}`;
+    let url = `administrador/editar/${vehiculo.id}`;
     this.router.navigate([url]);
   }
 }

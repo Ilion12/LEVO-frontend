@@ -15,7 +15,6 @@ import { VehiculoModule } from "../vehiculo/vehiculo.module";
     AdministradorRoutingModule,
     FontAwesomeModule,
     FormsModule,
-    VehiculoModule,
   ],
   providers: [],
   exports: [AdministradorComponent],

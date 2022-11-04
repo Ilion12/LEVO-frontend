@@ -123,8 +123,6 @@ export class VehiculoEditarComponent implements OnInit {
           this.datosTecnicosInteres = this.datosTecnicosInteresService.mapearDatosTecnicosInteres(response);
         this.mantenimientoPreventivoService.getPP(id).subscribe(response => {
           this.mantenimientoPreventivo = this.mantenimientoPreventivoService.mapearMantenimientoPreventivo(response);
-          console.log("this.mantenimientos");
-          console.log(this.mantenimientos);
         })
       })
     })
@@ -157,7 +155,7 @@ export class VehiculoEditarComponent implements OnInit {
   onMantenimientoEditar(mantenimiento: MantenimientoImpl) {
     this.verDatosMR(mantenimiento);
     console.log(mantenimiento)
-    let url = `mantenimientosrealizados/editar/${mantenimiento.id}`;
+    let url = `administrador/mantenimientosrealizados/editar/${mantenimiento.id}`;
     this.router.navigate([url]);
   }
 

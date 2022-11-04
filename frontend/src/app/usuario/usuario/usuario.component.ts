@@ -1,4 +1,11 @@
 import { Component, OnInit } from '@angular/core';
+import { Router, UrlSerializer } from '@angular/router';
+import { DatosTecnicosInteresImpl } from 'src/app/vehiculo/models/datos-tecnicos-interes-impl';
+import { MantenimientoPreventivoImpl } from 'src/app/vehiculo/models/planes-preventivos-impl';
+import { Vehiculo } from 'src/app/vehiculo/models/vehiculo';
+import { VehiculoImpl } from 'src/app/vehiculo/models/vehiculo-impl';
+import { VehiculoService } from 'src/app/vehiculo/service/vehiculo.service';
+
 
 @Component({
   selector: 'app-usuario',
@@ -7,9 +14,46 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UsuarioComponent implements OnInit {
 
-  constructor() { }
+  matricula: string="";
+  vehiculos: Vehiculo[] = [];
+  vehiculoVerDatos: Vehiculo = new VehiculoImpl();
+  datosTecnicosInteres!: DatosTecnicosInteresImpl;
+  mantenimientoPreventivo!: MantenimientoPreventivoImpl;
 
-  ngOnInit(): void {
+  user:any=localStorage.getItem('usuario');
+  
+
+
+  
+
+  constructor( 
+    private vehiculoService: VehiculoService,
+    private router: Router
+  ) {}
+
+  ngOnInit(): void {}
+
+  onVehiculoConsultar(vehiculo: Vehiculo) {
+    this.verDatos(vehiculo);
+    console.log(vehiculo);
+    let url = `usuario/consultar/${vehiculo.id}`;
+    this.router.navigate([url]);
+    
   }
+
+  verDatos(vehiculo: Vehiculo): void {
+    this.vehiculoVerDatos = vehiculo;
+  }
+
+  vehiculoBuscado(matricula: string) {
+    this.vehiculoService
+      .getBusquedaPorMatricula(matricula)
+      .subscribe((response) => {
+        this.vehiculos = this.vehiculoService.extraerVehiculos(response);
+        console.log(response);
+      });
+      
+  }
+
 
 }

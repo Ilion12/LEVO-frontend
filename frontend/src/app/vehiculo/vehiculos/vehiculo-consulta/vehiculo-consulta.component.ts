@@ -23,8 +23,8 @@ export class VehiculoConsultaComponent implements OnInit {
   vehiculo: Vehiculo = new VehiculoImpl();
   mantenimiento: Mantenimiento = new MantenimientoImpl();
   mantenimientosVerDatos: MantenimientoImpl[] = [];
-  mantenimientoPreventivoVerDatos: MantenimientoPreventivoImpl = new MantenimientoPreventivoImpl();
-  datosTecnicosInteresVerDatos: DatosTecnicosInteresImpl = new DatosTecnicosInteresImpl();
+  // mantenimientoPreventivoVerDatos: MantenimientoPreventivoImpl = new MantenimientoPreventivoImpl();
+  // datosTecnicosInteresVerDatos: DatosTecnicosInteresImpl = new DatosTecnicosInteresImpl();
 
   @Input() datosTecnicosInteres: DatosTecnicosInteres = new DatosTecnicosInteresImpl();
   @Output() datosTecnicosInteresConsultar = new EventEmitter<DatosTecnicosInteresImpl>();
@@ -116,7 +116,6 @@ export class VehiculoConsultaComponent implements OnInit {
 
     this.vehiculoService.getVehiculo(id).subscribe((response) => {
       this.vehiculo = this.vehiculoService.mapearVehiculo(response);
-      console.log(this.vehiculo);
     });
 
     this.datosTecnicosInteresService
@@ -135,34 +134,6 @@ export class VehiculoConsultaComponent implements OnInit {
 
   cargarVehiculo(): string {
     return this.activatedRoute.snapshot.params["id"];
-  }
-
-  onMantenimientoPreventivoConsultar(mantenimientoPreventivo: MantenimientoPreventivoImpl) {
-    this.verDatosPP(mantenimientoPreventivo);
-    let url = `planespreventivos/consultar/${this.vehiculo.id}`;
-    this.router.navigate([url]);
-  }
-
-  verDatosPP(mantenimientoPreventivo: MantenimientoPreventivoImpl): void {
-    this.mantenimientoPreventivoVerDatos = mantenimientoPreventivo;
-  }
-
-  onDatosTecnicosInteresConsultar(datosTecnicosInteres: DatosTecnicosInteresImpl) {
-    this.verDatosDTI(datosTecnicosInteres);
-    let url = `datostecnicosinteres/consultar/${this.vehiculo.id}`;
-    this.router.navigate([url]);
-  }
-
-  verDatosDTI(datosTecnicosInteres: DatosTecnicosInteresImpl): void {
-    this.datosTecnicosInteresVerDatos = datosTecnicosInteres;
-  }
-
-  consultarDTI(): void {
-    this.datosTecnicosInteresConsultar.emit(this.datosTecnicosInteres);
-  }
-
-  consultarMP(): void {
-    this.mantenimientoPreventivoConsultar.emit(this.mantenimientoPreventivo);
   }
 
   consultarMR(): void {

@@ -2,8 +2,8 @@ import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { catchError, Observable, of, Subject, throwError } from "rxjs";
 import { environment } from "src/environments/environment";
-import { Usuario } from "../usuario/models/usuario";
-import { UsuarioImpl } from "../usuario/models/usuario-impl";
+import { Usuario } from "../usuario/models/user";
+import { UsuarioImpl } from "../usuario/models/user-impl";
 
 
 @Injectable({
@@ -27,9 +27,9 @@ export class AuthService {
     this.isLogin = true;
     this.usuario=response;
     this.roleAs = this.usuario.rol;
-    localStorage.setItem('usuario', this.usuario.usuario);
-    localStorage.setItem('STATE', 'true');
-    localStorage.setItem('ROLE', this.roleAs);console.log(response)
+    sessionStorage.setItem('usuario', this.usuario.usuario);
+    sessionStorage.setItem('STATE', 'true');
+    sessionStorage.setItem('ROLE', this.roleAs);
    subject.next({ success: this.isLogin, role: this.roleAs });
     });//validacion del codigo de estado: 200 o 404
     return subject.asObservable();
@@ -39,13 +39,13 @@ export class AuthService {
   logout() {
     this.isLogin = false;
     this.roleAs = '';
-    localStorage.setItem('STATE', 'false');
-    localStorage.setItem('ROLE', '');
+    sessionStorage.setItem('STATE', 'false');
+    sessionStorage.setItem('ROLE', '');
     return of({ success: this.isLogin, role: '' });
   }
 
   isLoggedIn() {
-    const loggedIn = localStorage.getItem('STATE');
+    const loggedIn = sessionStorage.getItem('STATE');
     if (loggedIn == 'true')
       this.isLogin = true;
     else

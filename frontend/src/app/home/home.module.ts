@@ -7,6 +7,7 @@ import { AdministradorModule } from "../administrador/administrador.module";
 import { UsuarioModule } from "../usuario/usuario.module";
 import { VehiculoModule } from "../vehiculo/vehiculo.module";
 import { FormsModule } from "@angular/forms";
+import { AuthGuard } from "../service/auth.guard";
 
 @NgModule({
   declarations: [HomeComponent],
@@ -17,5 +18,6 @@ import { FormsModule } from "@angular/forms";
     UsuarioModule,
     VehiculoModule,FormsModule
   ],
+  providers:[AuthGuard]
 })
 export class HomeModule {}
