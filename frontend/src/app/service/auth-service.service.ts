@@ -1,5 +1,6 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
+import { Router } from "@angular/router";
 import { catchError, Observable, of, Subject, throwError } from "rxjs";
 import { environment } from "src/environments/environment";
 import { Usuario } from "../usuario/models/user";
@@ -10,6 +11,9 @@ import { UsuarioImpl } from "../usuario/models/user-impl";
   providedIn: 'root'
 })
 export class AuthService {
+
+  rol:any=sessionStorage.getItem('ROLE');
+
   isLogin = false;
 
   usuario!: Usuario;
@@ -19,7 +23,7 @@ export class AuthService {
   private host: string = environment.host;
   private urlEndpoint: string = `${this.host}usuarios/search/buscar-usuario?`;
 
-  constructor(private http:HttpClient) { }
+  constructor(private http:HttpClient, private router:Router) { }
 
   login(usuario:string, contraseña:string): Observable<any> {
     var subject=new Subject();
@@ -41,6 +45,8 @@ export class AuthService {
     this.roleAs = '';
     sessionStorage.setItem('STATE', 'false');
     sessionStorage.setItem('ROLE', '');
+    sessionStorage.setItem('usuario', '')
+    this.router.navigate(['']);
     return of({ success: this.isLogin, role: '' });
   }
 
@@ -54,7 +60,7 @@ export class AuthService {
   }
 
   getRole() {
-    this.roleAs = this.usuario.rol;
+    this.roleAs = this.rol ;
     return this.roleAs;
   }
 

@@ -10,6 +10,7 @@ import { DatosTecnicosInteresImpl } from "../models/datos-tecnicos-interes-impl"
 import { MantenimientoPreventivoImpl } from "../models/planes-preventivos-impl";
 import { Vehiculo } from "../models/vehiculo";
 import { VehiculoImpl } from "../models/vehiculo-impl";
+import { faArrowLeft, faBackwardStep } from "@fortawesome/free-solid-svg-icons";
 
 @Component({
   selector: "app-formulario",
@@ -31,9 +32,9 @@ export class FormularioComponent implements OnInit {
   tipoVehiculo;
 
   firstFormGroup = this._formBuilder.group({
-    matricula: ["", Validators.required],
+    matricula: ["", [Validators.required, Validators.minLength(8), Validators.maxLength(8)]],
     fechaAlta: ["", Validators.required],
-    marca: ["", Validators.required],
+    marca: ["", [Validators.required, Validators.minLength(2)]],
     modelo: ["", Validators.required],
     tipoVehiculo: ["", Validators.required],
     unidadDestino: ["", Validators.required],
@@ -125,14 +126,12 @@ export class FormularioComponent implements OnInit {
 
         this.vehiculo.datosTecnicosInteres =
           datosTecnicos._links.datotecnicointeres.href;
-        console.log(this.vehiculo);
         
         this.mantenimientoPreventivoService
           .crearMantenimientoPreventivo(this.mantenimientoPreventivo)
           .subscribe((planPreventivo) => {
             this.vehiculo.planespreventivos =
               planPreventivo._links.planpreventivo.href;
-            console.log(this.vehiculo);
             this.vehiculoService.crearVehiculo(this.vehiculo).subscribe();
           });
       });
@@ -149,4 +148,6 @@ export class FormularioComponent implements OnInit {
     let id: string = this.cargarId();
     this.router.navigate([`/planespreventivos/editar/${id}`]);
   }
+
+  volver= faArrowLeft;
 }

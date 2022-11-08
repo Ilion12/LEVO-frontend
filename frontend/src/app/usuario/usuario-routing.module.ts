@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { UsuarioComponent } from './usuario/usuario.component';
 import { VehiculoConsultaComponent } from '../vehiculo/vehiculos/vehiculo-consulta/vehiculo-consulta.component';
 import { VehiculosComponent } from '../vehiculo/vehiculos/vehiculos.component';
+import { AuthGuard } from '../service/auth.guard';
 
 const routes: Routes = [
   {
@@ -12,10 +13,14 @@ const routes: Routes = [
   {
     path: "usuario/vehiculos",
     component: VehiculosComponent,
+    canActivate:[AuthGuard],
+data:{role:'USER'}
   },
   {
     path: "usuario/consultar/:id",
     component: VehiculoConsultaComponent,
+    canActivate:[AuthGuard],
+data:{role:'USER'}
   }
 ];
 

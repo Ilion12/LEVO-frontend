@@ -1,6 +1,11 @@
 <div class="row" id="lineaInferior">
-  <p></p>
-  <p class="fs-2">Alta Vehículo</p>
+  <div class=" col-2"></div>
+  <div class=" col-8">
+  <p class="fs-2">Alta Vehículo</p></div>
+  <div class=" col-2">
+    <fa-icon [icon]="volver" routerLink="/administrador"></fa-icon>
+    <p>Volver</p>
+  </div>
 </div>
 
 <mat-stepper #stepper>
@@ -18,16 +23,21 @@
           <mat-form-field class="fs-5" appearance="outline">
             <mat-label>Matrícula</mat-label>
             <input type="text" matInput placeholder="PGC0000A" formControlName="matricula"
-              [(ngModel)]="vehiculo.matricula" maxlength="8" minlength="8" required />
+              [(ngModel)]="vehiculo.matricula" maxlength="8" minlength="8" />
           </mat-form-field>
+          <div *ngIf= "firstFormGroup.get('matricula')?.touched && firstFormGroup.get('matricula')?.errors?.['required']" class="alert alert-danger">Campo obligatorio</div>
+          <div *ngIf= "firstFormGroup.get('matricula')?.touched && firstFormGroup.get('matricula')?.errors?.['minlength']" class="alert alert-danger">
+            {{firstFormGroup.get('matricula')?.touched && firstFormGroup.get('matricula')?.errors?.['minlength'].requiredLength}} caracteres mínimo</div>
         </div>
 
         <div class="col-xl-6">
           <mat-form-field class="fs-5" appearance="outline">
             <mat-label>Fecha Alta</mat-label>
             <input type="date" matInput placeholder="mm/dd/aaaa" formControlName="fechaAlta"
-              [(ngModel)]="vehiculo.fechaAlta" required />
+              [(ngModel)]="vehiculo.fechaAlta"  />
           </mat-form-field>
+          <div *ngIf= "firstFormGroup.get('fechaAlta')?.touched && firstFormGroup.get('fechaAlta')?.errors?.['required']" class="alert alert-danger">Campo obligatorio</div>
+          
         </div>
 
       </div>
@@ -41,21 +51,23 @@
         <div class="col-xl-4">
           <mat-form-field class="fs-5" appearance="outline">
             <mat-label>Marca</mat-label>
-            <input type="text" matInput formControlName="marca" [(ngModel)]="vehiculo.marca" required />
+            <input type="text" matInput formControlName="marca" [(ngModel)]="vehiculo.marca"  />
           </mat-form-field>
+          <div *ngIf= "firstFormGroup.get('marca')?.touched && firstFormGroup.get('marca')?.errors?.['required']" class="alert alert-danger">Campo obligatorio</div>
+          <div *ngIf= "firstFormGroup.get('marca')?.touched && firstFormGroup.get('marca')?.errors?.['minlength']" class="alert alert-danger">{{firstFormGroup.get('marca')?.touched && firstFormGroup.get('marca')?.errors?.['minlength'].requiredLength}} caracteres mínimo</div>
         </div>
 
         <div class="col-xl-4">
           <mat-form-field class="fs-5" appearance="outline">
             <mat-label>Modelo</mat-label>
-            <input type="text" matInput formControlName="modelo" [(ngModel)]="vehiculo.modelo" required />
+            <input type="text" matInput formControlName="modelo" [(ngModel)]="vehiculo.modelo"  />
           </mat-form-field>
         </div>
 
         <div class="col-xl-4">
           <mat-form-field class="fs-5" appearance="outline">
             <mat-label>Tipo Vehículo</mat-label>
-            <mat-select matInput type="text" formControlName="tipoVehiculo" [(ngModel)]="vehiculo.tipo" required>
+            <mat-select matInput type="text" formControlName="tipoVehiculo" [(ngModel)]="vehiculo.tipo" >
               <mat-option selected></mat-option>
               <mat-option value="Turismo">Turismo</mat-option>
               <mat-option value="Todo Terreno">Todo Terreno</mat-option>
@@ -77,7 +89,7 @@
           <mat-form-field class="fs-5" appearance="outline">
             <mat-label>Unidad Destino</mat-label>
             <input type="text" matInput formControlName="unidadDestino"
-              [(ngModel)]="vehiculo.unidadDestino" required />
+              [(ngModel)]="vehiculo.unidadDestino"  />
           </mat-form-field>
         </div>
 
@@ -85,7 +97,7 @@
           <mat-form-field class="fs-5" appearance="outline">
             <mat-label>Fecha Adjudicación</mat-label>
             <input type="date" matInput placeholder="dd/mm/aaaa" formControlName="fechaAdjudicacion"
-              [(ngModel)]="vehiculo.fechaAdjudicacion" required />
+              [(ngModel)]="vehiculo.fechaAdjudicacion"  />
           </mat-form-field>
         </div>
 
@@ -94,7 +106,7 @@
       <br>
 
       <div>
-        <button class="btn btn-primary btn-md" mat-button matStepperNext [disabled]="">Siguiente</button>
+        <button class="btn btn-primary btn-md" mat-button matStepperNext [disabled]="firstFormGroup.invalid">Siguiente</button>
       </div>
 
       <br>
@@ -115,7 +127,7 @@
           <mat-form-field class="fs-6" appearance="outline">
             <mat-label>Nº Bastidor</mat-label>
             <input type="text" matInput placeholder="vdbnkplpkffej32442" formControlName="bastidor"
-              [(ngModel)]="datosTecnicosInteres.bastidor" required />
+              [(ngModel)]="datosTecnicosInteres.bastidor"  />
           </mat-form-field>
         </div>
 
@@ -123,7 +135,7 @@
           <mat-form-field class="fs-6" appearance="outline">
             <mat-label>Color Carrocería</mat-label>
             <input type="text" matInput placeholder="Bicolor" formControlName="color"
-              [(ngModel)]="datosTecnicosInteres.color" required />
+              [(ngModel)]="datosTecnicosInteres.color"  />
           </mat-form-field>
         </div>
 
@@ -131,7 +143,7 @@
           <mat-form-field class="fs-6" appearance="outline">
             <mat-label>Clasif Medioambiental</mat-label>
             <mat-select matInput type="text" formControlName="clasificacionMedioambiental"
-              [(ngModel)]="datosTecnicosInteres.clasificacionMedioambiental" required>
+              [(ngModel)]="datosTecnicosInteres.clasificacionMedioambiental" >
               <mat-option selected></mat-option>
               <mat-option value="A">A</mat-option>
               <mat-option value="B">B</mat-option>
@@ -145,7 +157,7 @@
         <div class="col-xl-3">
           <mat-form-field class="fs-6" appearance="outline">
             <mat-label>Tipo Cambio</mat-label>
-            <mat-select matInput type="text" formControlName="cambio" [(ngModel)]="datosTecnicosInteres.cambio" required>
+            <mat-select matInput type="text" formControlName="cambio" [(ngModel)]="datosTecnicosInteres.cambio" >
               <mat-option selected></mat-option>
               <mat-option value="Manual">Manual</mat-option>
               <mat-option value="Automatico">Automático</mat-option>
@@ -166,7 +178,7 @@
             <mat-form-field class="fs-6" appearance="outline">
               <mat-label>Tipo Combustible</mat-label>
               <mat-select matInput type="text" formControlName="combustible"
-                [(ngModel)]="datosTecnicosInteres.combustible" required>
+                [(ngModel)]="datosTecnicosInteres.combustible" >
                 <mat-option selected></mat-option>
                 <mat-option value="Diesel">Diesel</mat-option>
                 <mat-option value="Gasolina">Gasolina</mat-option>
@@ -181,7 +193,7 @@
             <mat-form-field class="fs-6" appearance="outline">
               <mat-label>Capacidad Depósito</mat-label>
               <input type="number" matInput formControlName="capacidadDeposito"
-                [(ngModel)]="datosTecnicosInteres.capacidadDeposito" required />
+                [(ngModel)]="datosTecnicosInteres.capacidadDeposito"  />
               <span matSuffix>Litros</span>
             </mat-form-field>
           </div>
@@ -199,7 +211,7 @@
             <mat-form-field class="fs-6" appearance="outline">
               <mat-label>Lubricante</mat-label>
               <input type="text" matInput placeholder="5W30 SYNTETIC" formControlName="lubricanteMotor"
-                [(ngModel)]="datosTecnicosInteres.lubricanteMotor" required />
+                [(ngModel)]="datosTecnicosInteres.lubricanteMotor"  />
             </mat-form-field>
           </div>
 
@@ -207,7 +219,7 @@
             <mat-form-field class="fs-6" appearance="outline">
               <mat-label>Capacidad Carter</mat-label>
               <input type="number" matInput formControlName="capacidadCarter"
-                [(ngModel)]="datosTecnicosInteres.capacidadCarter" required />
+                [(ngModel)]="datosTecnicosInteres.capacidadCarter"  />
               <span matSuffix>Litros</span>
             </mat-form-field>
           </div>
@@ -225,7 +237,7 @@
             <mat-form-field class="fs-6" appearance="outline">
               <mat-label>Presión Delanteros</mat-label>
               <input type="number" matInput formControlName="presionNeumaticosDelanteros"
-                [(ngModel)]="datosTecnicosInteres.presionNeumaticosDelanteros" required />
+                [(ngModel)]="datosTecnicosInteres.presionNeumaticosDelanteros"  />
               <span matSuffix>bar</span>
             </mat-form-field>
           </div>
@@ -234,7 +246,7 @@
             <mat-form-field class="fs-6" appearance="outline">
               <mat-label>Presión Traseros</mat-label>
               <input type="number" matInput formControlName="presionNeumaticosTraseros"
-                [(ngModel)]="datosTecnicosInteres.presionNeumaticosTraseros" required />
+                [(ngModel)]="datosTecnicosInteres.presionNeumaticosTraseros"  />
               <span matSuffix>bar</span>
             </mat-form-field>
           </div>
@@ -243,7 +255,7 @@
             <mat-form-field class="fs-6" appearance="outline">
               <mat-label>Tipo Cubiertas</mat-label>
               <input type="text" matInput placeholder="255/R17Y" formControlName="tipoCubiertas"
-                [(ngModel)]="datosTecnicosInteres.tipoCubiertas" required />
+                [(ngModel)]="datosTecnicosInteres.tipoCubiertas"  />
             </mat-form-field>
           </div>
 
@@ -260,7 +272,7 @@
             <mat-form-field class="fs-6" appearance="outline">
               <mat-label>Nº Baterías</mat-label>
               <input type="number" matInput formControlName="numeroBaterias"
-                [(ngModel)]="datosTecnicosInteres.numeroBaterias" required />
+                [(ngModel)]="datosTecnicosInteres.numeroBaterias"  />
             </mat-form-field>
           </div>
 
@@ -268,7 +280,7 @@
             <mat-form-field class="fs-6" appearance="outline">
               <mat-label>Amperios/Hora</mat-label>
               <input type="number" matInput formControlName="amperiosHoraBaterias"
-                [(ngModel)]="datosTecnicosInteres.amperiosHoraBaterias" required />
+                [(ngModel)]="datosTecnicosInteres.amperiosHoraBaterias"  />
               <span matSuffix>amp/h</span>
             </mat-form-field>
           </div>
@@ -277,7 +289,7 @@
             <mat-form-field class="fs-6" appearance="outline">
               <mat-label>Amperaje:</mat-label>
               <input type="number" matInput formControlName="amperajeBaterias"
-                [(ngModel)]="datosTecnicosInteres.amperajeBaterias" required />
+                [(ngModel)]="datosTecnicosInteres.amperajeBaterias"  />
               <span matSuffix>amp</span>
               </mat-form-field>
           </div>
@@ -286,7 +298,7 @@
             <mat-form-field class="fs-6" appearance="outline">
               <mat-label>Voltaje:</mat-label>
               <input type="number" matInput formControlName="voltajeBaterias"
-                [(ngModel)]="datosTecnicosInteres.voltajeBaterias" required />
+                [(ngModel)]="datosTecnicosInteres.voltajeBaterias"  />
               <span matSuffix>V</span>
             </mat-form-field>
           </div>
@@ -298,7 +310,7 @@
       <div>
         <button class="btn btn-warning btn-md" mat-button matStepperPrevious>Atrás</button>
           &nbsp;&nbsp;&nbsp;
-        <button class="btn btn-primary btn-md" mat-button matStepperNext>Siguiente</button>
+        <button class="btn btn-primary btn-md" mat-button matStepperNext [disabled]="secondFormGroup.invalid">Siguiente</button>
       </div>
 
       <br>
@@ -316,7 +328,7 @@
         <div class="col-xl-12">
           <mat-form-field class="fs-6" appearance="outline">
             <mat-label>Condiciones Uso</mat-label>
-            <mat-select matInput type="text" formControlName="condicionesUso" [(ngModel)]="mantenimientoPreventivo.condicionesUso" required>
+            <mat-select matInput type="text" formControlName="condicionesUso" [(ngModel)]="mantenimientoPreventivo.condicionesUso" >
               <mat-option selected></mat-option>
               <mat-option value="Normales">Normales</mat-option>
               <mat-option value="Severas">Severas</mat-option>
@@ -562,7 +574,7 @@
       <div>
         <button class="btn btn-warning btn-md" mat-button matStepperPrevious>Atrás</button>
         &nbsp;&nbsp;&nbsp;
-        <a routerLink="/administrador"><button class="btn btn-primary btn-md" mat-button (click)="onAddVehiculo()">Guardar</button></a>
+        <a routerLink="/administrador"><button class="btn btn-primary btn-md" mat-button (click)="onAddVehiculo()" [disabled]="thirdFormGroup.invalid">Guardar</button></a>
       </div>
 
       <br>

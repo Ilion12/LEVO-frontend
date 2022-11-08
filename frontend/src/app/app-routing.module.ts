@@ -9,11 +9,12 @@ const routes: Routes = [
     loadChildren: () => import("./home/home.module").then((m) => m.HomeModule),
   },
   {path:"administrador",
-loadChildren:()=> import("./administrador/administrador.module").then(m=> m.AdministradorModule),
-canActivate:[AuthGuard],
-data:{role:'ADMIN'}},
-{path:"usuario",
-loadChildren:()=> import("./usuario/usuario.module").then(m=> m.UsuarioModule),
+  loadChildren:()=> import("./administrador/administrador.module").then(m=> m.AdministradorModule),
+  canActivate:[AuthGuard],
+  data:{role:'ADMIN'}},
+  
+  {path:"usuario",
+  loadChildren:()=> import("./usuario/usuario.module").then(m=> m.UsuarioModule),
   canActivate:[AuthGuard],
     data:{role:'USER'}
 },
