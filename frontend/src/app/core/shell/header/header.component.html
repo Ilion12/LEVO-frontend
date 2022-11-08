@@ -18,8 +18,8 @@
 				&nbsp;
 				<img id="logoGCright" src="\assets\imagenes\emblemagcnuevo.png">
 			</div>
-			<div class="col-xl-2">
-				<fa-icon [icon]="usuario"></fa-icon><p>{{user}}-{{rol|lowercase}}</p>
+			<div class="col-xl-2" *ngIf="verUsuario">
+				<fa-icon [icon]="usuario"></fa-icon><p>{{user}}&nbsp;&nbsp;&nbsp;{{rol|lowercase}}</p>
 				<fa-icon [icon]="salir" (click)="logout()"></fa-icon>
 				<p>Cerrar Sesión</p>
 			</div>

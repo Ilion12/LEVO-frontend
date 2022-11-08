@@ -14,14 +14,21 @@ export class HeaderComponent implements OnInit {
   user:any=sessionStorage.getItem('usuario');
   rol:any=sessionStorage.getItem('ROLE')
 
+  verUsuario:boolean=false;
+
   constructor(private authService: AuthService,
     private router:Router) { }
 
   ngOnInit(): void {
+    this.mostrarIconos();
   }
 
   logout(){ console.log(this.user);
     this.authService.logout();
+  }
+
+  mostrarIconos(){
+    this.verUsuario=this.authService.isLoggedIn();
   }
 
   salir= faRightFromBracket;

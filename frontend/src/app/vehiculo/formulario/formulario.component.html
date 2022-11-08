@@ -25,9 +25,6 @@
             <input type="text" matInput placeholder="PGC0000A" formControlName="matricula"
               [(ngModel)]="vehiculo.matricula" maxlength="8" minlength="8" />
           </mat-form-field>
-          <div *ngIf= "firstFormGroup.get('matricula')?.touched && firstFormGroup.get('matricula')?.errors?.['required']" class="alert alert-danger">Campo obligatorio</div>
-          <div *ngIf= "firstFormGroup.get('matricula')?.touched && firstFormGroup.get('matricula')?.errors?.['minlength']" class="alert alert-danger">
-            {{firstFormGroup.get('matricula')?.touched && firstFormGroup.get('matricula')?.errors?.['minlength'].requiredLength}} caracteres mínimo</div>
         </div>
 
         <div class="col-xl-6">
@@ -109,7 +106,7 @@
       <br>
 
       <div>
-        <button class="btn btn-primary btn-md" mat-button matStepperNext [disabled]="firstFormGroup.invalid">Siguiente</button>
+        <button class="btn btn-primary btn-md" mat-button matStepperNext >Siguiente</button>
       </div>
 
       <br>
@@ -329,7 +326,7 @@
       <div>
         <button class="btn btn-warning btn-md" mat-button matStepperPrevious>Atrás</button>
           &nbsp;&nbsp;&nbsp;
-        <button class="btn btn-primary btn-md" mat-button matStepperNext [disabled]="secondFormGroup.invalid">Siguiente</button>
+        <button class="btn btn-primary btn-md" mat-button matStepperNext >Siguiente</button>
       </div>
 
       <br>
