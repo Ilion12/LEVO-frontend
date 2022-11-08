@@ -42,7 +42,7 @@ export class FormularioComponent implements OnInit {
   });
 
   secondFormGroup = this._formBuilder.group({
-    bastidor: ["", Validators.required],
+    bastidor: ["", [Validators.required,Validators.minLength(17)]],
     color: ["", Validators.required],
     combustible: ["", Validators.required],
     cambio: ["", Validators.required],
