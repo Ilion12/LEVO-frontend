@@ -150,4 +150,8 @@ export class FormularioComponent implements OnInit {
   }
 
   volver= faArrowLeft;
+
+  goBack(){
+    this.router.navigate(['/administrador'])
+  }
 }

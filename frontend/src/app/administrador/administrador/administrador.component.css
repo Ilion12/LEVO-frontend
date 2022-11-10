@@ -36,3 +36,39 @@
   font-weight: 600;
   text-decoration: none;
 }
+
+#lineaAlta {
+  
+  margin-top: -2rem;
+  height: 3rem;
+  background-color: #004d40;
+  /* font-weight: bold; */
+  /* font-size: 16px; */
+  color: white;
+  border-top-color: #fdd835;
+  border-style: solid;
+  border-left-color: #004d40;
+  border-right-color: #004d40;
+  border-bottom-color: #004d00;
+}
+
+li.nav-item{
+  margin-left: 1rem;
+  height: 3rem;
+  background-color: #004d40;
+  font-weight: bold;
+  font-size: 16px;
+  border-top-color: #fdd835;
+  border-style: solid;
+  border-left-color: #fdd835;
+  border-right-color: #fdd835;
+
+}
+
+a{
+  color:#fdd835;
+}
+
+ul.nav{
+  margin-left: -20px;
+}

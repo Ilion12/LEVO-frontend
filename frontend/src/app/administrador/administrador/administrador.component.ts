@@ -24,7 +24,9 @@ export class AdministradorComponent implements OnInit {
   constructor(
     private vehiculoService: VehiculoService,
     private router: Router
-  ) {}
+  ) {this.router.routeReuseStrategy.shouldReuseRoute = function () {
+    return false;}
+  }
 
   ngOnInit(): void {}
 

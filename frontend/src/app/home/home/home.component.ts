@@ -14,7 +14,9 @@ export class HomeComponent implements OnInit {
  
   usuario: Usuario = new UsuarioImpl();
 
-  constructor(private authService: AuthService, private router:Router) { }
+  constructor(private authService: AuthService, private router:Router) {
+    this.show = false;
+   }
 
   ngOnInit(): void {
   }
@@ -31,5 +33,11 @@ export class HomeComponent implements OnInit {
       }
     });
   }
+
+  show: boolean;
+
+  mostrarContrasena() {
+    this.show = !this.show;
+}
 
 }

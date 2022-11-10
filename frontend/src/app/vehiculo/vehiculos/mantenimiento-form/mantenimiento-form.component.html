@@ -222,7 +222,7 @@
       <button class="btn btn-success" type="submit" (click)="onAddMantenimiento()"
         [disabled]="!mantenimientoForm.form.valid">Aceptar</button>
       &nbsp;&nbsp;&nbsp;
-      <button class="btn btn-danger" name="cancelarMantenimiento" routerLink="/">Cancelar</button>
+      <button class="btn btn-danger" name="cancelarMantenimiento" (click)="goBack()">Cancelar</button>
     </div>
 
     <br>

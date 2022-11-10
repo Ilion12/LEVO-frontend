@@ -15,7 +15,11 @@
             </div>
             <br>
             <div class="form-group">
-                <input type="password" name="contraseña" class="form-control" placeholder="Introduzca su contraseña" [(ngModel)]="usuario.contrasena"/>
+                <input [type]="show ? 'text' : 'password'" name="contraseña" class="form-control" placeholder="Introduzca su contraseña" [(ngModel)]="usuario.contrasena"/>
+            </div>
+            <div class="campo">
+                <input  class="checkbox" type="checkbox" name="password" id="password" (click)="mostrarContrasena()">
+                <span>Ver contraseña</span>
             </div>
             <br>
             <div class="form-group">
@@ -24,7 +28,7 @@
             </div>
             <br>
             <div class="form-group">
-                <a class="ForgetPwd">¿Ha olvidado su contraseña?</a>
+                <a class="ForgetPwd" href="mailto:gestioncontraseñasLEVO@guardiacivil.es">¿Ha olvidado su contraseña?</a>
             </div>
         </form>
     </div>

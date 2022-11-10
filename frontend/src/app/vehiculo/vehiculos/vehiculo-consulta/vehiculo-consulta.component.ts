@@ -150,6 +150,18 @@ export class VehiculoConsultaComponent implements OnInit {
   verDatosMR(mantenimientos: MantenimientoImpl[]): void {
     this.mantenimientosVerDatos = mantenimientos;
   }
+  rol:any=sessionStorage.getItem('ROLE');
+  
+  
+  goBack(){
+    console.log(this.rol);
+    if(this.rol=='ADMIN'){
+      this.router.navigate(['/administrador']);
+    }
+    if(this.rol=='USER'){
+      this.router.navigate(['/usuario']);
+    }
+  }
 
   volver= faArrowLeft;
 }

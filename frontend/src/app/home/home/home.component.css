@@ -36,3 +36,16 @@
   font-weight: 600;
   text-decoration: none;
 }
+
+.campo {
+  position: relative;
+  margin-top: .1rem;
+}
+
+
+
+input {
+  width: 100%;
+  padding: 7px;
+}
+

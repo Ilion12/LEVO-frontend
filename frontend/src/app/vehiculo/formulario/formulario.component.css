@@ -3,9 +3,17 @@
 }
 
 p {
-  color:#060808;
+  color:#f8fafa;
 }
 
 span {
   color:#004d40;
+}
+
+p.fs-x {
+  margin-top: .5rem;
+  color: #fafbfb;
+  font-size:xx-large;
+  justify-content: center;
+  align-items: center;
 }

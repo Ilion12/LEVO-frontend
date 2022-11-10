@@ -2,8 +2,12 @@
   margin-top: 34px;
 }
 
-p.fs-2 {
+p.fs-x {
+  margin-top: .5rem;
   color: #fafbfb;
+  font-size:xx-large;
+  justify-content: center;
+  align-items: center;
 }
 
 span {
