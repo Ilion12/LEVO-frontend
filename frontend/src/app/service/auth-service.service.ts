@@ -47,15 +47,18 @@ export class AuthService {
     sessionStorage.setItem('ROLE', '');
     sessionStorage.setItem('usuario', '')
     this.router.navigate(['']);
+    location.reload();
     return of({ success: this.isLogin, role: '' });
   }
 
   isLoggedIn() {
     const loggedIn = sessionStorage.getItem('STATE');
-    if (loggedIn == 'true')
+    if (loggedIn == 'true'){
       this.isLogin = true;
-    else
+    }
+    else{
       this.isLogin = false;
+    }
     return this.isLogin;
   }
 

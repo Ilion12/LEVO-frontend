@@ -11,6 +11,7 @@ import { VehiculoService } from "../../service/vehiculo.service";
 import { FormBuilder } from "@angular/forms";
 import { MantenimientoImpl } from "../../models/mantenimiento-impl";
 import { Mantenimiento } from "../../models/mantenimiento";
+import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 
 @Component({
   selector: "app-vehiculo-consulta",
@@ -149,4 +150,6 @@ export class VehiculoConsultaComponent implements OnInit {
   verDatosMR(mantenimientos: MantenimientoImpl[]): void {
     this.mantenimientosVerDatos = mantenimientos;
   }
+
+  volver= faArrowLeft;
 }

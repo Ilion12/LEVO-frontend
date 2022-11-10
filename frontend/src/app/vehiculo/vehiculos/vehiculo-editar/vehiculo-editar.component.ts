@@ -1,6 +1,7 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
+import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 import { environment } from 'src/environments/environment.prod';
 import { DatosTecnicosInteres } from '../../models/datos-tecnicos-interes';
 import { DatosTecnicosInteresImpl } from '../../models/datos-tecnicos-interes-impl';
@@ -169,4 +170,6 @@ export class VehiculoEditarComponent implements OnInit {
   onMantenimientoEliminar(mantenimiento: MantenimientoImpl) {
     this.mantenimientoService.deleteMantenimiento(mantenimiento.id).subscribe();
   }
+
+  volver= faArrowLeft;
 }

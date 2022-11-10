@@ -1,5 +1,12 @@
 <div class="row" id="lineaInferior">
+  <div class=" col-2"></div>
+  <div class=" col-8">
   <p class="fs-2">{{vehiculo.matricula|uppercase}}</p>
+  </div>
+  <div class=" col-2">
+    <fa-icon [icon]="volver" routerLink="/administrador"></fa-icon>
+    <p>Volver</p>
+  </div>
 </div>
 
 <mat-stepper #stepper>

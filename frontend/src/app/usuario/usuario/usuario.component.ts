@@ -21,21 +21,17 @@ export class UsuarioComponent implements OnInit {
   mantenimientoPreventivo!: MantenimientoPreventivoImpl;
 
   user:any=localStorage.getItem('usuario');
-  
-
-
-  
-
   constructor( 
     private vehiculoService: VehiculoService,
     private router: Router
   ) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+  }
+
 
   onVehiculoConsultar(vehiculo: Vehiculo) {
     this.verDatos(vehiculo);
-    console.log(vehiculo);
     let url = `usuario/consultar/${vehiculo.id}`;
     this.router.navigate([url]);
     
@@ -50,7 +46,6 @@ export class UsuarioComponent implements OnInit {
       .getBusquedaPorMatricula(matricula)
       .subscribe((response) => {
         this.vehiculos = this.vehiculoService.extraerVehiculos(response);
-        console.log(response);
       });
       
   }

@@ -1,6 +1,7 @@
+import { LOCATION_INITIALIZED } from "@angular/common";
 import { Component, OnInit } from "@angular/core";
 import { Router } from "@angular/router";
-import { faMagnifyingGlass, faPencil, faTrashCan } from "@fortawesome/free-solid-svg-icons";
+import { faArrowLeft, faMagnifyingGlass, faPencil, faTrashCan } from "@fortawesome/free-solid-svg-icons";
 import { DatosTecnicosInteresImpl } from "../models/datos-tecnicos-interes-impl";
 import { Mantenimiento } from "../models/mantenimiento";
 import { MantenimientoImpl } from "../models/mantenimiento-impl";
@@ -30,12 +31,15 @@ export class VehiculosComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+    
     this.vehiculoService
       .getVehiculos()
       .subscribe(
         (response) =>
           (this.vehiculos = this.vehiculoService.extraerVehiculos(response))
       );
+
+      
   }
 
   onVehiculoEliminar(vehiculo: Vehiculo) {
@@ -49,7 +53,10 @@ export class VehiculosComponent implements OnInit {
           });
       });
 
-    this.router.navigate(["vehiculos"]);
+    this.router.navigate(["administrador/vehiculos"]);
+    location.reload();
+
+
   }
 
   onVehiculoConsultar(vehiculo: Vehiculo) {
@@ -71,4 +78,5 @@ export class VehiculosComponent implements OnInit {
   faMagnifyingGlass = faMagnifyingGlass;
   faPencil = faPencil;
   faTrashCan = faTrashCan;
+  volver= faArrowLeft;
 }

@@ -52,6 +52,8 @@ export class AdministradorComponent implements OnInit {
 
   onVehiculoEliminar(vehiculo: Vehiculo) {
     this.vehiculoService.deleteVehiculo(vehiculo.id).subscribe();
+    let url = `administrador/vehiculos`;
+    this.router.navigate([url]);
   }
 
   onVehiculoEditar(vehiculo: Vehiculo) {
