@@ -12,7 +12,7 @@ import { UsuarioImpl } from "../usuario/models/user-impl";
 })
 export class AuthService {
 
-  rol:any=sessionStorage.getItem('ROLE');
+  
 
   isLogin = false;
 
@@ -63,7 +63,8 @@ export class AuthService {
   }
 
   getRole() {
-    this.roleAs = this.rol ;
+     let rol:any=sessionStorage.getItem('ROLE');
+    this.roleAs = rol ;
     return this.roleAs;
   }
 
